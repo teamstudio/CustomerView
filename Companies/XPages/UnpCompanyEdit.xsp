@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:unp="http://unplugged.teamstudio.com">
+	<xp:this.data>
+		<xp:dominoDocument var="docCompany" formName="frmCompany"></xp:dominoDocument>
+	</xp:this.data>
+
+	<unp:unpScrollableArea>
+		<xp:this.facets>
+			<xp:div xp:key="facet_1">
+
+				<unp:unpFormEditor showbuttons="yes" closexpagename="UnpMain.xsp" formname="frmCompany" title="Company">
+
+					<xp:this.facets>
+						<xp:panel xp:key="facet_1">
+
+							<ul class="fieldlist">
+
+								<xp:panel tagName="li" rendered="#{javascript:!document1.isNewNote()}">
+
+									<div class="formThumbContainer">
+
+										<xp:div styleClass="bgThumbnail"
+											rendered="#{javascript:!isEmpty(document1.getItemValueString('PhotoFileName'))}">
+											<xp:this.attrs>
+												<xp:attr name="style">
+													<xp:this.value><![CDATA[#{javascript:var photo = applicationScope.get("thisDbUrl") + "/0/" + param.get("documentId") + "/$file/" + document1.getItemValueString('PhotoFileName');
+				
+				"background-image: url('" + photo + "');"}]]></xp:this.value>
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:div>
+
+										<xp:panel tagName="i" styleClass="glyphicons building"
+											rendered="#{javascript:isEmpty(document1.getItemValueString('PhotoFileName'))}" />
+									</div>
+
+									<xp:span styleClass="xspTextComputedField">
+
+										<b>
+											<xp:text disableTheme="true" escape="true" value="#{document1.Company}"></xp:text>
+										</b>
+										<br />
+
+									</xp:span>
+								</xp:panel>
+								
+								<li>
+									<xp:label value="Company name" id="label5" for="Company"></xp:label>
+									<xp:inputText id="Company" value="#{document1.Company}" styleClass="xspInputFieldEditBox deletable required"></xp:inputText>
+								</li>
+								
+								<li>
+									<xp:label value="Address 1" id="label4" for="Address1"></xp:label>
+									<xp:inputText id="Address1" value="#{document1.Address1}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+								</li>
+								<li>
+									<xp:label value="Address 2" id="label6" for="Address2"></xp:label>
+									<xp:inputText id="Address2" value="#{document1.Address2}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+								</li>
+								<li>
+									<xp:label value="Zip code" id="label8" for="ZipCode"></xp:label>
+									<xp:inputText id="ZipCode" value="#{document1.ZipCode}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+								</li>
+								<li>
+									<xp:label value="City" id="label9" for="City"></xp:label>
+									<xp:inputText id="City" value="#{document1.ZipCode}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+								</li>
+								<li>
+									<xp:label value="Country" id="label10" for="Country"></xp:label>
+									<xp:inputText id="Country" value="#{document1.Country}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+								</li>
+
+								<li>
+									<xp:label value="Phone" id="label1" for="Phone"></xp:label>
+									<xp:inputText id="Phone" value="#{document1.Phone}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+								</li>
+								<li>
+									<xp:label value="Email" id="label2" for="EMailAddress"></xp:label>
+									<xp:inputText id="EMailAddress" value="#{document1.EMailAddress}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+								</li>
+								<li>
+									<xp:label value="Homepage" id="label3" for="Homepage"></xp:label>
+									<xp:inputText id="Homepage" value="#{document1.Homepage}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+								</li><!--
+
+								<li>
+									<xp:label value="Logo" id="label7" for="fileUpload1"></xp:label>
+									<xp:fileUpload id="fileUpload1" value="#{document1.foto}"></xp:fileUpload>
+								</li>
+								
+								-->
+								<li>
+									<xp:label value="Comments" id="commentsLabel" for="Comments" styleClass="widelabel"></xp:label>
+									<xp:inputTextarea id="Comments"
+										styleClass="richtextfield" value="#{document1.Comments}">
+									</xp:inputTextarea>
+								</li>
+
+							</ul>
+						</xp:panel>
+
+					</xp:this.facets>
+				</unp:unpFormEditor>
+
+			</xp:div>
+
+		</xp:this.facets>
+	</unp:unpScrollableArea>
+
+</xp:view>

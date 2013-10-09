@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" 
+	xmlns:unp="http://unplugged.teamstudio.com" 
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	
+		<xp:scriptBlock id="scriptBlock1">
+			<xp:this.value><![CDATA[window.location.href = "/unplugged/apps/contact.nsf"]]></xp:this.value>
+		</xp:scriptBlock>
+
+</xp:view>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='unpContactsByParent' xmlns='http://www.lotus.com/dxl' version='9.0'
+ replicaid='C1257BEF00363F66' hide='web' showinmenu='false' publicaccess='false'
+ designerversion='8.5.3' unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator'
+ headers='beveled' opencollapsed='false' showresponsehierarchy='true' showmargin='true'
+ shrinkrows='false' extendlastcolumn='false' showhierarchies='false' unreadcolor='black'
+ rowlinecount='1' headerlinecount='1' rowspacing='1' bgcolor='white' totalscolor='black'
+ headerbgcolor='white' boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
+ allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
+ uniquekeys='false'>
+<noteinfo noteid='27a' unid='AE75D0B3DC16C9B6C1257BEF00350B63' sequence='6'>
+<created><datetime dst='true'>20130923T113923,23+02</datetime></created>
+<modified><datetime dst='true'>20131008T151312,87+02</datetime></modified>
+<revised><datetime dst='true'>20131008T151312,85+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20131008T151312,85+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130923T115236,41+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='selection'><formula
+>SELECT Form = "frmContact"</formula></code>
+<column sort='ascending' hidedetailrows='false' itemname='parentIDs' width='10'
+ resizable='true' separatemultiplevalues='true' sortnoaccent='false' sortnocase='true'
+ showaslinks='false' categorized='true'><columnheader title='ParentIDs'><font
+ size='9pt' style='bold'/></columnheader></column>
+<column sort='ascending' hidedetailrows='false' itemname='Name' width='10'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='true' sortnocase='true'
+ showaslinks='false'><columnheader title='unpName'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='EMailAddress' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='unpDetails'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='unpPhoto' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='unpPhoto'><font size='9pt' style='bold'/></columnheader><code event='value'><formula
+>@If(PhotoFileName=""; ""; "0/" + @Text(@DocumentUniqueID) + "/$FILE/" + PhotoFileName)</formula></code></column></view>
+

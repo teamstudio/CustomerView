@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="23a" sequence="62" unid="18F06A2EA9B092FDC1257BEB00318967">
+<created><datetime dst="true">20130919T110104,39+02</datetime></created>
+<modified><datetime dst="true">20131008T122546,74+02</datetime></modified>
+<revised><datetime dst="true">20131008T122546,72+02</datetime></revised>
+<lastaccessed><datetime dst="true">20131008T122546,72+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130923T115236,17+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name><name>CN=Domino Administrator/O=LinQed</name><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<item name="$Flags"><text>gC~4;</text></item>
+
+
+<item name="$TITLE" sign="true"><text>unpResources.xsp</text></item>
+
+
+
+<item name="$Class"><text>TS CustomerView</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+
+<item name="$FileNames" sign="true"><text>unpResources.xsp</text></item></note>

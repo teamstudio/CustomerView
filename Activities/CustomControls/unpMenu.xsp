@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com"><!--
+
+	<unp:unpNavigator>
+
+
+
+		<unp:this.menuItem>
+
+			<unp:menuItem page="/UnpMain.xsp" label="Companies" ajaxtargetid="content" ajaxloadid="contentwrapper" icon="building"></unp:menuItem>
+			<unp:menuItem label="Contacts" page="/UnpContacts.xsp" ajaxtargetid="content" ajaxloadid="contentwrapper" icon="user"></unp:menuItem>
+
+			<unp:menuItem label="Files" page="/UnpContacts.xsp" ajaxtargetid="content" ajaxloadid="contentwrapper" icon="file"></unp:menuItem>
+			<unp:menuItem label="Activities" page="/UnpContacts.xsp" ajaxtargetid="content" ajaxloadid="contentwrapper" icon="folder_open"></unp:menuItem>
+
+			<unp:menuItem label="Opportunities" page="/UnpContacts.xsp" ajaxtargetid="content" ajaxloadid="contentwrapper" icon="folder_plus"></unp:menuItem>
+			<unp:menuItem label="Todos" page="/UnpContacts.xsp" ajaxtargetid="content" ajaxloadid="contentwrapper" icon="log_book"></unp:menuItem>
+
+		</unp:this.menuItem>
+	</unp:unpNavigator>
+
+	-->
+	
+	<unp:unpNavigator>
+		<unp:this.menuItems>
+		
+		
+			<![CDATA[#{javascript:				var m = [];
+				m.push( { label: "Companies (" + sessionScope.get("numCompanies") + ")", disabled: "no", page : "/UnpMain.xsp", ajaxtargetid: "content", ajaxloadid : "contentwrapper", icon : "building", submenu : "no" });
+				m.push( { label: "Contacts (" + sessionScope.get("numContacts") + ")", disabled: "no", page : "/UnpContacts.xsp", ajaxtargetid: "content", ajaxloadid : "contentwrapper", icon : "user", submenu : "no" });
+				
+				m.push( { label: "Media", disabled: "no", page : "../../files.unp/UnpMain.xsp", ajaxtargetid: null, ajaxloadid : null, icon : "file", submenu : "no" });
+				
+				m.push( { label: "Activities", disabled: "no", page : "/UnpActivities.xsp", ajaxtargetid: "content", ajaxloadid : "contentwrapper", icon : "folder_open", submenu : "no" });
+				
+				m.push( { label: "Deals", disabled: "no", page : "/UnpContacts.xsp", ajaxtargetid: "content", ajaxloadid : "contentwrapper", icon : "folder_plus", submenu : "no" });
+				
+				return m;
+			}]]>
+		</unp:this.menuItems>
+	
+</unp:unpNavigator>
+</xp:view>

@@ -1,0 +1,163 @@
+/*colored glyphicons*/
+.glyphicons {
+	vertical-align: top;
+}
+
+i.unp-glyph-white:before {
+	color: #fff;
+}
+
+i.unp-glyph-grey:before {
+	color: #cecece;
+}
+
+/* rounded elements (e.g. images in Contacts)*/
+.roundedBorders {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+/* default thumbnail size */
+td.thumbnail img,img.thumbnail {
+	height: 60px;
+}
+
+td.thumbnail {
+	white-space: nowrap;
+	vertical-align: top;
+	padding-right: 9px;
+}
+
+.thumbContainer {
+	top: -5px;
+	float: left;
+	position: relative;
+	width: 50px;
+	height: 50px;
+	margin-right: 13px;
+
+}
+.thumbContainer .bgThumbnail, .formThumbContainer .bgThumbnail {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 50px;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+}
+.formThumbContainer .bgThumbnail {
+	float: right;	
+	width: 65px;
+	height: 65px;
+}
+
+.thumbContainer .glyphicons:before {
+	position: absolute;
+	left: 7px;
+	top: 7px;
+	font: 36px/1em 'Glyphicons Regular';
+}
+.formThumbContainer {
+	float:left; clear:left; width:27%; text-align:right; 
+	min-width: 70px; padding-top:10px; padding-bottom:10px;
+	height: 70px;
+}
+ 
+
+.formThumbContainer .glyphicons:before  {
+	font: 36px/1em 'Glyphicons Regular';
+	color: #cecece;
+}
+
+
+/* debug toolbar styles */
+#dBar {
+	background: silver; position: absolute; top:0; right: 0;font-size: 12px; 
+	z-index: 25;	
+}
+#dBarLoad {
+	font-weight: bold; 
+	width: 80px; 
+	padding: 6px;	
+}
+#dBarContents {
+	width: 375px; 
+	display:none; 
+	padding: 6px;
+}
+div.dBar {
+	background: #dddddd; 
+	text-shadow:none;
+}
+	
+div.dBar .header {
+	background:#444444;
+	padding: 5px; 
+	color: #ffffff;
+	text-align: middle;
+}
+div.dBar table {
+	width: 100%;
+	border-collapse: collapse;
+}
+div.dBar table.grid th {
+	font-weight:bold;
+	border: 0;
+	padding: 1px 2px;
+	background: #bbbbbb;
+}
+div.dBar table.grid td {
+	border: 1px solid #CECECE;
+	padding: 1px 2px;
+}
+div.dBar table.grid td.error {
+	color: red;
+}
+div.dBar table.grid td.warning {
+	color: #E0AD06;
+}
+div.dBar table.grid td.debug {
+	font-style: italic;
+}
+div.dBar td.first {
+	width: 85px;
+}
+
+div.dBar div.section {
+	padding: 0;
+	clear: both;
+}
+div.dBar div.title {
+	background:#bbbbbb; 
+	padding:5px; 
+	font-weight: bold;
+	border-bottom: 1px solid #000000;
+}
+div.dBar .content {
+	margin: 7px 5px;
+}
+div.dBar button {
+	margin: 4px;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 20px;
+	height: initial;
+}
+div.dBar .debugbutton {
+	width: auto !important;
+	display: inline;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+div.dBar .debugbuttonsmall {
+	width: auto !important;
+	display: inline;
+	padding-left: 12px;
+	padding-right: 12px;
+}

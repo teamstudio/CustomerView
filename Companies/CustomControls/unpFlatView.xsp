@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		Copyright 2013 Teamstudio Inc Licensed under the Apache License,
+		Version 2.0 (the "License"); you may not use this file except in
+		compliance with the License. You may obtain a copy of the License at
+		http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+		applicable law or agreed to in writing, software distributed under the
+		License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+		CONDITIONS OF ANY KIND, either express or implied. See the License for
+		the specific language governing permissions and limitations under the
+		License
+	-->
+
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoView var="viewList"
+			viewName="#{javascript:compositeData.viewName}">
+			<xp:this.categoryFilter><![CDATA[#{javascript:if (isEmpty(compositeData.categoryfilter)){
+	return null;
+}else{
+	return compositeData.categoryfilter;
+}}]]></xp:this.categoryFilter>
+			<xp:this.databaseName><![CDATA[#{javascript:if (compositeData.dbName != null){
+	var db = session.getDatabase("", compositeData.dbName);
+	if (db == null){
+		return null;
+	}else{
+		return compositeData.dbName;
+	}
+}}]]></xp:this.databaseName>
+		</xp:dominoView>
+	</xp:this.data>
+	<xp:this.resources>
+		<xp:script src="/unp/jquery.blockUI.min.js" clientSide="true"></xp:script>
+		<xp:script src="/unp/iScroll.min.js" clientSide="true"></xp:script>
+		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
+		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+
+	<div id="results">
+		<xp:panel tagName="div" style="#{javascript:compositeData.cssoverride}">
+			<xp:this.styleClass><![CDATA[#{javascript:var out = new Array();
+if(compositeData.insetData) {
+	out.push("bordered");
+}
+if (compositeData.position == "left-aligned"){
+	out.push("pullleft");
+}
+if (out.length > 0){
+	return @Implode(out, " ");
+}}]]>
+			</xp:this.styleClass>
+			<div id="flatView">
+				<ul id="flatViewRowSet">
+					<xp:panel tagName="li" id="title" styleClass="title">
+						<xp:this.style><![CDATA[#{javascript:if (isEmpty(compositeData.title)){
+	return "display: none;";
+}}]]></xp:this.style>
+						<xp:label id="label3">
+							<xp:this.value><![CDATA[#{javascript:compositeData.title;
+}]]></xp:this.value>
+
+						</xp:label>
+					</xp:panel>
+					<xp:repeat id="repeat4" var="thisRowData"
+						value="#{viewList}" disableOutputTag="true"
+						indexVar="thisRowIndex">
+						<xp:this.rows><![CDATA[${javascript:sessionScope.rowcount = compositeData.numberofrows;
+if (compositeData.enableAZPicker == "yes"){
+	return "5000";
+}else{
+	if (sessionScope.rowcount != null){
+		return sessionScope.rowcount;
+	}else{
+		return 20;
+	}
+}}]]></xp:this.rows>
+						<xp:panel tagName="li" id="categoryrow"
+							styleClass="categoryRowFixed condensed" disableTheme="true"
+							rendered="#{javascript:thisRowData.isCategory()}">
+							<xp:text
+								value="#{javascript:thisRowData.getColumnValues().elementAt(0)}">
+							</xp:text>
+						</xp:panel>
+						<xp:panel tagName="li" id="datarow"
+							rendered="#{javascript:!thisRowData.isCategory()}">
+							<xp:this.attrs>
+								<xp:attr name="onClick">
+									<xp:this.value><![CDATA[#{javascript:
+	var url = getDbPath() + "/" + compositeData.xpageDoc + "?action=openDocument&documentId=" + thisRowData.getDocument().getUniversalID();
+	if (compositeData.ajaxload != "No"){
+		return "openDocument('" + url + "', 'content');"
+	}else{
+		return "document.location.href='" + url + "'";
+	}
+}]]></xp:this.value>
+								</xp:attr>
+							</xp:this.attrs>
+							<xp:this.styleClass><![CDATA[#{javascript:if (viewScope.rowcount == null){
+	viewScope.rowcount = 1;
+}else{
+	viewScope.rowcount = viewScope.rowcount + 1;
+}
+var out = "data-row";
+if (viewScope.rowcount == 1 && isEmpty(compositeData.title)){
+	out += " first-row";
+}
+if (compositeData.collapseRows == "Yes"){
+	out += " collapse-row";
+}
+return out;}]]></xp:this.styleClass>
+
+<div class="thumbContainer">
+						
+								<xp:div styleClass="bgThumbnail">
+									<xp:this.rendered><![CDATA[#{javascript:var photocol = compositeData.photoColumn;
+									var photo = thisRowData.getColumnValue(photocol);
+									return !isEmpty(photocol) && !isEmpty( photo ) && photo.indexOf('/')>-1 ;}]]></xp:this.rendered>
+	
+								<xp:this.attrs>
+									<xp:attr name="style">
+										<xp:this.value><![CDATA[#{javascript:var photo = thisRowData.getColumnValue(compositeData.photoColumn);
+	
+	"background-image: url('" + photo + "');"}]]></xp:this.value>
+									</xp:attr>
+								</xp:this.attrs>
+								</xp:div>
+								
+								<xp:text tagName="i" id="computedField1" escape="false" 
+									styleClass="#{javascript:'glyphicons unp-glyph-grey ' + thisRowData.getColumnValue(compositeData.photoColumn)}">
+										<xp:this.rendered><![CDATA[#{javascript:var photocol = compositeData.photoColumn;
+										var photo = thisRowData.getColumnValue(photocol);
+									return !isEmpty(photocol) && !isEmpty( photo ) && photo.indexOf('/')==-1;}]]></xp:this.rendered>
+								
+								</xp:text>
+								
+								<xp:text tagName="i" id="icon" escape="false" 
+									styleClass="#{javascript:'glyphicons unp-glyph-grey ' + compositeData.placeHolderIcon}">
+										<xp:this.rendered><![CDATA[#{javascript:var photocol = compositeData.photoColumn;
+										var photo = thisRowData.getColumnValue(photocol);
+									return !isEmpty(photocol) && isEmpty( photo );}]]></xp:this.rendered>
+								
+								</xp:text>
+							</div>
+							
+							<xp:image id="image1">
+								<xp:this.styleClass><![CDATA[#{javascript:if(isEmpty(compositeData.detailColumn) || compositeData.collapseRows == "Yes"){ 
+	return 'singleLineIcon';
+} else {
+	return 'multiLineIcon';
+}}]]></xp:this.styleClass>
+								<xp:this.url><![CDATA[#{javascript:if (compositeData.collapseRows == "Yes"){
+	return "/unp/arrow-down.png";
+}else{
+	return "/unp/right-arrow-circle.png";
+}}]]></xp:this.url>
+							</xp:image>
+							<xp:label id="label2"
+								value="#{javascript:thisRowData.getColumnValue(compositeData.summaryColumn);}">
+								<xp:this.styleClass><![CDATA[#{javascript:var out = "viewlistsummary";
+if (compositeData.wrapsummarytext == "yes"){
+	out += " two-lines";
+}
+return out;}]]></xp:this.styleClass>
+							</xp:label>
+							<xp:div id="rowDetails">
+								<xp:this.style><![CDATA[#{javascript:if (compositeData.collapseRows == "Yes"){
+	return "display: none;";
+}}]]></xp:this.style>
+								<xp:this.styleClass><![CDATA[#{javascript:"rowDetails" + thisRowIndex}]]></xp:this.styleClass>
+								<xp:label id="label1"
+									styleClass="viewlistdetail">
+									<xp:this.value><![CDATA[#{javascript:if(isEmpty(compositeData.detailColumn)){
+	return " ";
+}else{
+  return thisRowData.getColumnValue(compositeData.detailColumn);
+}}]]></xp:this.value>
+
+								</xp:label>
+							</xp:div>
+						</xp:panel>
+					</xp:repeat>
+				</ul>
+				<div class="summaryDataRow"></div>
+				<xp:div id="pullUpHolder">
+					<xp:this.rendered><![CDATA[#{javascript:compositeData.refreshmethod == "pull" && applicationScope.unpluggedserver == true && viewScope.rowcount >= compositeData.numberofrows}]]></xp:this.rendered>
+					<div id="pullUp">
+						<span class="pullUpIcon"></span>
+						<span class="pullUpLabel">
+							Pull up to load more...
+						</span>
+					</div>
+				</xp:div>
+				<xp:div id="loadmorelink">
+					<xp:this.rendered><![CDATA[#{javascript:compositeData.refreshmethod != "none" && viewScope.rowcount >= compositeData.numberofrows}]]></xp:this.rendered>
+					<xp:this.styleClass><![CDATA[#{javascript:if (compositeData.refreshmethod != "button" && applicationScope.unpluggedserver == true){
+	return "loadmorelink hidden";
+}else{
+	return "loadmorelink";
+}}]]></xp:this.styleClass>
+					<xp:button value="Load More..." id="loadmorebutton"
+						styleClass="loadmorebutton">
+						<xp:this.attrs>
+							<xp:attr name="onclick">
+								<xp:this.value><![CDATA[#{javascript:"loadmore('" + compositeData.dbName + "', '" + compositeData.viewName + "', '" + compositeData.summaryColumn + "', '" + compositeData.detailColumn + "', '" + compositeData.categoryfilter + "', '" + compositeData.xpageDoc + "', '" + compositeData.refreshmethod + "', '" + compositeData.photoColumn + "', '" + compositeData.collapseRows + "', '" + compositeData.wrapsummarytext + "', '" + compositeData.ajaxload + "', '" + compositeData.placeHolderIcon + "')"}]]></xp:this.value>
+							</xp:attr>
+						</xp:this.attrs>
+					</xp:button>
+				</xp:div>
+
+			</div>
+		</xp:panel>
+	</div>
+
+</xp:view>

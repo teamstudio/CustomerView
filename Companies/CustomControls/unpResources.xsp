@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com" xmlns:xc="http://www.ibm.com/xsp/custom">
+	
+	<xc:unpDebugToolbarLoader></xc:unpDebugToolbarLoader>
+
+	<xp:this.resources>
+		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
+		
+		<xp:styleSheet href="/unplugged-light.css"></xp:styleSheet>
+
+		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
+
+		<xp:script src="/unpConfig.jss" clientSide="false"></xp:script>
+		<xp:script src="/scripts/modernizr.js" clientSide="true"></xp:script>
+		<xp:styleSheet href="/css/glyphicons.css"></xp:styleSheet>
+		<xp:styleSheet href="/crm.css"></xp:styleSheet>
+	</xp:this.resources>
+
+</xp:view>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="15e" sequence="13" unid="2DE4F767F78316ABC1257BE900415745">
+<created><datetime dst="true">20130917T135341,81+02</datetime></created>
+<modified><datetime dst="true">20131001T152325,79+02</datetime></modified>
+<revised><datetime dst="true">20131001T152325,77+02</datetime></revised>
+<lastaccessed><datetime dst="true">20131001T152325,77+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130923T115232,46+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<item name="$TITLE"><text>unpAZPicker.xsp</text></item>
+
+
+
+
+<item name="$FileNames" sign="true"><text>unpAZPicker.xsp</text></item>
+
+<item name="$Class"><text>Unplugged Controls</text></item>
+<item name="$Flags"><text>gC~4;</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+
+</note>

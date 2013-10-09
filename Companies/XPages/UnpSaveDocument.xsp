@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" 
+	xmlns:unp="http://unplugged.teamstudio.com" 
+	xmlns:xc="http://www.ibm.com/xsp/custom" rendered="false">
+
+	<xp:this.resources>
+		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:var exCon = facesContext.getExternalContext(); 
+var writer = facesContext.getResponseWriter();
+var response = exCon.getResponse();
+response.setContentType("text/plain; charset=\"utf-8\"");
+var resp;
+var unid = "testing";
+
+try{
+	resp = "Started";
+	var doc = null;
+	resp = "Getting doc";
+	try{
+		doc = database.getDocumentByUNID(context.getUrlParameter("unid"));
+	}catch(e){
+		resp = "Error getting doc";
+	}
+	if (doc == null){
+		resp = "Creating doc";
+		doc = database.createDocument();
+		doc.replaceItemValue("Form", context.getUrlParameter("formname"));
+	}
+	resp = "getting parentunid";
+	if (context.getUrlParameter("parentunid") != "" && context.getUrlParameter("parentunid") != "null"){
+		var parent:NotesDocument = database.getDocumentByUNID(context.getUrlParameter("parentunid"));
+		resp = "creating response to parentunid = " + parent.getUniversalID();
+		doc.makeResponse(parent);
+	}
+	resp = "setting dateformat";
+	var dateformat = /^(19|20)\d\d[- \/.](0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])$/;
+	try{
+		resp = "getting keyset";
+		var keys = param.keySet().iterator();
+		resp = "starting iterator loop";
+		while(keys.hasNext()){
+			var key = keys.next();
+			resp = ("Processing " + key);
+			var value = unescape(param.get(key));
+			if (dateformat.test(value)){
+				value = value.split("-");
+				value = session.createDateTime(@Date(parseInt(value[0], 10), parseInt(value[1], 10), parseInt(value[2], 10)));
+			}
+			if (@Left(key, 2) == "$$"){
+				//Ignore, this is a system field
+			}else if(key.indexOf(":") > -1){
+				var fieldnames = key.split(":");
+				var fieldname = fieldnames[fieldnames.length - 1];
+				if (fieldname.indexOf("__") > -1){
+					//This needs to be a multi value field
+					fieldnames = fieldname.split("__");
+					resp = "start fieldname = " + fieldname;
+					fieldname = fieldnames[fieldnames.length - 1]
+					resp = "new fieldname = " + fieldname;
+					resp = "value = " + value;
+					value = @Explode(value, ",");
+				}
+				doc.replaceItemValue(fieldname, value);
+				resp = (fieldname + ": " + value);
+			}else{
+				doc.replaceItemValue(key, value);
+				resp = (key + ": " + value);
+			}
+		}
+		
+		resp = "all fields processed";
+		
+		//ml: calculate details
+		var f = doc.getItemValueString("Form");
+		doc.replaceItemValue("test", f);
+		
+		if (f == "frmCompany") {
+			doc.replaceItemValue("Details", @Trim( doc.getItemValueString("City")  + " " + doc.getItemValueString("ZipCode") ) ); 
+		}
+
+		doc.save();
+		unid = doc.getUniversalID();
+		resp = "OK";
+	}catch(e){
+		resp = e;
+	}
+}catch(mainerror){
+	
+}
+if(resp == "OK")
+{
+	writer.write(unid);
+} else {
+	writer.write("Error: " + resp);
+}
+writer.endDocument();
+facesContext.responseComplete();}]]></xp:this.afterRenderResponse>
+
+</xp:view>

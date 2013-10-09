@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" 
+	xmlns:unp="http://unplugged.teamstudio.com" 
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:unpResources />
+	
+	<unp:unpHeader search="database" viewsButton="true" title="Contacts" searchPage="UnpContactSearch.xsp"></unp:unpHeader>
+	
+	<xc:unpMenu />
+	
+	<div id="content">
+		<unp:unpScrollableArea>
+			<xp:this.facets>
+			<unp:unpFlatView xp:key="facet_1" insetData="true" detailColumn="unpDetails" summaryColumn="unpName" title="Contacts"
+				viewName="unpContacts" xpageDoc="UnpContact.xsp" numberofrows="20" photoColumn="unpPhoto" placeHolderIcon="user" />
+			</xp:this.facets>
+		</unp:unpScrollableArea>
+	</div>
+	
+	<unp:unpFooter synctype="alldbs"></unp:unpFooter>
+
+</xp:view>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:unp="http://unplugged.teamstudio.com">
+
+	<unp:unpScrollableArea>
+		<xp:this.facets>
+	<unp:unpFormEditor showbuttons="yes" closexpagename="UnpContacts.xsp" formname="frmContact" title="Contact"
+		xp:key="facet_1">
+
+		<xp:this.facets>
+			<xp:panel xp:key="facet_1">
+				<ul class="fieldlist">
+
+					<li>
+					
+						<div class="formThumbContainer">
+						
+							<xp:div styleClass="bgThumbnail" rendered="#{javascript:!isEmpty(document1.getItemValueString('PhotoFileName'))}">
+								<xp:this.attrs>
+									<xp:attr name="style">
+										<xp:this.value><![CDATA[#{javascript:var photo = applicationScope.get("thisDbUrl") + "/0/" + param.get("documentId") + "/$file/" + document1.getItemValueString('PhotoFileName');
+	
+	"background-image: url('" + photo + "');"}]]></xp:this.value>
+									</xp:attr>
+								</xp:this.attrs>
+							</xp:div>
+						
+							<xp:panel tagName="i" styleClass="glyphicons user" rendered="#{javascript:isEmpty(document1.getItemValueString('PhotoFileName'))}" />
+						</div>
+
+						<xp:span styleClass="xspTextComputedField">
+
+							<xp:text escape="true" disableTheme="true" value="#{javascript:document1.getItemValueString('Salutation')}" /><br />
+
+							<b>
+								<xp:text disableTheme="true" escape="true" value="#{document1.Name}" />
+							</b><br />
+
+							<xp:text escape="true" disableTheme="true" value="#{document1.Company}" />
+
+						</xp:span>
+					</li>
+
+					<li>
+						<xp:label value="Title" id="namelabel" for="Title"></xp:label>
+						<xp:inputText id="Title" value="#{document1.Title}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Job title" id="label4" for="JobTitle"></xp:label>
+						<xp:inputText id="JobTitle" value="#{document1.JobTitle}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Department" id="label5" for="Department"></xp:label>
+						<xp:inputText id="inputText1" value="#{document1.Department}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+					</li>
+
+					<li>
+						<xp:label value="Phone" id="label1" for="Phone"></xp:label>
+						<xp:inputText id="Phone" value="#{document1.Phone}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Email" id="label2" for="EmailAddress"></xp:label>
+						<xp:inputText id="EmailAddress" value="#{document1.EmailAddress}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+					</li>
+				</ul>
+			</xp:panel>
+		</xp:this.facets>
+
+	</unp:unpFormEditor>
+	</xp:this.facets>
+	</unp:unpScrollableArea>
+				
+</xp:view>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="25e" sequence="5" unid="28F35EFCC13D75F6C1257BFD00557A89">
+<created><datetime dst="true">20131007T173339,29+02</datetime></created>
+<modified><datetime dst="true">20131007T173345,98+02</datetime></modified>
+<revised><datetime dst="true">20131007T173345,97+02</datetime></revised>
+<lastaccessed><datetime dst="true">20131007T173345,97+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20131007T173339,29+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<item name="$TITLE"><text>unpNavigator.xsp</text></item>
+<item name="$Flags"><text>gC~4;</text></item>
+
+
+<item name="$FileNames" sign="true"><text>unpNavigator.xsp</text></item>
+
+
+<item name="$Class"><text>TS CustomerView</text></item></note>

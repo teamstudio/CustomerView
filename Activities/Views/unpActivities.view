@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='unpActivities' xmlns='http://www.lotus.com/dxl' version='9.0'
+ replicaid='C1257BF200465B59' hide='web' showinmenu='false' publicaccess='false'
+ designerversion='8.5.3' unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator'
+ headers='beveled' opencollapsed='false' showresponsehierarchy='true' showmargin='true'
+ shrinkrows='false' extendlastcolumn='false' showhierarchies='false' unreadcolor='black'
+ rowlinecount='1' headerlinecount='1' rowspacing='1' bgcolor='white' totalscolor='black'
+ headerbgcolor='white' boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
+ allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
+ uniquekeys='false'>
+<noteinfo noteid='176' unid='0E0F8D872D249406C1257BF9004711F7' sequence='8'>
+<created><datetime dst='true'>20131003T145616,55+02</datetime></created>
+<modified><datetime dst='true'>20131008T163439,77+02</datetime></modified>
+<revised><datetime dst='true'>20131008T163439,75+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20131008T163439,75+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20131003T145616,57+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='selection'><formula
+>SELECT Form = "frmActivity"</formula></code>
+<column sort='ascending' hidedetailrows='false' itemname='Subject' width='26.8750'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='true' sortnocase='true'
+ showaslinks='false'><columnheader title='unpName'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='Type' width='34.6250' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='unpDetails'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='Icon' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='Icon'><font size='9pt' style='bold'/></columnheader></column></view>
+

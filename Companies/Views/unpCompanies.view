@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='unpCompanies' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257BEF00363F66'
+ hide='web' showinmenu='false' publicaccess='false' designerversion='8.5.3'
+ unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator' headers='beveled'
+ opencollapsed='false' showresponsehierarchy='true' showmargin='true' shrinkrows='false'
+ extendlastcolumn='false' showhierarchies='false' unreadcolor='black' rowlinecount='1'
+ headerlinecount='1' rowspacing='1' bgcolor='white' totalscolor='black' headerbgcolor='white'
+ boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
+ allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
+ uniquekeys='false'>
+<noteinfo noteid='26e' unid='9E41188B61A93200C1257BEF00350B60' sequence='4'>
+<created><datetime dst='true'>20130923T113923,20+02</datetime></created>
+<modified><datetime dst='true'>20131001T160446,45+02</datetime></modified>
+<revised><datetime dst='true'>20131001T160446,43+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20131001T160446,43+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130923T115236,37+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='selection'><formula
+>SELECT Form = "frmCompany"</formula></code>
+<column sort='ascending' hidedetailrows='false' itemname='unpName' width='26.8750'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='true' sortnocase='true'
+ showaslinks='false'><columnheader title='unpName'><font size='9pt' style='bold'/></columnheader><code
+ event='value'><formula>Company</formula></code></column>
+<column hidedetailrows='false' itemname='Details' width='34.6250' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='unpDetails'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='unpPhoto' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='unpPhoto'><font size='9pt' style='bold'/></columnheader><code event='value'><formula
+>@If(PhotoFileName=""; ""; "0/" + @Text(@DocumentUniqueID) + "/$FILE/" + PhotoFileName)</formula></code></column></view>
+

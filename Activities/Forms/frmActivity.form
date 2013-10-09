@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='frmActivity' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257BF200465B59'
+ publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
+<noteinfo noteid='162' unid='09EFE5A8720D6C79C1257BF200467648' sequence='15'>
+<created><datetime dst='true'>20130926T144938,00+02</datetime></created>
+<modified><datetime dst='true'>20131009T135536,06+02</datetime></modified>
+<revised><datetime dst='true'>20131009T135536,04+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20131009T135536,04+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130926T144938,16+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<body><richtext>
+<pardef id='1'/>
+<par def='1'/>
+<par def='1'/>
+<table widthtype='fixedleft' refwidth='9.3340in'><tablecolumn width='1.2632in'/><tablecolumn
+ width='5.0250in'/><tablecolumn width='3.0458in'/>
+<tablerow>
+<tablecell>
+<pardef id='3' keepwithnext='true' keeptogether='true'/>
+<par def='3'>ID</par></tablecell>
+<tablecell>
+<pardef id='4' keepwithnext='true' keeptogether='true'/>
+<par def='4'><field type='text' kind='editable' name='ID'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<pardef id='5' keepwithnext='true' keeptogether='true'/>
+<par def='5'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>ParentIDs</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' allowmultivalues='true' kind='editable' name='ParentIDs'
+ listinputseparators='newline' listdisplayseparator='newline'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>Company</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='Company'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>Contact</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='Contact'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>Subject</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='Subject'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>Type</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='Type'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>Icon</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='Icon'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>DisplayDate</par></tablecell>
+<tablecell>
+<par def='4'><field type='datetime' kind='editable' name='DisplayDate'><datetimeformat
+ show='datetime' date='yearmonthday' fourdigityearfor21stcentury='true' time='hourminute'
+ zone='never' dateformat='weekdaydaymonthyear' dayformat='twodigitday' monthformat='twodigitmonth'
+ yearformat='fourdigityear' weekdayformat='shortname' dateseparator1=' ' dateseparator2='-'
+ dateseparator3='-' timeseparator=':' timeformat24='true' preference='usersetting'/></field></par></tablecell>
+<tablecell>
+<par def='5'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<pardef id='6' tabs='L0.5000in L1in L1.5000in L2in L2.5000in L3in L3.5000in L4in'
+ keepwithnext='true' keeptogether='true'/>
+<par def='6'>File</par></tablecell>
+<tablecell>
+<par def='4'><field type='richtext' kind='editable' name='File'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='5'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<pardef id='7' keepwithnext='true' keeptogether='true'/>
+<par def='7'>FileName</par></tablecell>
+<tablecell>
+<pardef id='8' keepwithnext='true' keeptogether='true'/>
+<par def='8'><field type='text' kind='editable' name='FileName'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<pardef id='9' keepwithnext='true' keeptogether='true'/>
+<par def='9'/></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='7'>Body</par></tablecell>
+<tablecell>
+<par def='8'><field type='richtext' kind='editable' name='Body'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAEAAAA=
+</compositedata></par></tablecell>
+<tablecell>
+<par def='9'/></tablecell></tablerow></table>
+<par def='1'/>
+<par def='1'/></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>frmActivity</text></item></form>
+

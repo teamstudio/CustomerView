@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:this.resources>
+		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	
+	<div id="dBar">
+
+		<div id="dBarLoad" onclick="loadDebugToolbar()">Show toolbar</div>
+
+		<div id="dBarContents"></div>
+
+	</div>
+
+	<xp:scriptBlock id="scriptBlock1">
+
+		<xp:this.value><![CDATA[function loadDebugToolbar() {
+		
+		$("#dBarLoad").hide();
+
+	$("#dBarContents")
+		.text("Loading...")
+		.show()
+		.load("UnpDebugToolbarMain.xsp .dBar", function() {
+			
+		});
+
+}]]></xp:this.value>
+	</xp:scriptBlock>
+
+</xp:view>

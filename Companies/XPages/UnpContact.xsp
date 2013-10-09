@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:unp="http://unplugged.teamstudio.com">`
+
+<xp:this.data>
+		<xp:dominoDocument var="docContact" formName="frmContact"></xp:dominoDocument>
+	</xp:this.data>
+
+
+	<unp:unpScrollableArea>
+		<xp:this.facets>
+
+			<xp:div xp:key="facet_1">
+				<unp:unpFormViewer showbuttons="true" closexpagename="UnpContacts.xsp" formname="frmContact" title="Contact" editxpagename="UnpContactEdit.xsp">
+
+					<xp:this.facets>
+
+						<xp:panel xp:key="facet_1">
+							<ul class="fieldlist">
+
+								<li>
+
+									<div class="formThumbContainer">
+
+										<xp:div styleClass="bgThumbnail" rendered="#{javascript:!isEmpty(document1.getItemValueString('PhotoFileName'))}">
+											<xp:this.attrs>
+												<xp:attr name="style">
+													<xp:this.value><![CDATA[#{javascript:var photo = applicationScope.get("thisDbUrl") + "/0/" + param.get("documentId") + "/$file/" + document1.getItemValueString('PhotoFileName');
+	
+	"background-image: url('" + photo + "');"}]]></xp:this.value>
+												</xp:attr>
+											</xp:this.attrs>
+										</xp:div>
+
+										<xp:panel tagName="i" styleClass="glyphicons user" rendered="#{javascript:isEmpty(document1.getItemValueString('PhotoFileName'))}" />
+									</div>
+
+									<xp:span styleClass="xspTextComputedField">
+
+										<xp:text escape="true" disableTheme="true" value="#{javascript:document1.getItemValueString('Salutation')}" />
+										<br />
+
+										<b>
+											<xp:text disableTheme="true" escape="true" value="#{document1.Name}" />
+										</b>
+										<br />
+
+										<xp:text escape="true" disableTheme="true" value="#{document1.Company}" />
+
+									</xp:span>
+								</li>
+
+								<li>
+									<xp:label value="Title" id="namelabel" for="name"></xp:label>
+									<xp:text id="name" value="#{javascript:document1.Title}"></xp:text>
+								</li>
+								<li>
+									<xp:label value="Job title" id="label4" for="JobTitle"></xp:label>
+									<xp:text id="JobTitle" value="#{javascript:document1.JobTitle}"></xp:text>
+								</li>
+								<li>
+									<xp:label value="Department" id="label5" for="Department"></xp:label>
+									<xp:text id="Department" value="#{document1.Department}"></xp:text>
+								</li>
+
+								<li>
+									<xp:label value="Phone" id="label1" for="phone"></xp:label>
+
+									<xp:span styleClass="xspTextComputedField">
+										<xp:this.rendered><![CDATA[#{javascript:sessionScope.isPhoneSupported}]]></xp:this.rendered>
+										<xp:link escape="true" text="#{document1.Phone}" id="phone">
+											<xp:this.value><![CDATA[#{javascript:"tel:" + document1.getItemValueString('Phone')}]]></xp:this.value>
+										</xp:link>
+									</xp:span>
+
+									<xp:text escape="true" id="computedField2" value="#{document1.Phone}">
+										<xp:this.rendered><![CDATA[#{javascript:!sessionScope.isPhoneSupported}]]></xp:this.rendered>
+									</xp:text>
+								</li>
+								<li>
+									<xp:label value="Email" id="label2" for="email"></xp:label>
+
+									<xp:span styleClass="xspTextComputedField">
+										<xp:link escape="true" text="#{document1.EmailAddress}" id="email">
+											<xp:this.value><![CDATA[#{javascript:"mailto:" + document1.getItemValueString('EMailAddress')}]]></xp:this.value>
+										</xp:link>
+									</xp:span>
+
+								</li>
+
+								<!-- comments -->
+								<li>
+									<xp:text id="description" tagName="div" value="#{document1.Comments}" escape="false" styleClass="body_richtext">
+									</xp:text>
+								</li>
+							</ul>
+						</xp:panel>
+					</xp:this.facets>
+
+				</unp:unpFormViewer>
+
+				<xp:div styleClass="bordered">
+					<unp:unpFlatView insetData="false" numberofrows="50" refreshmethod="none" position="menu-aligned" ajaxload="Yes" wrapsummarytext="no"
+						enableAZPicker="no" placeHolderIcon="user" categoryfilter="#{docContact.ID}" viewName="unpActivitiesByParent" summaryColumn="unpName"
+						detailColumn="unpDetails" title="Activities" xpageDoc="UnpActivity.xsp" photoColumn="Icon" dbName="#{javascript:applicationScope.dbActivitiesPath}">
+					</unp:unpFlatView>
+				</xp:div>
+
+			</xp:div>
+
+		</xp:this.facets>
+	</unp:unpScrollableArea>
+
+</xp:view>
