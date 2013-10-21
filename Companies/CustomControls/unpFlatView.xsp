@@ -32,7 +32,6 @@
 	</xp:this.data>
 	<xp:this.resources>
 		<xp:script src="/unp/jquery.blockUI.min.js" clientSide="true"></xp:script>
-		<xp:script src="/unp/iScroll.min.js" clientSide="true"></xp:script>
 		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
 		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
@@ -89,7 +88,7 @@ if (compositeData.enableAZPicker == "yes"){
 									<xp:this.value><![CDATA[#{javascript:
 	var url = getDbPath() + "/" + compositeData.xpageDoc + "?action=openDocument&documentId=" + thisRowData.getDocument().getUniversalID();
 	if (compositeData.ajaxload != "No"){
-		return "openDocument('" + url + "', 'content');"
+		return "openDocument('" + url + "', 'content', true);"
 	}else{
 		return "document.location.href='" + url + "'";
 	}

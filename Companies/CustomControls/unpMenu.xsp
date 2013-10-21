@@ -28,10 +28,9 @@
 			<![CDATA[#{javascript:				var m = [];
 				m.push( { label: "Companies (" + sessionScope.get("numCompanies") + ")", disabled: "no", page : "/UnpMain.xsp", ajaxtargetid: "content", ajaxloadid : "contentwrapper", icon : "building", submenu : "no" });
 				m.push( { label: "Contacts (" + sessionScope.get("numContacts") + ")", disabled: "no", page : "/UnpContacts.xsp", ajaxtargetid: "content", ajaxloadid : "contentwrapper", icon : "user", submenu : "no" });
-				
-				m.push( { label: "Media", disabled: "no", page : "../../files.unp/UnpMain.xsp", ajaxtargetid: null, ajaxloadid : null, icon : "file", submenu : "no" });
-				
 				m.push( { label: "Activities", disabled: "no", page : "/UnpActivities.xsp", ajaxtargetid: "content", ajaxloadid : "contentwrapper", icon : "folder_open", submenu : "no" });
+				
+				m.push( { label: "Media", disabled: "no", page : "../../media.unp/UnpMain.xsp", ajaxtargetid: null, ajaxloadid : null, icon : "file", submenu : "no" });
 				
 				m.push( { label: "Deals", disabled: "no", page : "/UnpContacts.xsp", ajaxtargetid: "content", ajaxloadid : "contentwrapper", icon : "folder_plus", submenu : "no" });
 				

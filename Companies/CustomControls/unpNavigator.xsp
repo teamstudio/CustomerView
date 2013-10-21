@@ -45,7 +45,7 @@ return out;}]]></xp:this.styleClass>
 								<xp:attr name="onclick">
 									<xp:this.value><![CDATA[#{javascript:if (menuItem.page != "" && menuItem.page != null){
 	if (menuItem.ajaxloadid != null && menuItem.ajaxloadid != ""){
-		return "loadPage('" + getDbPath() + menuItem.page + " #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + ");";
+		return "loadPage('" + getDbPath() + menuItem.page + " #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + ", true, true);";
 	}else{
 		return "openPage('" + getDbPath() + menuItem.page + "', '" + menuItem.ajaxtargetid + "')";
 	}

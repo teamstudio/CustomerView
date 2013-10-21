@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <form name='frmContact' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257BEF00363F66'
  publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
-<noteinfo noteid='4a2' unid='63FAB16800556B51C1257BEF003F10DC' sequence='14'>
+<noteinfo noteid='4a2' unid='63FAB16800556B51C1257BEF003F10DC' sequence='16'>
 <created><datetime dst='true'>20130923T132850,84+02</datetime></created>
-<modified><datetime dst='true'>20131008T150252,46+02</datetime></modified>
-<revised><datetime dst='true'>20131008T150252,44+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131008T150252,44+02</datetime></lastaccessed>
+<modified><datetime dst='true'>20131010T142624,05+02</datetime></modified>
+<revised><datetime dst='true'>20131010T142624,04+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20131010T142624,04+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130923T132850,99+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
@@ -46,9 +46,18 @@ Yg4BAIQAAAAAAAAAAAA=
 </compositedata></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>Photo</par></tablecell>
+<par def='3'>FirstName</par></tablecell>
 <tablecell>
-<par def='4'><field type='text' kind='editable' name='Photo'/><compositedata
+<par def='4'><field type='text' kind='editable' name='FirstName'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>LastName</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='LastName'/><compositedata
  type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
  aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
@@ -64,9 +73,29 @@ Yg4BAIQAAAAAAAAAAAA=
 </compositedata></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
+<pardef id='5' tabs='L0.5000in L1in L1.5000in L2in L2.5000in L3in L3.5000in L4in'
+ keepwithnext='true' keeptogether='true'/>
+<par def='5'>Salutation</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='Salutation'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
 <par def='3'>Phone</par></tablecell>
 <tablecell>
 <par def='4'><field type='text' kind='editable' name='Phone'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='3'>Photo</par></tablecell>
+<tablecell>
+<par def='4'><field type='text' kind='editable' name='Photo'/><compositedata
  type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
  aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=

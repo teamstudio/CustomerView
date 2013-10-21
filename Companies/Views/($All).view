@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <view name='($All)' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257BEF00363F66'
- showinmenu='false' noreplace='true' publicaccess='false' designerversion='8.5.3'
+ hide='web' showinmenu='false' publicaccess='false' designerversion='8.5.3'
  unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator' headers='beveled'
  opencollapsed='true' showresponsehierarchy='true' showmargin='true' shrinkrows='false'
  extendlastcolumn='false' showhierarchies='false' unreadcolor='black' rowlinecount='1'
@@ -8,11 +8,11 @@
  totalscolor='black' headerbgcolor='white' boldunreadrows='false' evaluateactions='false'
  allownewdocuments='false' allowcustomizations='true' hidemarginborder='false'
  marginwidth='0px' marginbgcolor='white' uniquekeys='false'>
-<noteinfo noteid='2a26' unid='5929991FAF6BEEA2C1257BF7004A1235' sequence='7'>
+<noteinfo noteid='2a26' unid='5929991FAF6BEEA2C1257BF7004A1235' sequence='9'>
 <created><datetime dst='true'>20131001T152903,25+02</datetime></created>
-<modified><datetime dst='true'>20131001T155953,68+02</datetime></modified>
-<revised><datetime dst='true'>20131001T155953,67+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131001T155953,67+02</datetime></lastaccessed>
+<modified><datetime dst='true'>20131011T102033,98+02</datetime></modified>
+<revised><datetime dst='true'>20131011T102033,96+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20131011T102033,96+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131001T152903,30+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='selection'><formula

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.data>
+		<xp:dominoDocument var="docCompany" action="openDocument" formName="frmCompany">
+			<xp:this.documentId><![CDATA[#{javascript:param.get("parentunid")}]]></xp:this.documentId>
+		</xp:dominoDocument>
+	</xp:this.data>
+
+	<xc:unpResources></xc:unpResources>
+	
+	<unp:unpScrollableArea>
+		<xp:this.facets>
+			<xp:div xp:key="facet_1">
+
+				<unp:unpFormEditor showbuttons="yes" closexpagename="UnpMain.xsp" formname="frmActivity" title="Activity"
+					dbName="#{applicationScope.dbActivitiesPath}" viewxpagename="UnpActivity.xsp">
+
+					<xp:this.facets>
+						<xp:panel xp:key="facet_1">
+						
+ <ul class="fieldlist">
+
+								<li>
+
+									<div class="formThumbContainer">
+
+										<xp:panel tagName="i">
+											<xp:this.styleClass><![CDATA[#{javascript:var icon = "";
+
+if (document1.isNewNote()) {
+	document1.replaceItemValue("Type", param.get("type"));
+	icon = getIcon( param.get("type"));
+	document1.replaceItemValue("Icon", icon);
+} else {
+	icon = document1.getItemValueString("Icon");
+}
+
+return 'glyphicons ' + icon}]]></xp:this.styleClass>
+										</xp:panel>
+
+									</div>
+
+									<xp:span styleClass="xspTextComputedField">
+
+										<b>
+											<xp:text disableTheme="true" escape="true" value="#{document1.Subject}"></xp:text>
+										</b>
+										<br></br>
+										<xp:text escape="true" disableTheme="true" value="#{document1.DisplayDate}">
+											<xp:this.converter>
+												<xp:convertDateTime type="both" timeStyle="short" dateStyle="medium"></xp:convertDateTime>
+											</xp:this.converter>
+										</xp:text>
+
+									</xp:span>
+								</li>
+								
+								<xp:panel tagName="li">
+									<xp:this.rendered><![CDATA[#{javascript:!isEmpty(param.get('parentunid')) && !isEmpty(docCompany.getItemValueString('Company'))}]]></xp:this.rendered>
+									<xp:label value="Company" id="label8" for="company"></xp:label>
+									<xp:text escape="true" id="computedField1" value="#{docCompany.Company}"></xp:text>
+								</xp:panel>
+
+								<li>
+									<xp:label value="Subject" id="label3" for="Subject"></xp:label>
+									<xp:inputText id="Subject" value="#{document1.Subject}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+								</li>
+
+								<!-- body -->
+								<li>
+									<xp:label value="Details" id="detailslabel" for="Body" styleClass="widelabel"></xp:label>
+									<xp:inputTextarea id="Body" styleClass="richtextfield" value="#{document1.Body}"></xp:inputTextarea>
+
+								</li>
+
+							</ul>
+							
+							<xp:inputHidden id="Type" value="#{document1.Type}"></xp:inputHidden>
+
+						</xp:panel>
+
+					</xp:this.facets>
+				</unp:unpFormEditor>
+
+			</xp:div>
+
+		</xp:this.facets>
+	</unp:unpScrollableArea>
+
+</xp:view>

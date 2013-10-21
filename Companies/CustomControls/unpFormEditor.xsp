@@ -15,7 +15,6 @@
 	<xp:this.resources>
 		<xp:script src="/unp/jquery.blockUI.min.js" clientSide="true"></xp:script>
 		<xp:script src="/unp/jquery.autocomplete.min.js" clientSide="true"></xp:script>
-		<xp:script src="/unp/iScroll.min.js" clientSide="true"></xp:script>
 		<xp:script src="/unplugged.js" clientSide="true"></xp:script>
 		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
@@ -53,12 +52,8 @@ if (out.length > 0){
 							<xp:attr name="onclick">
 								<xp:this.value><![CDATA[#{javascript:var out = "saveDocument('" + getClientId("customform") + "', '" + document1.getDocument().getUniversalID() + 
 "', '" + compositeData.viewxpagename + "', '" + compositeData.formname + "'"
-if (context.getUrlParameter("parentunid") != ""){
-	out += ", '" + context.getUrlParameter("parentunid") + "'";
-}
-if (compositeData.dbName != null){
-	out += ", '" + compositeData.dbName + "'";
-}
+out += ", " + ( !isEmpty(context.getUrlParameter("parentunid")) ? "'" + context.getUrlParameter("parentunid") + "'" : "null") 
+out += ", " + ( !isEmpty(compositeData.dbName) ? "'" + compositeData.dbName + "'" : "null")
 out += ");"
 return out;}]]></xp:this.value>
 							</xp:attr>
@@ -68,7 +63,8 @@ return out;}]]></xp:this.value>
 					<xp:panel id="closebutton" styleClass="cancelButton"
 						tagName="li">
 						<xp:this.attrs>
-							<xp:attr name="onclick" value="unp.goBack()">
+							<xp:attr name="onclick">
+								<xp:this.value><![CDATA[#{javascript:return "history.back()";}]]></xp:this.value>
 							</xp:attr>
 						</xp:this.attrs>
 						<span class="formbuttonlabel">Cancel</span>

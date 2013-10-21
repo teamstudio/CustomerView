@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:unp="http://unplugged.teamstudio.com">
 
+	<xp:this.data>
+		<xp:dominoDocument var="docCompany" action="openDocument" formName="frmCompany">
+			<xp:this.documentId><![CDATA[#{javascript:param.get("parentunid")}]]></xp:this.documentId>
+		</xp:dominoDocument>
+	</xp:this.data>
+	
 	<unp:unpScrollableArea>
 		<xp:this.facets>
-	<unp:unpFormEditor showbuttons="yes" closexpagename="UnpContacts.xsp" formname="frmContact" title="Contact"
-		xp:key="facet_1">
+	<unp:unpFormEditor showbuttons="yes" closexpagename="UnpContacts.xsp" formname="frmContact" title="Contact" xp:key="facet_1"
+		viewxpagename="UnpContact.xsp">
 
 		<xp:this.facets>
 			<xp:panel xp:key="facet_1">
 				<ul class="fieldlist">
 
-					<li>
-					
+					<xp:panel tagName="li" rendered="#{javascript:!document1.isNewNote()}">
+
 						<div class="formThumbContainer">
-						
+
 							<xp:div styleClass="bgThumbnail" rendered="#{javascript:!isEmpty(document1.getItemValueString('PhotoFileName'))}">
 								<xp:this.attrs>
 									<xp:attr name="style">
@@ -23,21 +29,43 @@
 									</xp:attr>
 								</xp:this.attrs>
 							</xp:div>
-						
-							<xp:panel tagName="i" styleClass="glyphicons user" rendered="#{javascript:isEmpty(document1.getItemValueString('PhotoFileName'))}" />
+
+							<xp:panel tagName="i" styleClass="glyphicons user"
+								rendered="#{javascript:isEmpty(document1.getItemValueString('PhotoFileName'))}">
+							</xp:panel>
 						</div>
 
 						<xp:span styleClass="xspTextComputedField">
 
-							<xp:text escape="true" disableTheme="true" value="#{javascript:document1.getItemValueString('Salutation')}" /><br />
+							<xp:text escape="true" disableTheme="true" value="#{javascript:document1.getItemValueString('Salutation')}"></xp:text>
+							<br></br>
 
-							<b>
-								<xp:text disableTheme="true" escape="true" value="#{document1.Name}" />
-							</b><br />
+							<xp:text style="font-weight: bold;" disableTheme="true" escape="true" value="#{document1.Name}"></xp:text>
+							<br></br>
 
-							<xp:text escape="true" disableTheme="true" value="#{document1.Company}" />
+							<xp:text escape="true" disableTheme="true" value="#{document1.Company}"></xp:text>
 
 						</xp:span>
+					</xp:panel>
+
+					<xp:panel tagName="li">
+						<xp:this.rendered><![CDATA[#{javascript:!isEmpty(param.get('parentunid')) && !isEmpty(docCompany.getItemValueString('Company'))}]]></xp:this.rendered>
+						<xp:label value="Company" id="label8" for="company"></xp:label>
+						<xp:text escape="true" id="computedField1" value="#{docCompany.Company}"></xp:text>
+					</xp:panel>
+
+					<li>
+						<xp:label value="First name" id="label3" for="FirstName"></xp:label>
+						<xp:inputText id="FirstName" value="#{document1.FirstName}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+					</li>
+					<li>
+						<xp:label value="Last name *" id="label6" for="LastName"></xp:label>
+						<xp:inputText id="LastName" value="#{document1.LastName}" styleClass="xspInputFieldEditBox deletable required"></xp:inputText>
+					</li>
+
+					<li>
+						<xp:label value="Salutation" id="label7" for="Salutation"></xp:label>
+						<xp:inputText id="Salutation" value="#{document1.Salutation}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
 					</li>
 
 					<li>
@@ -50,7 +78,7 @@
 					</li>
 					<li>
 						<xp:label value="Department" id="label5" for="Department"></xp:label>
-						<xp:inputText id="inputText1" value="#{document1.Department}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
+						<xp:inputText id="Department" value="#{document1.Department}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
 					</li>
 
 					<li>
@@ -62,11 +90,13 @@
 						<xp:inputText id="EmailAddress" value="#{document1.EmailAddress}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
 					</li>
 				</ul>
+				
+				<xp:inputHidden id="Type" value="contact"></xp:inputHidden>
 			</xp:panel>
 		</xp:this.facets>
 
 	</unp:unpFormEditor>
-	</xp:this.facets>
+		</xp:this.facets>
 	</unp:unpScrollableArea>
 				
 </xp:view>

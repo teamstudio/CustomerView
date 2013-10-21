@@ -101,7 +101,6 @@ return out;}]]></xp:this.styleClass>
 }]]></xp:this.rendered>								
 								</xp:text>
 							</div>
-				
 				<xp:image id="image1">
 					<xp:this.styleClass><![CDATA[#{javascript:if(context.getUrlParameter("detailcol") == "undefined" || context.getUrlParameter("detailcol") == "null" || context.getUrlParameter("collapserows") == "Yes"){ return 'singleLineIcon';} else {return 'multiLineIcon';}}]]></xp:this.styleClass>
 					<xp:this.url><![CDATA[#{javascript:if (context.getUrlParameter("collapserows") == "Yes"){

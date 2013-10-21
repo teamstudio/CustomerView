@@ -4,7 +4,7 @@
 	xmlns:xc="http://www.ibm.com/xsp/custom">
 	
 		<xp:scriptBlock id="scriptBlock1">
-			<xp:this.value><![CDATA[window.location.href = "/unplugged/apps/contact.nsf"]]></xp:this.value>
+			<xp:this.value><![CDATA[window.location.href = "/unplugged/apps/contacts.nsf/UnpActivities.xsp"]]></xp:this.value>
 		</xp:scriptBlock>
 
 </xp:view>

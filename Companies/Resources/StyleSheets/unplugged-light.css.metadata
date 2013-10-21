@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><stylesheetresource designerversion="8.5.3" fromtemplate="Unplugged Controls" name="unplugged-light.css" publicaccess="false" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="186" sequence="2" unid="B42724F61DF3207DC1257BE9004C6467">
-<created><datetime dst="true">20130917T155424,39+02</datetime></created>
-<modified><datetime dst="true">20130926T140716,05+02</datetime></modified>
-<revised><datetime dst="true">20130926T140559,40+02</datetime></revised>
-<lastaccessed><datetime dst="true">20130926T140716,04+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20130923T115232,96+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby></stylesheetresource>
+<noteinfo noteid="2fe2" sequence="3" unid="4B67F853F0C1B1A5C1257C0B002C6A56">
+<created><datetime dst="true">20131021T100508,06+02</datetime></created>
+<modified><datetime dst="true">20131021T100910,20+02</datetime></modified>
+<revised><datetime dst="true">20131021T100910,18+02</datetime></revised>
+<lastaccessed><datetime dst="true">20131021T100910,18+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20131021T100508,09+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name><name>CN=Mark Leusink/O=LinQed</name></updatedby></stylesheetresource>

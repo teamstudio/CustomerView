@@ -1,8 +1,8 @@
-/*colored glyphicons*/
 .glyphicons {
-	vertical-align: top;
+	vertical-align: top !important;
 }
 
+/*colored glyphicons*/
 i.unp-glyph-white:before {
 	color: #fff;
 }
@@ -75,6 +75,26 @@ td.thumbnail {
 	color: #cecece;
 }
 
+ul.dropdown-menu {
+	position: fixed;
+	top: inherit;
+	bottom: 55px;
+	right: 10px;	
+}
+ul.dropdown-menu li {
+	padding: 0;	
+}
+ul.dropdown-menu li a {
+	display:block;	
+	font-size: 16px;
+	line-height: 34px;
+	padding: 0 20px;
+}
+
+ul.dropdown-menu li a:hover, ul.dropdown-menu li a:active {
+	background: #eeeeee;
+	text-decoration: none
+}
 
 /* debug toolbar styles */
 #dBar {
@@ -143,7 +163,6 @@ div.dBar .content {
 	margin: 7px 5px;
 }
 div.dBar button {
-	margin: 4px;
 	font-weight: normal;
 	font-size: 12px;
 	line-height: 20px;

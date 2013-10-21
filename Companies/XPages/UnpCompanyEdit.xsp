@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom" xmlns:unp="http://unplugged.teamstudio.com">
-	<xp:this.data>
-		<xp:dominoDocument var="docCompany" formName="frmCompany"></xp:dominoDocument>
-	</xp:this.data>
-
+	
 	<unp:unpScrollableArea>
 		<xp:this.facets>
 			<xp:div xp:key="facet_1">
@@ -31,7 +28,7 @@
 										</xp:div>
 
 										<xp:panel tagName="i" styleClass="glyphicons building"
-											rendered="#{javascript:isEmpty(document1.getItemValueString('PhotoFileName'))}" />
+											rendered="#{javascript:isEmpty(document1.getItemValueString('PhotoFileName'))}"></xp:panel>
 									</div>
 
 									<xp:span styleClass="xspTextComputedField">
@@ -97,6 +94,9 @@
 								</li>
 
 							</ul>
+							
+							<xp:inputHidden id="Type" value="company"></xp:inputHidden>
+							
 						</xp:panel>
 
 					</xp:this.facets>

@@ -3,24 +3,25 @@
 	xmlns:unp="http://unplugged.teamstudio.com" 
 	xmlns:xc="http://www.ibm.com/xsp/custom">
 
-	<xc:unpResources />
+	<xc:unpResources></xc:unpResources>
 	
 	<unp:unpHeader search="database" viewsButton="true" title="Contacts" searchPage="UnpContactSearch.xsp"></unp:unpHeader>
 	
-	<xc:unpMenu />
+	<xc:unpMenu></xc:unpMenu>
 	
 	<div id="content">
 		<unp:unpScrollableArea>
 			<xp:this.facets>
 			<unp:unpFlatView xp:key="facet_1" insetData="true" detailColumn="unpDetails" 
-				summaryColumn="unpName" title="Activities"
+				summaryColumn="unpName" title="Recent activities"
 				viewName="unpActivities" xpageDoc="UnpActivity.xsp" 
 				dbName="#{javascript:applicationScope.dbActivitiesPath}"
-				numberofrows="20" photoColumn="Icon" placeHolderIcon="user" />
+				numberofrows="20" photoColumn="Icon" placeHolderIcon="user">
+				</unp:unpFlatView>
 			</xp:this.facets>
 		</unp:unpScrollableArea>
 	</div>
 	
-	<unp:unpFooter synctype="alldbs"></unp:unpFooter>
+	<unp:unpFooter synctype="alldbs" newDocLoadType="ajax"></unp:unpFooter>
 
 </xp:view>

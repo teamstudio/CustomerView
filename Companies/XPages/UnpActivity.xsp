@@ -1,140 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com" xmlns:xc="http://www.ibm.com/xsp/custom">
+	
+	<xc:unpResources></xc:unpResources>
 
-<xp:this.data>
-		<xp:dominoDocument var="docActivity" formName="frmActivity"></xp:dominoDocument>
-	</xp:this.data>
+	<unp:unpHeader search="database" viewsButton="true" title="Contacts" searchPage="UnpContactSearch.xsp"></unp:unpHeader>
 
-	<unp:unpScrollableArea>
-		<xp:this.facets>
-			<xp:div xp:key="facet_1">
+	<xc:unpMenu></xc:unpMenu>
 
-				<unp:unpFormViewer showbuttons="true" closexpagename="UnpMain.xsp" formname="frmActivity" title="Activity" editxpagewithajax="yes"
-					editxpagename="UnpActivityEdit.xsp" dbName="#{applicationScope.dbActivitiesPath}">
+	<div id="content">
+		<unp:unpScrollableArea>
+			<xp:this.facets>
+				<xp:div xp:key="facet_1">
 
-					<xp:this.facets>
-						<xp:panel xp:key="facet_1">
+					<unp:unpFormViewer showbuttons="true" closexpagename="UnpMain.xsp" formname="frmActivity" title="Activity" editxpagewithajax="yes"
+						editxpagename="UnpActivityEdit.xsp" dbName="#{applicationScope.dbActivitiesPath}">
 
-							<ul class="fieldlist">
+						<xp:this.facets>
+							<xp:panel xp:key="facet_1">
 
-								<li>
+								<ul class="fieldlist">
 
-									<div class="formThumbContainer">
+									<li>
 
-										<xp:panel tagName="i" 
-											rendered="#{javascript:!isEmpty(document1.getItemValueString('Icon'))}"
-										styleClass="#{javascript:'glyphicons ' + document1.getItemValueString('Icon')}"
-											 />
-											
-									</div>
+										<div class="formThumbContainer">
 
-									<xp:span styleClass="xspTextComputedField">
+											<xp:panel tagName="i" rendered="#{javascript:!isEmpty(document1.getItemValueString('Icon'))}"
+												styleClass="#{javascript:'glyphicons ' + document1.getItemValueString('Icon')}">
+											</xp:panel>
 
-										<b>
-											<xp:text disableTheme="true" escape="true" value="#{document1.Subject}"></xp:text>
-										</b>
-										<br />
-										<xp:text escape="true" disableTheme="true" value="#{document1.DisplayDate}">
-											<xp:this.converter>
-												<xp:convertDateTime type="both" timeStyle="short" dateStyle="medium"></xp:convertDateTime>
-											</xp:this.converter>
+										</div>
+
+										<xp:span styleClass="xspTextComputedField">
+
+											<b>
+												<xp:text disableTheme="true" escape="true" value="#{document1.Subject}"></xp:text>
+											</b>
+											<br></br>
+											<xp:text escape="true" disableTheme="true" value="#{document1.DisplayDate}">
+												<xp:this.converter>
+													<xp:convertDateTime type="both" timeStyle="short" dateStyle="medium"></xp:convertDateTime>
+												</xp:this.converter>
+											</xp:text>
+
+										</xp:span>
+									</li>
+
+									<xp:panel tagName="li" rendered="#{javascript:!isEmpty(document1.getItemValueString('FileName'))}">
+
+										<xp:label value="File" id="label1" for="file"></xp:label>
+
+										<xp:span styleClass="xspTextComputedField">
+											<xp:link escape="true" text="#{document1.FileName}" id="phone">
+												<xp:this.value><![CDATA[#{javascript:"/" + applicationScope.dbActivitiesPath + "/0/" + document1.getDocument().getUniversalID() + "/$file/" + document1.getItemValueString('FileName')}]]></xp:this.value>
+											</xp:link>
+										</xp:span>
+
+
+									</xp:panel>
+									
+
+									<!-- body -->
+									<li>
+										<xp:text id="description" tagName="div" value="#{document1.Body}" escape="false" styleClass="body_richtext">
 										</xp:text>
-
-									</xp:span>
-								</li>
-								
-								<xp:panel tagName="li" rendered="#{javascript:!isEmpty(document1.getItemValueString('FileName'))}">
-								
-									<xp:label value="File" id="label1" for="file"></xp:label>
-									
-									<xp:span styleClass="xspTextComputedField">
-										<xp:link escape="true" text="#{document1.FileName}" id="phone">
-											<xp:this.value><![CDATA[#{javascript:"/" + applicationScope.dbActivitiesPath + "/0/" + document1.getDocument().getUniversalID() + "/$file/" + document1.getItemValueString('FileName')}]]></xp:this.value>
-										</xp:link>
-									</xp:span>
-									
-								
-								</xp:panel>
-								
-
-								<!--<li>
-									<xp:label value="Phone" id="label1" for="phone"></xp:label>
-
-									<xp:span styleClass="xspTextComputedField">
-										<xp:this.rendered><![CDATA[#{javascript:sessionScope.isPhoneSupported}]]></xp:this.rendered>
-										<xp:link escape="true" text="#{document1.Phone}" id="phone">
-											<xp:this.value><![CDATA[#{javascript:"tel:" + document1.getItemValueString('Phone')}]]></xp:this.value>
-										</xp:link>
-									</xp:span>
-
-									<xp:text escape="true" id="computedField2" value="#{document1.Phone}">
-										<xp:this.rendered><![CDATA[#{javascript:!sessionScope.isPhoneSupported}]]></xp:this.rendered>
-									</xp:text>
-
-								</li>
-								<li>
-									<xp:label value="Email" id="label2" for="email"></xp:label>
-
-									<xp:span styleClass="xspTextComputedField">
-										<xp:link escape="true" text="#{document1.EMailAddress}" id="email">
-											<xp:this.value><![CDATA[#{javascript:"mailto:" + document1.getItemValueString('EMailAddress')}]]></xp:this.value>
-										</xp:link>
-									</xp:span>
-
-								</li>
-								<li>
-									<xp:label value="Homepage" id="label3" for="homePage"></xp:label>
-
-									<span class="xspTextComputedField">
-
-										<xp:link escape="true" text="#{document1.Homepage}" target="_blank" id="homePage">
-											<xp:this.value><![CDATA[#{javascript:var url = document1.getItemValueString('Homepage');
-	if ( !isEmpty(url) && url.indexOf('http') == -1) { 
-		url = 'http://' + url;
-	}
-	return url;}]]></xp:this.value>
-										</xp:link>
+									</li>
 
 
-									</span>
-								</li>
 
-								<li>
-									<xp:label value="Address" id="label4" for="name"></xp:label>
+								</ul>
+							</xp:panel>
 
-									<xp:text escape="false" id="address">
-										<xp:this.value><![CDATA[#{javascript:var a = [];
-	a.push( document1.getItemValueString('Address1') );
-	a.push( document1.getItemValueString('Address2') );
-	a.push( document1.getItemValueString('ZipCode') + " " + document1.getItemValueString('City') );
-	a.push( document1.getItemValueString('Country') );
-	
-	a = @Trim(a);
-	
-	return @Implode(a, "<br />")}]]></xp:this.value>
-									</xp:text>
+						</xp:this.facets>
+					</unp:unpFormViewer>
 
-								</li>
+				</xp:div>
 
-							-->
-							
-								<!-- body -->
-								<li>
-									<xp:text id="description" tagName="div" value="#{document1.Body}" escape="false" styleClass="body_richtext">
-									</xp:text>
-								</li>
-							
-							
-							
-							</ul>
-						</xp:panel>
+			</xp:this.facets>
+		</unp:unpScrollableArea>
+	</div>
 
-					</xp:this.facets>
-				</unp:unpFormViewer>
-				
-			</xp:div>
-
-		</xp:this.facets>
-	</unp:unpScrollableArea>
+	<unp:unpFooter synctype="alldbs"></unp:unpFooter>
 
 </xp:view>

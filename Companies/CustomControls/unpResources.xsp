@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com" xmlns:xc="http://www.ibm.com/xsp/custom">
 	
-	<xc:unpDebugToolbarLoader></xc:unpDebugToolbarLoader>
+	<!--<xc:unpDebugToolbar></xc:unpDebugToolbar>
 
-	<xp:this.resources>
+	--><xp:this.resources>
 		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
 		
 		<xp:styleSheet href="/unplugged-light.css"></xp:styleSheet>
