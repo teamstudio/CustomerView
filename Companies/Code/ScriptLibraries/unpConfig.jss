@@ -15,6 +15,7 @@ function initConfig() {
 			
 			applicationScope.put("dbActivitiesPath", docConfig.getItemValueString("dbActivitiesPath") );
 			applicationScope.put("dbContactsPath", docConfig.getItemValueString("dbContactsPath") );
+			applicationScope.put("dbMediaPath", docConfig.getItemValueString("dbMediaPath") );
 			
 		}
 		

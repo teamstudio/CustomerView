@@ -44,10 +44,18 @@ return out;}]]></xp:this.styleClass>
 							<xp:this.attrs>
 								<xp:attr name="onclick">
 									<xp:this.value><![CDATA[#{javascript:if (menuItem.page != "" && menuItem.page != null){
+									
+									//ml: check for path
+									var url = menuItem.page;
+									if ( menuItem.page.indexOf('.nsf') == -1 && menuItem.page.indexOf('.unp') == -1) {
+										url = getDbPath() + url;
+									} 
+									
 	if (menuItem.ajaxloadid != null && menuItem.ajaxloadid != ""){
-		return "loadPage('" + getDbPath() + menuItem.page + " #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + ", true, true);";
+	
+		return "loadPage('" + url + " #" + menuItem.ajaxloadid + "', '" + menuItem.ajaxtargetid + "', " + viewScope.menuItemIndex + ", true, true);";
 	}else{
-		return "openPage('" + getDbPath() + menuItem.page + "', '" + menuItem.ajaxtargetid + "')";
+		return "openPage('" + url + "', '" + menuItem.ajaxtargetid + "')";
 	}
 }else{
 	return "expandMenuItem(this)";
