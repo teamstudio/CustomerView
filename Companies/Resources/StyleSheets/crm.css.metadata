@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><stylesheetresource charset="UTF-8" designerversion="8.5.3" fromtemplate="TS CustomerView" name="crm.css" publicaccess="false" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="236" sequence="54" unid="735F6352F7C4F7C3C1257BEA006B52C2">
+<?xml version="1.0" encoding="UTF-8"?><stylesheetresource charset="UTF-8" designerversion="8.5.3" fromtemplate="TS CustomerView" maintenanceversion="1.0" name="crm.css" publicaccess="false" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="236" sequence="79" unid="735F6352F7C4F7C3C1257BEA006B52C2">
 <created><datetime dst="true">20130918T213215,38+02</datetime></created>
-<modified><datetime dst="true">20131009T134932,88+02</datetime></modified>
-<revised><datetime dst="true">20131009T134932,86+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131009T134932,86+02</datetime></lastaccessed>
+<modified><datetime>20131105T214356,53+01</datetime></modified>
+<revised><datetime>20131105T214356,51+01</datetime></revised>
+<lastaccessed><datetime>20131105T214356,51+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130923T115236,16+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby></stylesheetresource>

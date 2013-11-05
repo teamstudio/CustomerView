@@ -96,6 +96,38 @@ ul.dropdown-menu li a:hover, ul.dropdown-menu li a:active {
 	text-decoration: none
 }
 
+
+/* rounded box */
+.box {
+	-webkit-box-sizing: border-box;
+	position: relative;
+	-webkit-border-radius: 10px;
+	background: #fff;
+	font-size: 16px;
+}
+.box h2 {
+	border-radius: 8px 8px 0 0;
+	background: #cccccc;
+	color: #333;
+	border-bottom: 1px solid #AAA;
+	border-top: 1px solid #EEE;
+	padding: 10px 15px;
+	font-weight: bold;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 24px;
+}
+.box div.content {
+	padding: 15px;
+}
+
+/*increase size of rt font*/
+#formholder .body_richtext {
+	font-size: 16px;
+	padding: 15px 28px;
+}
+
 /* debug toolbar styles */
 #dBar {
 	background: silver; position: absolute; top:0; right: 0;font-size: 12px; 
