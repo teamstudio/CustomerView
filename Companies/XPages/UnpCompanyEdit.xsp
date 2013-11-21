@@ -5,7 +5,8 @@
 		<xp:this.facets>
 			<xp:div xp:key="facet_1">
 
-				<unp:unpFormEditor showbuttons="yes" closexpagename="UnpMain.xsp" formname="frmCompany" title="Company">
+				<unp:unpFormEditor showbuttons="yes" closexpagename="UnpMain.xsp" formname="frmCompany" title="Company"
+					viewxpagename="UnpCompany.xsp">
 
 					<xp:this.facets>
 						<xp:panel xp:key="facet_1">
@@ -28,7 +29,8 @@
 										</xp:div>
 
 										<xp:panel tagName="i" styleClass="glyphicons building"
-											rendered="#{javascript:isEmpty(document1.getItemValueString('PhotoFileName'))}"></xp:panel>
+											rendered="#{javascript:isEmpty(document1.getItemValueString('PhotoFileName'))}">
+										</xp:panel>
 									</div>
 
 									<xp:span styleClass="xspTextComputedField">
@@ -36,16 +38,16 @@
 										<b>
 											<xp:text disableTheme="true" escape="true" value="#{document1.Company}"></xp:text>
 										</b>
-										<br />
+										<br></br>
 
 									</xp:span>
 								</xp:panel>
-								
+
 								<li>
 									<xp:label value="Company name" id="label5" for="Company"></xp:label>
 									<xp:inputText id="Company" value="#{document1.Company}" styleClass="xspInputFieldEditBox deletable required"></xp:inputText>
 								</li>
-								
+
 								<li>
 									<xp:label value="Address 1" id="label4" for="Address1"></xp:label>
 									<xp:inputText id="Address1" value="#{document1.Address1}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
@@ -78,25 +80,24 @@
 								<li>
 									<xp:label value="Homepage" id="label3" for="Homepage"></xp:label>
 									<xp:inputText id="Homepage" value="#{document1.Homepage}" styleClass="xspInputFieldEditBox deletable"></xp:inputText>
-								</li><!--
-
-								<li>
+								</li>
+								<!--
+									
+									<li>
 									<xp:label value="Logo" id="label7" for="fileUpload1"></xp:label>
 									<xp:fileUpload id="fileUpload1" value="#{document1.foto}"></xp:fileUpload>
-								</li>
-								
+									</li>
+									
 								-->
 								<li>
 									<xp:label value="Comments" id="commentsLabel" for="Comments" styleClass="widelabel"></xp:label>
-									<xp:inputTextarea id="Comments"
-										styleClass="richtextfield" value="#{document1.Comments}">
-									</xp:inputTextarea>
+									<xp:inputTextarea id="Comments" styleClass="richtextfield" value="#{document1.Comments}"></xp:inputTextarea>
 								</li>
 
 							</ul>
-							
+
 							<xp:inputHidden id="Type" value="company"></xp:inputHidden>
-							
+
 						</xp:panel>
 
 					</xp:this.facets>

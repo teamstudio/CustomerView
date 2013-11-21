@@ -1,158 +1,187 @@
 <?xml version='1.0' encoding='utf-8'?>
-<form name='frmCompany' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257BEF00363F66'
- publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
-<noteinfo noteid='49e' unid='0B83352A076EBAD3C1257BEF003F0D5E' sequence='17'>
+<form name='frmCompany' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C1257BEF00363F66' publicaccess='false' designerversion='8.5.3'
+ renderpassthrough='true' conflictaction='mergeconflicts'>
+<noteinfo noteid='49e' unid='0B83352A076EBAD3C1257BEF003F0D5E' sequence='22'>
 <created><datetime dst='true'>20130923T132841,90+02</datetime></created>
-<modified><datetime dst='true'>20131008T150231,50+02</datetime></modified>
-<revised><datetime dst='true'>20131008T150231,49+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131008T150231,49+02</datetime></lastaccessed>
+<modified><datetime>20131108T103034,20+01</datetime></modified>
+<revised><datetime>20131108T103034,18+01</datetime></revised>
+<lastaccessed><datetime>20131108T103034,18+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130923T132842,07+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
 <body><richtext>
 <pardef id='1'/>
-<par def='1'/>
-<par def='1'/>
-<table widthtype='fixedleft' refwidth='7.8736in'><tablecolumn width='3.9368in'/><tablecolumn
- width='3.9368in'/>
+<par def='1'><run><font size='9pt'/></run></par>
+<table widthtype='fixedleft' refwidth='7.1688in'><tablecolumn width='1.8542in'/><tablecolumn
+ width='5.3146in'/>
 <tablerow>
 <tablecell>
 <pardef id='3' keepwithnext='true' keeptogether='true'/>
-<par def='3'>ID</par></tablecell>
+<par def='3'><run><font size='9pt'/>ID</run></par></tablecell>
 <tablecell>
 <pardef id='4' keepwithnext='true' keeptogether='true'/>
-<par def='4'><field type='text' kind='editable' name='ID'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='7' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='ID'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='7' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>ParentIDs</par></tablecell>
+<par def='3'><run><font size='9pt'/>ParentIDs</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='text' allowmultivalues='true' kind='editable' name='ParentIDs'
- listinputseparators='newline' listdisplayseparator='newline'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ allowmultivalues='true' kind='editable' name='ParentIDs' listinputseparators='newline'
+ listdisplayseparator='newline'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>Company</par></tablecell>
+<par def='3'><run><font size='9pt'/>Company</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='text' kind='editable' name='Company'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='Company'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>Photo</par></tablecell>
+<par def='3'><run><font size='9pt'/>Photo</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='richtext' kind='editable' name='Photo'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='richtext'
+ kind='editable' name='Photo'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>PhotoFileName</par></tablecell>
+<par def='3'><run><font size='9pt'/>PhotoFileName</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='text' kind='editable' name='PhotoFileName'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='PhotoFileName'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>Phone</par></tablecell>
+<par def='3'><run><font size='9pt'/>Phone</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='text' kind='editable' name='Phone'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='Phone'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>Homepage</par></tablecell>
+<par def='3'><run><font size='9pt'/>Homepage</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='text' kind='editable' name='Homepage'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='Homepage'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>EmailAddress</par></tablecell>
+<par def='3'><run><font size='9pt'/>EmailAddress</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='text' kind='editable' name='EmailAddress'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='EmailAddress'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>Comments</par></tablecell>
+<par def='3'><run><font size='9pt'/>Comments</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='richtext' kind='editable' name='Comments'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='richtext'
+ kind='editable' name='Comments'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAEAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>Address1</par></tablecell>
+<par def='3'><run><font size='9pt'/>Address1</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='text' kind='editable' name='Address1'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='Address1'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>Address2</par></tablecell>
+<par def='3'><run><font size='9pt'/>Address2</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='text' kind='editable' name='Address2'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='Address2'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>ZipCode</par></tablecell>
+<par def='3'><run><font size='9pt'/>ZipCode</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='text' kind='editable' name='ZipCode'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='ZipCode'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>City</par></tablecell>
+<par def='3'><run><font size='9pt'/>City</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='text' kind='editable' name='City'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='City'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>Country</par></tablecell>
+<par def='3'><run><font size='9pt'/>Country</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='text' kind='editable' name='Country'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='Country'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
-<par def='3'>Details</par></tablecell>
+<par def='3'><run><font size='9pt'/>Details</run></par></tablecell>
 <tablecell>
-<par def='4'><field type='text' kind='editable' name='Details'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+<par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ kind='editable' name='Details'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></tablecell></tablerow></table>
-<par def='1'/></richtext></body>
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<pardef id='5' tabs='L0.5000in L1in L1.5000in L2in L2.5000in L3in L3.5000in L4in'
+ keepwithnext='true' keeptogether='true'/>
+<par def='5'><run><font size='9pt'/>PrimaryAccountManager</run></par></tablecell>
+<tablecell>
+<pardef id='6' keepwithnext='true' keeptogether='true'/>
+<par def='6'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
+ allowmultivalues='true' kind='editable' name='PrimaryAccountManager' listinputseparators='comma semicolon'
+ listdisplayseparator='semicolon'/></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='7' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par></tablecell></tablerow></table>
+<par def='1'><run><font size='9pt'/></run></par></richtext></body>
 <item name='$$ScriptName' summary='false' sign='true'><text>frmCompany</text></item></form>
 

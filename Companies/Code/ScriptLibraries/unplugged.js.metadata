@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="16a" sequence="83" unid="C3A2941100E35E9EC1257BE900415E7A">
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="16a" sequence="189" unid="C3A2941100E35E9EC1257BE900415E7A">
 <created><datetime dst="true">20130917T135400,26+02</datetime></created>
-<modified><datetime dst="true">20131008T101128,47+02</datetime></modified>
-<revised><datetime dst="true">20131008T101128,45+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131008T101128,45+02</datetime></lastaccessed>
+<modified><datetime>20131105T221201,59+01</datetime></modified>
+<revised><datetime>20131105T221201,58+01</datetime></revised>
+<lastaccessed><datetime>20131105T221201,58+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130923T115232,55+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Mark Leusink/O=LinQed</name><name>CN=Domino Administrator/O=LinQed</name><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
-<item name="$Class"><text>Unplugged Controls</text></item>
 <item name="$TITLE" sign="true"><text>unplugged.js</text></item>
-<item name="$Flags"><text>h534Q</text></item>
+<item name="$Flags"><text>h534QP</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 </note>

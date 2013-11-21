@@ -3,8 +3,19 @@
 	xmlns:unp="http://unplugged.teamstudio.com" 
 	xmlns:xc="http://www.ibm.com/xsp/custom">
 	
-		<xp:scriptBlock id="scriptBlock1">
-			<xp:this.value><![CDATA[window.location.href = "/unplugged/apps/contacts.nsf/UnpActivities.xsp"]]></xp:this.value>
-		</xp:scriptBlock>
+	<xp:scriptBlock id="scriptBlock1">
+		<xp:this.value><![CDATA[#{javascript:var dbContactsPath = "";
+
+if (!applicationScope.containsKey("dbContactsPath") ) {
+
+	var docConfig = database.getView("unpConfig").getFirstDocument();
+	applicationScope.put("dbContactsPath", docConfig.getItemValueString("dbContactsPath") );
+
+}
+
+dbContactsPath = applicationScope.dbContactsPath;
+
+"window.location.href = '/" + dbContactsPath + "/UnpActivities.xsp';"}]]></xp:this.value>
+	</xp:scriptBlock>
 
 </xp:view>

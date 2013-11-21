@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<form name='frmActivity' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257BF200465B59'
- publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
+<form name='frmActivity' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C1257BF200465B59' publicaccess='false' designerversion='8.5.3'
+ renderpassthrough='true'>
 <noteinfo noteid='162' unid='09EFE5A8720D6C79C1257BF200467648' sequence='15'>
 <created><datetime dst='true'>20130926T144938,00+02</datetime></created>
 <modified><datetime dst='true'>20131009T135536,06+02</datetime></modified>

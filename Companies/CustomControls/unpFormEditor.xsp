@@ -69,7 +69,27 @@ return out;}]]></xp:this.value>
 						</xp:this.attrs>
 						<span class="formbuttonlabel">Cancel</span>
 					</xp:panel>
+					
+					<!-- delete button -->
+					<xp:panel id="panel1" styleClass="button" tagName="li" style="width: 50%; margin-top:10px;">
+						<xp:this.attrs>
+							<xp:attr name="onclick">
+								<xp:this.value><![CDATA[#{javascript:var msg = "";
+
+if (compositeData.formname=="frmContact") {
+	msg = "Are you sure you want to delete this contact?";
+} else if (compositeData.formname == "frmActivity") {
+	msg = "Are you sure you want to delete this activity?";
+}
+
+return "if (confirm('" + msg + "') ) { deleteDocument('" + document1.getDocument().getUniversalID() + "', " + ( !isEmpty(compositeData.dbName) ? "'" + compositeData.dbName + "'" : "null") + "); }";}]]></xp:this.value>
+							</xp:attr>
+						</xp:this.attrs>
+						<xp:this.rendered><![CDATA[#{javascript:!document1.isNewNote() && (compositeData.formname == "frmContact" || compositeData.formname == "frmActivity")}]]></xp:this.rendered>
+						<span class="formbuttonlabel">Delete</span>
+					</xp:panel>
 				</xp:panel>
+	
 			</xp:div>
 		</div>
 	</xp:panel>

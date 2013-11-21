@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" name="movies.png" publicaccess="false" replicaid="C1257C070036FEE1" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1e6" sequence="2" unid="D69DD7E613727412C1257A850067195E">
+<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" maintenanceversion="1.0" name="movies.png" publicaccess="false" refresh="true" replicaid="C1257C070036FEE1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1e6" sequence="3" unid="D69DD7E613727412C1257A850067195E">
 <created><datetime dst="true">20120926T204607,02+02</datetime></created>
-<modified><datetime dst="true">20131017T120044,94+02</datetime></modified>
-<revised><datetime dst="true">20120927T154518,33+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131017T120044,93+02</datetime></lastaccessed>
+<modified><datetime>20131030T150748,51+01</datetime></modified>
+<revised><datetime>20131030T150748,50+01</datetime></revised>
+<lastaccessed><datetime>20131030T150748,50+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20131017T120044,93+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><jpeg>
@@ -39,4 +39,5 @@ GOX1/dwwkqlN0b+vQ/qotepfCcCiv9/MrwlASH8NBfF/kL8FGADFyEuQiP6kzwAAAABJRU5ErkJg
 gg==
 </jpeg>
 
-<item name="$FileModDT" sign="true"><datetime dst="true">20120418T102401,20+02</datetime></item></imageresource>
+<item name="$FileModDT" sign="true"><datetime dst="true">20120418T102401,20+02</datetime></item>
+<item name="$EditFilePath"><text>C:\Users\MARKLE~1\AppData\Local\Temp\notes90C43B\~movies.png</text></item></imageresource>

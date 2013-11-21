@@ -20,10 +20,7 @@
 		</xp:script>
 	</xp:this.resources>
 
-	<xp:this.beforePageLoad><![CDATA[#{javascript:if (sessionScope.favorites == null){
-	sessionScope.favorites = getFavorites();
-}
-if (sessionScope.downloaded == null){
+	<xp:this.beforePageLoad><![CDATA[#{javascript:if (sessionScope.downloaded == null){
 	sessionScope.downloaded = getDownloaded();
 }
 if (sessionScope.languages == null){
@@ -32,10 +29,12 @@ if (sessionScope.languages == null){
 if (sessionScope.years == null){
 	sessionScope.years = $A(@Unique(@DbColumn(@DbName(), compositeData.primaryview, 7))).sort();
 }
+
 sessionScope.categorylist = @Unique(@Right(@DbColumn(@DbName(), compositeData.primaryview, 1), "~"));
 sessionScope.urlquery = context.getUrlParameter("query");
 sessionScope.urllanguagefilter = context.getUrlParameter("languagefilter");
 sessionScope.urlyearfilter = context.getUrlParameter("yearfilter");}]]></xp:this.beforePageLoad>
+
 	<xp:this.data>
 		<xp:dominoView var="hview">
 			<xp:this.viewName><![CDATA[#{javascript:var filter = "";
@@ -187,7 +186,7 @@ if (compositeData.favoritesonly != "yes"){
 	return docs;
 }else{
 	//We need to filter down the collection to only include favorites
-	var favorites = sessionScope.favorites;
+	var favorites = getFavorites();
 	
 	var filtereddocs = new Array();
 	var doc:NotesViewEntry = docs.getFirstEntry();
@@ -204,7 +203,7 @@ if (compositeData.favoritesonly != "yes"){
 }else{
 	return 5;
 }}]]></xp:this.rows>
-									<xp:panel id="hviewitem" styleClass="hviewitem">
+									<xp:panel id="hviewitem" styleClass="hviewitem js-viewitem">
 										<xp:this.attrs>
 											<xp:attr name="unid"
 												value="#{javascript:if (requestScope.count == null){
@@ -226,10 +225,11 @@ rowData.getUniversalID()}">
 											<xp:attr name="ontouchend">
 												<xp:this.value><![CDATA[#{javascript:var id = rowData.getUniversalID();
 												var isDownloaded = @IsMember(id, sessionScope.downloaded);
-												var openLink = "window.location.href='0/" + rowData.getColumnValues().get(3) + "';";
-												var showDlg = "openHViewDialog('" + compositeData.dialogxpage + "', '" + compositeData.sourcediv + "', '" + id + "')";
 												
-												"touchEnd( function(event) {" + (isDownloaded ? openLink : showDlg) + "}, function(event) {" + showDlg + "} );"}]]></xp:this.value>
+												var openLink = "openFile('" + id + "','" + compositeData.dialogxpage + "', '" + compositeData.sourcediv + "');";
+												var showDlg = "openMediaDialog('" + compositeData.dialogxpage + "', '" + compositeData.sourcediv + "', '" + id + "')";
+												
+												"touchEnd( function(event) {" + openLink + "}, function(event) {" + showDlg + "} );"}]]></xp:this.value>
 											</xp:attr>
 											<!-- ML END -->
 										
@@ -238,22 +238,17 @@ rowData.getUniversalID()}">
 											<xp:this.styleClass><![CDATA[#{javascript:"hviewicon icon-" + rowData.getColumnValues().elementAt(4)}]]></xp:this.styleClass>
 											<xp:panel tagName="span" id="badge1" styleClass="badge badge-favorite">
 
-												<xp:this.style><![CDATA[#{javascript:if(@IsMember(rowData.getUniversalID(), sessionScope.favorites)){
+												<xp:this.style><![CDATA[#{javascript:if(@IsMember(rowData.getUniversalID(), getFavorites() )){
 	return "display: inline;";
 }else{
 	return "display: none;";
 }}]]></xp:this.style>
 											</xp:panel>
-											<xp:panel tagName="span" id="badge2" styleClass="badge badge-downloaded">
-												<xp:this.rendered><![CDATA[#{javascript:if(@IsMember(rowData.getUniversalID(), sessionScope.downloaded)){
-	return true;
-}else{
-	return false;
-}}]]></xp:this.rendered>
-											</xp:panel>
-											<xp:panel tagName="span" id="badge3"
-												styleClass="badge badge-downloading" rendered="false">
-											</xp:panel>
+											<!-- ml: change visibility using display,  -->
+											<span class="badge badge-downloaded" style="display:none;"></span>
+											
+											<span class="badge badge-downloading" style="display:none;"></span>
+											<!-- end changes... -->
 										</xp:panel>
 
 										<xp:text id="hviewtitle" styleClass="hviewtitle">
@@ -298,8 +293,19 @@ try{
 	</div>
 	<div id="hviewPopup" class="dialog" style=" display:none;">
 		<div id="hviewitemcontent">
-
 		</div>
 	</div>
 	<div id="underlayhviewPopup" class="underlay"></div>
+	
+	<xp:scriptBlock id="scriptBlock1">
+		<xp:this.value><![CDATA[$( function() {
+	
+	console.log("update...");
+	updateLocalFileList();
+
+})
+
+]]></xp:this.value>
+	</xp:scriptBlock>
+
 </xp:view>

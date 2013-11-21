@@ -1,23 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257C070036FEE1" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="316" sequence="14" unid="A9FF0BEFF7A19361C1257B90003691AE">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257C070036FEE1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="316" sequence="30" unid="A9FF0BEFF7A19361C1257B90003691AE">
 <created><datetime dst="true">20130620T115602,38+02</datetime></created>
-<modified><datetime dst="true">20131021T103319,19+02</datetime></modified>
-<revised><datetime dst="true">20131015T162539,32+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131021T103319,17+02</datetime></lastaccessed>
+<modified><datetime>20131120T213727,15+01</datetime></modified>
+<revised><datetime>20131120T213727,13+01</datetime></revised>
+<lastaccessed><datetime>20131120T213727,13+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20131017T120055,91+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Mark Leusink/O=SAXDEV</name></updatedby>
-<wassignedby><name>CN=Mark Leusink/O=SAXDEV</name></wassignedby>
+<updatedby><name>CN=Mark Leusink/O=SAXDEV</name><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
 <item name="$TITLE"><text>unpTabbedFooter.xsp</text></item>
 
-
-
-
-<item name="$FileNames" sign="true"><text>unpTabbedFooter.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 
 
+<item name="$Flags"><text>gC~4;P</text></item>
 
-<item name="$Class"><text>Unplugged Controls</text></item>
-<item name="$Flags"><text>gC~4;</text></item></note>
+
+
+
+<item name="$FileNames" sign="true"><text>unpTabbedFooter.xsp</text></item></note>

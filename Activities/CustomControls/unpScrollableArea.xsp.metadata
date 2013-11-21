@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1fa" sequence="9" unid="D3E9E434B4D9D2A2C1257BF9004BC1A3">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1fa" sequence="21" unid="D3E9E434B4D9D2A2C1257BF9004BC1A3">
 <created><datetime dst="true">20131003T154727,71+02</datetime></created>
-<modified><datetime dst="true">20131003T154902,07+02</datetime></modified>
-<revised><datetime dst="true">20131003T154902,05+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131003T154902,05+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131003T154727,71+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
-<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<modified><datetime>20131107T130209,42+01</datetime></modified>
+<revised><datetime>20131107T130209,40+01</datetime></revised>
+<lastaccessed><datetime>20131107T130209,40+01</datetime></lastaccessed>
+<addedtofile><datetime>20131107T130145,18+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=SAXDEV</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=SAXDEV</name></wassignedby>
 <item name="$TITLE"><text>unpScrollableArea.xsp</text></item>
 <item name="$Flags"><text>gC~4;</text></item>
+<item name="$Class"><text>Unplugged Controls</text></item>
+
+
 
 
 <item name="$FileNames" sign="true"><text>unpScrollableArea.xsp</text></item>
-
-
-<item name="$Class"><text>Unplugged Controls</text></item>
 <item name="$DesignerVersion"><text>8.5</text></item>
 
 

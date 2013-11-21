@@ -1,22 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
-<view name='unpMenuItems' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257C070036FEE1'
- hide='web' showinmenu='false' publicaccess='false' designerversion='8.5.3'
- unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator' headers='beveled'
- opencollapsed='false' showresponsehierarchy='true' showmargin='true' shrinkrows='false'
- extendlastcolumn='false' showhierarchies='false' unreadcolor='black' rowlinecount='1'
- headerlinecount='1' rowspacing='1' bgcolor='white' altrowcolor='#efefef'
+<view name='unpMenuItems' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C1257C070036FEE1' hide='web' showinmenu='false' publicaccess='false'
+ designerversion='8.5.3' unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator'
+ headers='beveled' opencollapsed='false' showresponsehierarchy='true' showmargin='true'
+ shrinkrows='false' extendlastcolumn='false' showhierarchies='false' unreadcolor='black'
+ rowlinecount='1' headerlinecount='1' rowspacing='1' bgcolor='white' altrowcolor='#efefef'
  totalscolor='black' headerbgcolor='white' boldunreadrows='false' evaluateactions='false'
  allownewdocuments='false' allowcustomizations='true' hidemarginborder='false'
  marginwidth='0px' marginbgcolor='white' uniquekeys='false'>
-<noteinfo noteid='2f2' unid='3C582DCB4035BA23C1257B90002C0663' sequence='24'>
+<noteinfo noteid='2f2' unid='3C582DCB4035BA23C1257B90002C0663' sequence='25'>
 <created><datetime dst='true'>20130620T100052,19+02</datetime></created>
-<modified><datetime dst='true'>20131017T120055,65+02</datetime></modified>
-<revised><datetime dst='true'>20130703T100811,05+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131017T160855,67+02</datetime></lastaccessed>
+<modified><datetime>20131104T102737,19+01</datetime></modified>
+<revised><datetime>20131104T102737,17+01</datetime></revised>
+<lastaccessed><datetime>20131104T102737,17+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131017T120055,64+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='selection'><formula
->SELECT Form="fFolder"</formula></code>
+>SELECT Form="frmFolder"</formula></code>
 <column sort='ascending' hidedetailrows='false' itemname='title' width='21.6250'
  resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='true'
  showaslinks='false'><font size='9pt'/><columnheader title='title'><font size='9pt'

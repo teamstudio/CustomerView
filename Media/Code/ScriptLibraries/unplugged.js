@@ -190,7 +190,11 @@ function openDocument(url, target, loadFooter) {
 	// $.blockUI();
 	// document.location.href = url;
 	var thisArea = $("#" + target);
-	thisArea.load(url.replace(" ", "%20") + " #contentwrapper",
+	
+	var ajaxUrl = url.replace(" ", "%20");
+	ajaxUrl += sep + (ajaxUrl.indexOf("?") > -1 ? "&" : "?") + "ajaxLoad=true";
+	
+	thisArea.load(ajaxUrl + " #contentwrapper",
 			function(data) {
 
 				if (firedrequests != null) {
@@ -339,10 +343,14 @@ function loadPage(url, target, menuitem, pushState, loadFooter) {
 			unp.storePageRequest(url);
 		}
 		
+		//ML: check downloaded files
+		updateLocalFileList();
+		
 		initiscroll();
 		initHorizontalView();
 		initDeleteable();
 		initAutoComplete();
+		
 		return false;
 	});
 	if (_pushState){
@@ -653,8 +661,9 @@ function openHViewDialog(xpage, source, unid) {
 		xpage += ".xsp";
 	}
 	var url = xpage + "?action=openDocument&documentId=" + unid;
+	
 	$("#hviewitemcontent").load(url.replace(" ", "%20") + " #" + source,
-			function() {
+			function(data) {
 				openDialog("hviewPopup");
 				return false;
 			});
@@ -765,6 +774,9 @@ function hviewFavourite(xpage, unid) {
 		xpage += ".xsp";
 	}
 	var url = xpage + "?favorite=toggle&action=openDocument&documentId=" + unid;
+	
+	if (getURLParameter("islocal") == "true") { url += "&islocal=true"; }
+	
 	$("#hviewitemcontent").load(url.replace(" ", "%20") + " #results");
 	$("[unid='" + unid + "'] .badge-favorite").toggle();
 }
@@ -772,6 +784,7 @@ function hviewFavourite(xpage, unid) {
 function hviewEmail(xpage, unid) {
 	$("#hviewdialogbuttons").toggle();
 	$("#emailholder").toggle();
+	initAutoComplete();
 }
 
 function hviewEmailSend(xpage, unid) {

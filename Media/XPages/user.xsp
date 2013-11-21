@@ -2,7 +2,7 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core"
 	xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:this.data>
-		<xp:dominoDocument var="docUser" formName="fUser"
+		<xp:dominoDocument var="docUser" formName="frmUser"
 			action="editDocument">
 			<xp:this.documentId><![CDATA[#{javascript:@DbLookup( @DbName(), "vUsers", @UserName(), 2);}]]></xp:this.documentId>
 		</xp:dominoDocument>

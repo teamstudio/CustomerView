@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
-<form name='fFileMetadata' xmlns='http://www.lotus.com/dxl' version='9.0'
- replicaid='C1257C070036FEE1' hide='web' nocompose='true' publicaccess='false'
- designerversion='8.5.3' renderpassthrough='true'>
-<noteinfo noteid='18a' unid='76D18A31C9E05D32C1257A4B00342230' sequence='51'>
+<form name='frmFileMetadata' xmlns='http://www.lotus.com/dxl' version='9.0'
+ maintenanceversion='1.0' replicaid='C1257C070036FEE1' hide='web' nocompose='true'
+ publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
+<noteinfo noteid='18a' unid='76D18A31C9E05D32C1257A4B00342230' sequence='54'>
 <created><datetime dst='true'>20120730T112926,24+02</datetime></created>
-<modified><datetime dst='true'>20131021T104659,40+02</datetime></modified>
-<revised><datetime dst='true'>20131021T104659,39+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131021T104659,39+02</datetime></lastaccessed>
+<modified><datetime>20131111T170134,57+01</datetime></modified>
+<revised><datetime>20131111T170134,56+01</datetime></revised>
+<lastaccessed><datetime>20131111T170134,56+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131017T120043,46+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
-<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='windowtitle'><formula
->"File: " + title</formula></code>
+<updatedby><name>CN=Domino Administrator/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Domino Administrator/O=LinQed</name></wassignedby><code
+ event='windowtitle'><formula>"File: " + title</formula></code>
 <body><richtext>
 <pardef id='1'/>
 <par def='1'><run><font size='9pt' style='bold'/></run></par>
@@ -354,12 +354,7 @@ Yg4BAIQAAAAAAAAAAAA=
  type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
  aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par>
-<par def='1'><field type='text' kind='editable' name='isLocal'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata> (true/ false if the file is a local file - causes the 'airplane' indicator on the mobile ui)</par></richtext></body>
+</compositedata></par></richtext></body>
 <item name='$XPageAlt'><text>file.xsp</text></item>
 <item name='$$ScriptName' summary='false' sign='true'><text>fBookmark</text></item>
 <item name='cnxUpdated' summary='false'><number>0</number></item>

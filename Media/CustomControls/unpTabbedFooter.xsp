@@ -31,11 +31,12 @@
 	</style>
 	<xp:panel styleClass="footer black">
 
-		<div id='tabfooter'>
+<!--ml: use custom style on #tabfooter & li -->
+		<div id='tabfooter' style="position:relative; height: 100px; width: 250px; margin: 0 auto;">
 			<ul id="footerTabBar">
-				<xp:repeat id="repeat1" rows="30" disableOutputTag="true"
+			<xp:repeat id="repeat1" rows="30" disableOutputTag="true"
 					var="menuItem" value="#{javascript:compositeData.tab;}">
-					<xp:panel tagName="li">
+					<xp:panel tagName="li" style="width:90px;">
 						<xp:this.styleClass><![CDATA[#{javascript:
 if (("/" + getCurrentXPage()) == menuItem.page){
 	return "menuitem" + viewScope.menuItemIndex + " tabSelected";
@@ -49,7 +50,8 @@ if (!isEmpty(menuItem.callback)){
 	js += menuItem.callback;
 }
 if (!isEmpty(menuItem.page)){
-	js += "openPage('" + getDbPath() + menuItem.page + "', '" + menuItem.ajaxtargetid + "')";
+	//ml: use custom js function
+	js += "switchFooterTab('" + getDbPath() + menuItem.page + "')";
 }
 return js;}]]></xp:this.value>
 							</xp:attr>

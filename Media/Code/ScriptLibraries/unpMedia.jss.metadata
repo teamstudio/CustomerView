@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="C1257C070036FEE1" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="35a" sequence="61" unid="73102BB0AC724BE0C1257B94006B651B">
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="C1257C070036FEE1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="35a" sequence="71" unid="73102BB0AC724BE0C1257B94006B651B">
 <created><datetime dst="true">20130624T213302,35+02</datetime></created>
-<modified><datetime dst="true">20131017T214940,11+02</datetime></modified>
-<revised><datetime dst="true">20131017T214940,09+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131017T214940,09+02</datetime></lastaccessed>
+<modified><datetime>20131119T214626,13+01</datetime></modified>
+<revised><datetime>20131119T214626,11+01</datetime></revised>
+<lastaccessed><datetime>20131119T214626,11+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20131017T120056,36+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>

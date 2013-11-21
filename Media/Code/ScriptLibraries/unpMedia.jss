@@ -121,11 +121,9 @@ function getMenuOptions() {
 
 function getMenuOptionsHierchical() {
 	
-
-	
 	try {
 		
-		//if ( !sessionScope.containsKey("menu") ) {
+		if ( !sessionScope.containsKey("menu") ) {
 		
 			dBar.debug("process menu");
 			
@@ -139,20 +137,23 @@ function getMenuOptionsHierchical() {
 			//read all menu items
 			var veMenuItem = nav.getFirst();
 			while (null != veMenuItem) {
-			
+				
 				var colValues = veMenuItem.getColumnValues();
 				
 				var pos = colValues.get(2);
 				var unid = colValues.get(3);
+				var label = colValues.get(0);
 				
 				var item = {
-					"label" : colValues.get(0),
+					"label" : label,
 					"folderId" : colValues.get(1),
 					"id" : unid,
 					"entryId" : colValues.get(4),
 					"subMenu" : [],
 					"hasSubMenu" : false
 				};
+				
+				dBar.debug("found " + label)
 				
 				if (pos ==2) {
 					
@@ -166,8 +167,12 @@ function getMenuOptionsHierchical() {
 				} else if (pos==4) {
 					
 					item.submenu = "sub-sub";
-					item.ajaxloadid = "results";
-					item.ajaxtargetid = "results";
+					//item.ajaxloadid = "results";
+					//item.ajaxtargetid = "results";
+					
+					item.ajaxloadid = "contentwrapper";
+					item.ajaxtargetid = "content";
+					
 					item.page = page + "?documentId=" + unid;
 					
 					subMenuOptions.push(item);
@@ -211,11 +216,12 @@ function getMenuOptionsHierchical() {
 			}
 		
 			sessionScope.menu = menuOptions;
-			return menuOptions;
-		//} else {
+		
+		}
+		
+		return sessionScope.menu;
 			
-		//	return sessionScope.menu;		
-		//}
+		dBar.debug("done");
 		
 	} catch (e) {
 		dBar.error(e);
@@ -232,3 +238,12 @@ function getOptionsByFolder( unsortedOptions, numOptions, folderId) {
 	}
 	return res;
 }
+
+function isVideo( fileName ) {
+
+	var ext = fileName.substring( fileName.lastIndexOf(".") + 1).toLowerCase();
+	
+	return (ext == "mov" || ext == "mp4" || ext == "mpg" || ext == "avi");
+	
+}
+

@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><fileresource alias="fonts/glyphicons-regular.eot" designerversion="8.5.3" name="unp/glyphicons-regular.eot" publicaccess="false" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1ba" sequence="1" unid="341BFBBE3E283310C1257BF9004BB454">
+<?xml version="1.0" encoding="UTF-8"?><fileresource alias="fonts/glyphicons-regular.eot" designerversion="8.5.3" maintenanceversion="1.0" name="unp/glyphicons-regular.eot" publicaccess="false" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1ba" sequence="6" unid="341BFBBE3E283310C1257BF9004BB454">
 <created><datetime dst="true">20131003T154653,64+02</datetime></created>
-<modified><datetime dst="true">20131003T154653,84+02</datetime></modified>
-<revised><datetime dst="true">20131003T154653,83+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131003T154653,83+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131003T154653,83+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby></fileresource>
+<modified><datetime>20131107T130144,82+01</datetime></modified>
+<revised><datetime>20131107T130144,81+01</datetime></revised>
+<lastaccessed><datetime>20131107T130144,81+01</datetime></lastaccessed>
+<addedtofile><datetime>20131107T130144,70+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=SAXDEV</name></updatedby></fileresource>

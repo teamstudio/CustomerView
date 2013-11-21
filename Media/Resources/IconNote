@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- replicaid='C1257C070036FEE1'>
-<noteinfo noteid='11a' unid='932A9EF0584CFAB4C1257A4600640E6D' sequence='6'>
+ maintenanceversion='1.0' replicaid='C1257C070036FEE1'>
+<noteinfo noteid='11a' unid='932A9EF0584CFAB4C1257A4600640E6D' sequence='7'>
 <created><datetime dst='true'>20120725T201252,93+02</datetime></created>
-<modified><datetime dst='true'>20131017T120107,02+02</datetime></modified>
-<revised><datetime dst='true'>20131017T120107,00+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131017T120107,00+02</datetime></lastaccessed>
+<modified><datetime>20131030T151018,50+01</datetime></modified>
+<revised><datetime>20131030T151018,48+01</datetime></revised>
+<lastaccessed><datetime>20131030T151018,48+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131017T120042,35+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name><name>CN=Mark Leusink/O=CITC</name><name
 >CN=Mark Leusink/O=LinQed</name><name>CN=Demo/O=LinQed</name><name>CN=Mark Leusink/O=LinQed</name></updatedby>
@@ -26,9 +26,9 @@ AAAAUEECICABAAD/////+A4DgA==
 </rawitemdata></item>
 <item name='$DBTheme'><text>dragonfly.theme</text></item>
 <item name='$DefaultXPage'><text>home.xsp</text></item>
-<item name='$Flags'><text>J7!zf</text></item>
-<item name='$LaunchXPageRunOnServer'><text>0</text></item>
-<item name='$FlagsNoRefresh'><text/></item>
 <item name='$Daos'><text>1</text></item>
-<item name='$TITLE'><text>Media</text></item></note>
+<item name='$TITLE'><text>Media</text></item>
+<item name='$Flags'><text>J7!zfn</text></item>
+<item name='$LaunchXPageRunOnServer'><text>0</text></item>
+<item name='$FlagsNoRefresh'><text/></item></note>
 

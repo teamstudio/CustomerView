@@ -142,7 +142,7 @@ public class FileMetaData {
 				
 				//metadata doesn't exist yet
 				docFileMetadata = dbTarget.createDocument();
-				docFileMetadata.replaceItemValue("form", "fFileMetadata");
+				docFileMetadata.replaceItemValue("form", "frmFileMetadata");
 				docFileMetadata.replaceItemValue("id", id);
 				docFileMetadata.replaceItemValue("configId", configId);
 				
@@ -218,11 +218,13 @@ public class FileMetaData {
 			//save and embed the related file in a 'file' document
 			boolean savedFile = downloadAndEmbedFile(dbTarget, tempDir.getAbsolutePath() + File.separator, targetFileUrl, fileSize, httpClient);
 			
-			docFileMetadata.replaceItemValue("fileId", fileId);
-			docFileMetadata.replaceItemValue("fileUnid", fileUnid);
-			docFileMetadata.replaceItemValue("attachmentUrl", fileUnid + "/$file/" + java.net.URLEncoder.encode( attachmentName, "UTF-8") );
+			if (savedFile) {
+				docFileMetadata.replaceItemValue("fileId", fileId);
+				docFileMetadata.replaceItemValue("fileUnid", fileUnid);
+				docFileMetadata.replaceItemValue("attachmentUrl", fileUnid + "/$file/" + java.net.URLEncoder.encode( attachmentName, "UTF-8") );
 			
-			docFileMetadata.save();
+				docFileMetadata.save();
+			}
 			
 		} catch (Exception e) {
 	
@@ -310,7 +312,7 @@ public class FileMetaData {
 			if (docFile == null ) {		//create new file document
 				
 				docFile = dbTarget.createDocument();
-				docFile.replaceItemValue("form", "fFile");
+				docFile.replaceItemValue("form", "frmFile");
 
 				fileUnid = docFile.getUniversalID();
 				fileId = "f" + fileUnid.toLowerCase();

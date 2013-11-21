@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="filter" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1da" sequence="2" unid="548DD62F2EAD9F36C1257BE9004CCC83">
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1da" sequence="7" unid="548DD62F2EAD9F36C1257BE9004CCC83">
 <created><datetime dst="true">20130917T155850,91+02</datetime></created>
-<modified><datetime dst="true">20130926T140716,23+02</datetime></modified>
-<revised><datetime dst="true">20130926T140608,78+02</datetime></revised>
-<lastaccessed><datetime dst="true">20130926T140716,22+02</datetime></lastaccessed>
+<modified><datetime>20131105T214436,58+01</datetime></modified>
+<revised><datetime>20131105T214436,56+01</datetime></revised>
+<lastaccessed><datetime>20131105T214436,56+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130923T115233,58+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<item name="$Class"><text>Unplugged Controls</text></item>
 <item name="$TITLE" sign="true"><text>unpSearchDatabase.js</text></item>
+<item name="$Flags"><text>h534Q</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
-
-<item name="$Class"><text>Unplugged Controls</text></item>
-<item name="$Flags"><text>h534Q</text></item></note>
+</note>

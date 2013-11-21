@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257C070036FEE1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1532" sequence="11" unid="41E834957219D2DEC1257C18006A3560">
+<created><datetime>20131103T202004,80+01</datetime></created>
+<modified><datetime>20131103T204350,93+01</datetime></modified>
+<revised><datetime>20131103T204350,91+01</datetime></revised>
+<lastaccessed><datetime>20131103T204350,91+01</datetime></lastaccessed>
+<addedtofile><datetime>20131103T202004,80+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<item name="$Flags"><text>gC~4K</text></item>
+<item name="$TITLE"><text>getVideo.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+<item name="$PublicAccess"><text>1</text></item>
+
+
+
+
+<item name="$FileNames" sign="true"><text>getVideo.xsp</text></item></note>

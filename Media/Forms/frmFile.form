@@ -1,11 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<form name='fFile' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257C070036FEE1'
- publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
-<noteinfo noteid='84a' unid='D92E08E5E03083BAC1257B9D002A2416' sequence='6'>
+<form name='frmFile' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C1257C070036FEE1' publicaccess='false' designerversion='8.5.3'
+ renderpassthrough='true'>
+<noteinfo noteid='84a' unid='D92E08E5E03083BAC1257B9D002A2416' sequence='8'>
 <created><datetime dst='true'>20130703T094017,50+02</datetime></created>
-<modified><datetime dst='true'>20131017T120106,61+02</datetime></modified>
-<revised><datetime dst='true'>20130703T112804,23+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131017T120106,60+02</datetime></lastaccessed>
+<modified><datetime>20131104T102557,66+01</datetime></modified>
+<revised><datetime>20131104T102557,64+01</datetime></revised>
+<lastaccessed><datetime>20131104T102557,64+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131017T120106,60+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
@@ -80,6 +81,6 @@ Yg4BAIQAAAAAAAEAAAA=
 <par def='5'><run><font size='9pt'/>attachment</run></par></tablecell></tablerow></table>
 <pardef id='2' firstlineleftmargin='1in'/>
 <par def='2'/></richtext></body>
-<item name='cnxUpdated' summary='false'><number>0</number></item>
+<item name='cnxUpdated' summary='false' sign='true'><number>0</number></item>
 <item name='$$ScriptName' summary='false' sign='true'><text>fFile</text></item></form>
 

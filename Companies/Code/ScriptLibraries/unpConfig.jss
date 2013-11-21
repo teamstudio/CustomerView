@@ -1,10 +1,10 @@
+import unpCommon;
+
 function initConfig() {
 	
-	if (!applicationScope.init) {
-		
-		dBar.debug("init application scope");
+	if (!applicationScope.initConfig) {
 
-		applicationScope.init = true;
+		applicationScope.initConfig = true;
 	
 		applicationScope.put("thisDbUrl", ( isUnpluggedServer() ? "" : "/.ibmxspres/domino") + "/" + @ReplaceSubstring(database.getFilePath(), "\\", "/") );
 		
@@ -21,11 +21,11 @@ function initConfig() {
 		
 	}
 
-	if (!sessionScope.init) {
+	if (!sessionScope.initConfig) {
 
-		dBar.debug("init session scope");
+		//dBar.debug("init session scope");
 
-		sessionScope.init = true;
+		sessionScope.initConfig = true;
 	
 		var ua = @LowerCase( context.getUserAgent().getUserAgent() );
 		
@@ -45,6 +45,7 @@ function updateStats() {
 
 }
 
+//print('(unpConfig.jss) start init config');
 initConfig();
 
 function getIcon( type:String ) {
@@ -81,7 +82,7 @@ function getIcon( type:String ) {
 
 function saveDocument() {
 	
-	dBar.debug("in save document function");
+	//dBar.debug("in save document function");
 	
 	var response = "Started";
 	
@@ -93,7 +94,7 @@ function saveDocument() {
 		var targetDbPath = context.getUrlParameter("dbname");
 		var parentunid = context.getUrlParameter("parentunid");	
 		
-		dBar.debug("> form: " + form + ", unid: " + unid + ", target database: " + targetDbPath);
+		//dBar.debug("> form: " + form + ", unid: " + unid + ", target database: " + targetDbPath);
 		
 		var dbTarget = null;
 		

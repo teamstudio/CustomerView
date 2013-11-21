@@ -2,7 +2,7 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 
 	<xp:this.data>
-		<xp:dominoDocument var="docFile" formName="fFileMetadata"></xp:dominoDocument>
+		<xp:dominoDocument var="docFile" formName="frmFileMetadata"></xp:dominoDocument>
 	</xp:this.data>
 
 	<xp:this.beforePageLoad><![CDATA[#{javascript:if (docFile.isNewNote() ) {

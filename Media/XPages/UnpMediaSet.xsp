@@ -3,20 +3,36 @@
 	xmlns:unp="http://unplugged.teamstudio.com">
 
 	<xp:this.data>
-		<xp:dominoDocument var="docFolder" formName="fFolder"
+		<xp:dominoDocument var="docFolder" formName="frmFolder"
 			action="openDocument">
 		</xp:dominoDocument>
 	</xp:this.data>
-
+	
 	<xp:this.resources>
+		<xp:styleSheet href="/unplugged-light.css"></xp:styleSheet>
+		<xp:styleSheet href="/unplugged-media.css"></xp:styleSheet>
+		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
 		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
+		<xp:script src="/unpMedia.jss" clientSide="false"></xp:script>
+		<xp:script src="/unpMediaJS.js" clientSide="true"></xp:script>
 	</xp:this.resources>
+	
+	<unp:unpHeader search="database" searchPage="UnpMediaSearch.xsp" 
+		viewsButton="false"	
+		title="CustomerView">
+	</unp:unpHeader>
+
+	<unp:unpNavigatorComputed>
+		<unp:this.computedmenuitems><![CDATA[#{javascript:getMenuOptionsHierchical();}]]></unp:this.computedmenuitems>
+	</unp:unpNavigatorComputed>
+	
+	<div id="content">
 	
 	<unp:unpScrollableArea>
 		<xp:this.facets>
 
 			<unp:unpHorizontalView xp:key="facet_1"
-				dialogxpage="UnpDemoHorizontalViewDialog" sourcediv="results"
+				dialogxpage="UnpMediaDialog" sourcediv="results"
 				primaryview="unpFilesByFolder" filterview="unpFilesFilter"
 				toplevelcategory="#{docFolder.id}" title="#{docFolder.title}"
 				subtitle="#{docFolder.description}">
@@ -24,5 +40,19 @@
 			
 		</xp:this.facets>
 	</unp:unpScrollableArea>
+	
+	</div>
+	
+	<unp:unpTabbedFooter synctype="currentdb">
+		<unp:this.tab>
+			<unp:tab label="Library" page="/UnpMain.xsp"
+				icon="unp/icon-library.png" iconselected="unp/icon-library.png">
+			</unp:tab>
+			<unp:tab label="Favorites"
+				page="/UnpFavorites.xsp"
+				icon="unp/icon-favorite.png" iconselected="unp/icon-favorite.png">
+			</unp:tab>
+		</unp:this.tab>
+	</unp:unpTabbedFooter>
 
 </xp:view>

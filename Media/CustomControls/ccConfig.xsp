@@ -3,7 +3,7 @@
 	xmlns:xc="http://www.ibm.com/xsp/custom">
 
 	<xp:this.data>
-		<xp:dominoDocument var="docConfig" formName="fConfig"
+		<xp:dominoDocument var="docConfig" formName="frmConfig"
 			action="editDocument" >
 		</xp:dominoDocument>
 	</xp:this.data>
@@ -195,7 +195,7 @@
 						
 						//make sure that only 1 config is active
 						if (docConfig.getItemValueString("isActive") == "true") {
-							var dc = database.search("Form=\"fConfig\" & isActive=\"true\" & @Text(@DocumentUniqueId) != \"" + doc.getUniversalID() + "\"");
+							var dc = database.search("Form=\"frmConfig\" & isActive=\"true\" & @Text(@DocumentUniqueId) != \"" + doc.getUniversalID() + "\"");
 							dBar.debug("found " + dc.getCount() + " active config documents");
 							if (dc.getCount() > 0)  {
 								dc.stampAll("isActive", "false");

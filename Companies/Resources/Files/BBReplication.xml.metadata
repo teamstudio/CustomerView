@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><fileresource charset="UTF-8" designerversion="8.5.3" name="BBReplication.xml" publicaccess="false" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="3b2" sequence="3" unid="3E194D6DB263504BC1257BEF0038C21F">
+<?xml version="1.0" encoding="UTF-8"?><fileresource charset="UTF-8" designerversion="8.5.3" maintenanceversion="1.0" name="BBReplication.xml" publicaccess="false" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="3b2" sequence="6" unid="3E194D6DB263504BC1257BEF0038C21F">
 <created><datetime dst="true">20130923T121957,11+02</datetime></created>
-<modified><datetime dst="true">20131001T132634,37+02</datetime></modified>
-<revised><datetime dst="true">20131001T132634,35+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131001T132634,35+02</datetime></lastaccessed>
+<modified><datetime>20131105T214433,40+01</datetime></modified>
+<revised><datetime>20131105T214433,39+01</datetime></revised>
+<lastaccessed><datetime>20131105T214433,39+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130923T121957,15+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby></fileresource>

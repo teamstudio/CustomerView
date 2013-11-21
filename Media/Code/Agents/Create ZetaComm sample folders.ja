@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='utf-8'?>
+<agent name='Create ZetaComm sample folders' xmlns='http://www.lotus.com/dxl'
+ version='9.0' maintenanceversion='1.0' replicaid='C1257C070036FEE1' hide='web v3'
+ publicaccess='false' designerversion='8.5.3' restrictions='unrestricted'>
+<noteinfo noteid='15b6' unid='B5362403D6B608DCC1257C1A006DE24E' sequence='14'>
+<created><datetime>20131105T210013,58+01</datetime></created>
+<modified><datetime>20131105T232410,12+01</datetime></modified>
+<revised><datetime>20131105T232410,10+01</datetime></revised>
+<lastaccessed><datetime>20131105T232410,10+01</datetime></lastaccessed>
+<addedtofile><datetime>20131105T210013,99+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<designchange><datetime>20131105T232508,18+01</datetime></designchange>
+<trigger type='actionsmenu'/>
+<documentset type='runonce'/><code event='action'><javaproject class='JavaAgent.class'
+ codepath='c:\Program Files (x86)\IBM\Notes\Data' compiledebug='true'><java
+ name='JavaAgent.java'>
+import java.util.Collection;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.Vector;
+
+import lotus.domino.*;
+
+public class JavaAgent extends AgentBase {
+ 
+	private Session session;
+	
+	Database dbCurrent = null;
+	View vwFoldersByPath = null;
+	
+	private static final String CAT_SEP_CHAR = "\\";
+
+	public void NotesMain() {
+
+		try {
+			
+			session = getSession();
+			AgentContext agentContext = session.getAgentContext();
+			
+			dbCurrent = agentContext.getCurrentDatabase();
+		
+			System.out.println("--- started ---");
+
+			long started = (new Date()).getTime();
+			
+			//init views
+			vwFoldersByPath = dbCurrent.getView("vFoldersByPath");
+			
+			createDemoFolders();
+	
+			System.out.println("Import completed (in " + (((new Date()).getTime() - started) / 1000) + " seconds)");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	private void importFolder(String path, String id, String cat, String parentId, String treeBase) {
+		
+		Document docFolder = null;
+		
+		try {
+
+if (path.length() &gt; 0) {
+				path += CAT_SEP_CHAR;
+			}
+
+path += cat;
+			
+			//check if folder already exists
+			 docFolder = vwFoldersByPath.getDocumentByKey( path, true);
+
+if (null == docFolder) {
+
+				docFolder = vwFoldersByPath.getParent().createDocument();
+				docFolder.replaceItemValue("form", "frmFolder");
+
+				docFolder.replaceItemValue("id", id);
+				docFolder.replaceItemValue("folderPath", path);
+			
+		
+			}
+			docFolder.replaceItemValue("folderId", parentId);
+			docFolder.replaceItemValue("title", cat);
+			
+			Vector&lt;String&gt; folderTree = new Vector&lt;String&gt;();
+
+if (treeBase != null) {
+				String[] treeBaseEls = treeBase.split("#");
+				for (String treeEl : treeBaseEls) {
+					folderTree.add(treeEl);
+				}
+			}
+
+folderTree.add(parentId);
+			folderTree.add(id);
+			docFolder.replaceItemValue("folderTree", folderTree);
+
+docFolder.save();
+			
+		} catch (NotesException e) {
+			e.printStackTrace();
+		} finally {
+			
+			recycle(docFolder);
+			
+		}
+		
+	}
+	
+	
+	private void createDemoFolders() {
+			//
+		Vector&lt;String&gt; folderTree = new Vector&lt;String&gt;();
+		folderTree.add("root");
+	
+		importFolder("", "1", "Chipsets", "root", null);
+
+		importFolder("Chipsets", "11", "Stingray", "1", "root");
+		
+		importFolder("Chipsets\\Stingray", "111", "Stingray 100", "11", "root#1");
+		importFolder("Chipsets\\Stingray", "112", "Stingray 200", "11", "root#1");
+		importFolder("Chipsets\\Stingray", "113", "Stingray 400", "11", "root#1");
+		importFolder("Chipsets\\Stingray", "114", "Stingray 600", "11", "root#1");
+		
+
+		importFolder("Chipsets", "12", "Barracuda", "1", "root");
+		importFolder("Chipsets\\Barracuda", "121", "Barracuda 300", "12", "root#1");
+		importFolder("Chipsets\\Barracuda", "122", "Barracuda 500", "12", "root#1");
+		importFolder("Chipsets\\Barracuda", "123", "Barracuda 900", "12", "root#1");
+		
+		importFolder("Chipsets", "13", "Mako", "1", "root");
+		importFolder("Chipsets\\Mako", "131", "Mako 200", "13", "root#1");
+		importFolder("Chipsets\\Mako", "132", "Mako 400", "13", "root#1");
+		importFolder("Chipsets\\Mako", "133", "Mako 800", "13", "root#1");
+		importFolder("Chipsets\\Mako", "133", "Mako 900", "13", "root#1");
+		
+		importFolder("Chipsets", "14", "Sailfish", "1", "root");
+		importFolder("Chipsets\\Sailfish", "141", "Sailfish 100", "14", "root#1");
+		importFolder("Chipsets\\Sailfish", "142", "Sailfish 200", "14", "root#1");
+		importFolder("Chipsets\\Sailfish", "143", "Sailfish 300", "14", "root#1");
+		
+		//
+		importFolder("", "2", "Technologies", "root", null);
+		
+		importFolder("Technologies", "21", "Software", "2", "root");
+		importFolder("Technologies\\Software", "211", "Runtime", "21", "root#2");
+		importFolder("Technologies\\Software", "212", "Apps", "21", "root#2");
+		importFolder("Technologies\\Software", "213", "Tools", "21", "root#2");
+		
+		importFolder("Technologies", "22", "3G/4G", "2", "root");
+		importFolder("Technologies\\3G/4G", "221", "System-on-chip", "22", "root#2");
+		importFolder("Technologies\\3G/4G", "222", "Modules", "22", "root#2");
+		
+		importFolder("Technologies", "23", "Bluetooth", "2", "root");
+		importFolder("Technologies\\Bluetooth", "231", "Bluetooth 3.0", "23", "root#2");
+		importFolder("Technologies\\Bluetooth", "232", "Bluetooth 4.0", "23", "root#2");
+		
+		importFolder("Technologies", "24", "NFC", "2", "root");
+		importFolder("Technologies\\NFC", "241", "Smartcards", "24", "root#2");
+		importFolder("Technologies\\NFC", "242", "Inlays", "24", "root#2");
+		importFolder("Technologies\\NFC", "243", "Chipsets", "24", "root#2");
+		
+		importFolder("Technologies", "25", "Picocells", "2", "root");
+		importFolder("Technologies\\Picocells", "251", "Chipsets", "25", "root#2");
+		importFolder("Technologies\\Picocells", "252", "Modules", "25", "root#2");
+		importFolder("Technologies\\Picocells", "253", "Systems", "25", "root#2");
+		
+		//
+		importFolder("", "3", "Solutions", "root", null);
+		
+		importFolder("Solutions", "31", "Engineering services", "3", "root");
+		importFolder("Solutions\\Engineering services", "311", "Consulting", "31", "root#3");
+		importFolder("Solutions\\Engineering services", "312", "Testing", "31", "root#3");
+		importFolder("Solutions\\Engineering services", "313", "Certification", "31", "root#3");
+		
+		importFolder("Solutions", "32", "LBS", "3", "root");
+		importFolder("Solutions\\LBS", "321", "Consulting", "32", "root#3");
+		importFolder("Solutions\\LBS", "322", "Prototyping", "32", "root#3");
+		
+		importFolder("Solutions", "33", "Smartwatches", "3", "root");
+		importFolder("Solutions\\Smartwatches", "331", "Consulting", "33", "root#3");
+		importFolder("Solutions\\Smartwatches", "332", "Prototyping", "33", "root#3");
+		
+		importFolder("Solutions", "34", "Secure systems", "3", "root");
+		importFolder("Solutions\\Secure systems", "341", "Consulting", "34", "root#3");
+		importFolder("Solutions\\Secure systems", "342", "Testing", "34", "root#3");
+		importFolder("Solutions\\Secure systems", "343", "Certification", "34", "root#3");
+		
+	}
+	
+
+
+	public static void setDate(Document doc, String itemName, Date date) {
+
+		if (date == null) {
+			return;
+		}
+
+		DateTime dt = null;
+
+		try {
+
+			dt = doc.getParentDatabase().getParent().createDateTime(date);
+			doc.replaceItemValue(itemName, dt);
+
+		} catch (NotesException e) {
+			System.out.println(e);
+		} finally {
+			recycle(dt);
+		}
+
+	}
+
+	// recycle all objects in the arguments (in that order)
+	@SuppressWarnings("unchecked")
+	private static void recycle(final Object... args) {
+		for (Object o : args) {
+			if (o != null) {
+				if (o instanceof lotus.domino.Base) {
+					try {
+						((Base) o).recycle();
+					} catch (Throwable t) {
+						// who cares?
+					}
+				} else if (o instanceof Map) {
+					Set&lt;Map.Entry&gt; entries = ((Map) o).entrySet();
+					for (Map.Entry&lt;?, ?&gt; entry : entries) {
+						recycle(entry.getKey(), entry.getValue());
+					}
+				} else if (o instanceof Collection) {
+					Iterator i = ((Collection) o).iterator();
+					while (i.hasNext()) {
+						Object obj = i.next();
+						recycle(obj);
+					}
+
+				} else if (o.getClass().isArray()) {
+					try {
+						Object[] objs = (Object[]) o;
+						for (Object ao : objs) {
+							recycle(ao);
+						}
+					} catch (Throwable t) {
+						// who cares?
+					}
+				}
+			}
+		}
+	}
+
+
+}
+</java></javaproject></code>
+<rundata processeddocs='0' exitcode='0' agentdata='40B5B70955DFE856C1257C1A007B11CE'>
+<agentmodified><datetime>20131105T232410,12+01</datetime></agentmodified>
+<agentrun><datetime>20131105T232514,07+01</datetime></agentrun>
+<runlog>Started running agent 'Create ZetaComm sample folders' on 05-11-2013 23:25:13
+Ran Java Agent Class
+Done running agent 'Create ZetaComm sample folders' on 05-11-2013 23:25:14
+</runlog></rundata>
+<item name='$JavaCompilerSource'><text>1.5</text></item>
+<item name='$JavaCompilerTarget'><text>1.5</text></item></agent>
+

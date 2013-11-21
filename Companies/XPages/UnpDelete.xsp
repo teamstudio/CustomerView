@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
+
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:
+var exCon = facesContext.getExternalContext(); 
+var writer = facesContext.getResponseWriter();
+
+var response = exCon.getResponse();
+response.setContentType("text/plain; charset=\"utf-8\"");
+
+try {
+	var id = context.getUrlParameter("id");
+	var dbPath = context.getUrlParameter("dbPath");
+	
+	var db;
+	
+	if (dbPath != null && dbPath != "") {		//open target database
+		
+		db = session.getDatabase( "", dbPath);
+	
+	} else {		//remove from current database
+	
+		db = database;
+	}
+
+ 	var doc:NotesDocument = db.getDocumentByUNID(id);
+ 	
+	if ( doc.removePermanently() ) {
+	
+		writer.write("ok");
+		
+	} else {
+	
+		writer.write("The document could not be removed");
+		
+	}
+
+} catch (e) {
+	writer.write("An error occurred while removing this document:\n\n" + e);
+}
+
+writer.endDocument();
+facesContext.responseComplete();
+}]]></xp:this.afterRenderResponse>
+
+
+
+</xp:view>

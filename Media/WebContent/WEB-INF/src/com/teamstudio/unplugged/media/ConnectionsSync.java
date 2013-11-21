@@ -4,6 +4,7 @@ import org.apache.commons.httpclient.*;
 import org.apache.commons.httpclient.auth.AuthScope;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -300,7 +301,7 @@ public class ConnectionsSync {
 					//this entry is not in the feed anymore: remove it
 					lotus.domino.Document doc = ve.getDocument();
 					
-					String type = ( doc.getItemValueString("form").equals("fFolder") ? "folder" : "file");
+					String type = ( doc.getItemValueString("form").equals("frmFolder") ? "folder" : "file");
 					String title = doc.getItemValueString("title");
 					
 					getDBar().info("- removing deleted " + type + ", title: " + title + ", id: " + id);
@@ -464,41 +465,45 @@ public class ConnectionsSync {
 			
 			for (Entry entry : entries) {
 				
-				String entryTitle = entry.getTitle();
-				String entryId = getLocalId(entry.getId().toString() );
+				try {
+					String entryTitle = entry.getTitle();
+					String entryId = getLocalId(entry.getId().toString() );
 
-				getDBar().debug( "> title: " + entryTitle + ", id: " + entryId);
-				Utils.showProgress("Process library entry " + entryTitle );
-				
-				processedIds.add(entryId);
-
-				List<Category> categories = entry.getCategories("tag:ibm.com,2006:td/type");
-				
-				if (categories.size()>0) {
-					Category firstCat = categories.get(0);
-
-					if (firstCat.getTerm().equals(TERM_FOLDER)) {		//folder
-	
-						// create a folder document in the current database for this folder
-						createFolder(entry, entryId, folderTree );
-						
-						// process the entries of the folder						
-						Vector<String> tmp = new Vector<String>();
-						tmp.addAll(folderTree);
-						tmp.add( entryId );
-						
-						processLibraryFeed(client, entry.getContentSrc().getPath(), tmp );
+					getDBar().debug( "> title: " + entryTitle + ", id: " + entryId);
+					Utils.showProgress("Process library entry " + entryTitle );
 					
-					} else if (firstCat.getTerm().equals(TERM_DOCUMENT)) {		//file
-								
-						createFile(entry, entryId, folderTree );
-	
+					processedIds.add(entryId);
+
+					List<Category> categories = entry.getCategories("tag:ibm.com,2006:td/type");
+					
+					if (categories.size()>0) {
+						Category firstCat = categories.get(0);
+
+						if (firstCat.getTerm().equals(TERM_FOLDER)) {		//folder
+
+							// create a folder document in the current database for this folder
+							createFolder(entry, entryId, folderTree );
+							
+							// process the entries of the folder						
+							Vector<String> tmp = new Vector<String>();
+							tmp.addAll(folderTree);
+							tmp.add( entryId );
+							
+							processLibraryFeed(client, entry.getContentSrc().getPath(), tmp );
+						
+						} else if (firstCat.getTerm().equals(TERM_DOCUMENT)) {		//file
+									
+							createFile(entry, entryId, folderTree );
+
+						}
 					}
-				}
-				
-				if (DEBUG_MAX_FILES_DOWNLOAD > 0 && numFilesProcessed >= DEBUG_MAX_FILES_DOWNLOAD) {
-					getDBar().warn("abort further processing: 1 file downloaded");
-					return;
+					
+					if (DEBUG_MAX_FILES_DOWNLOAD > 0 && numFilesProcessed >= DEBUG_MAX_FILES_DOWNLOAD) {
+						getDBar().warn("abort further processing: 1 file downloaded");
+						return;
+					}
+				} catch (Exception e) {
+					getDBar().error(e);
 				}
 
 			}
@@ -534,7 +539,7 @@ public class ConnectionsSync {
 			if (docFolder == null) {
 				
 				docFolder = vEntries.getParent().createDocument();
-				docFolder.replaceItemValue("form", "fFolder");
+				docFolder.replaceItemValue("form", "frmFolder");
 				docFolder.replaceItemValue("id", entryId);
 				docFolder.replaceItemValue("configId", configId);
 				
@@ -627,8 +632,8 @@ public class ConnectionsSync {
 	}
 	
 	//retrieve the local part of an entry id (withouth the namespaces)
-	private String getLocalId( String id) {
-		String localId = java.net.URLDecoder.decode(id);
+	private String getLocalId( String id) throws UnsupportedEncodingException {
+		String localId = java.net.URLDecoder.decode(id, "UTF-8");
 		return localId.substring( localId.indexOf("{")+1, localId.length()-1);
 	}
 	

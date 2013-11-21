@@ -1,11 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<form name='fCommunity' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257C070036FEE1'
- hide='web' publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
-<noteinfo noteid='1ba' unid='70C3E167D1C97CFFC1257A84005015C0' sequence='6'>
+<form name='frmCommunity' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C1257C070036FEE1' hide='web' publicaccess='false' designerversion='8.5.3'
+ renderpassthrough='true'>
+<noteinfo noteid='1ba' unid='70C3E167D1C97CFFC1257A84005015C0' sequence='8'>
 <created><datetime dst='true'>20120925T163444,48+02</datetime></created>
-<modified><datetime dst='true'>20131017T120043,90+02</datetime></modified>
-<revised><datetime dst='true'>20120927T154517,97+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131017T120043,89+02</datetime></lastaccessed>
+<modified><datetime>20131104T102547,66+01</datetime></modified>
+<revised><datetime>20131104T102547,64+01</datetime></revised>
+<lastaccessed><datetime>20131104T102547,64+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131017T120043,89+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>

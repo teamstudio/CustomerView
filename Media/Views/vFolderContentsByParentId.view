@@ -1,22 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
 <view name='vFolderContentsByParentId' xmlns='http://www.lotus.com/dxl' version='9.0'
- replicaid='C1257C070036FEE1' hide='web' showinmenu='false' publicaccess='false'
- designerversion='8.5.3' unreadmarks='none' onopengoto='lastopened' onrefresh='displayindicator'
- headers='beveled' opencollapsed='false' showresponsehierarchy='true' showmargin='true'
- shrinkrows='false' extendlastcolumn='false' showhierarchies='false' unreadcolor='black'
- rowlinecount='1' headerlinecount='1' rowspacing='1' bgcolor='white' totalscolor='black'
- headerbgcolor='white' boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
- allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
- uniquekeys='false'>
-<noteinfo noteid='26e' unid='712CEC7CCC337A8EC1257B8C002B7DFF' sequence='17'>
+ maintenanceversion='1.0' replicaid='C1257C070036FEE1' hide='web' showinmenu='false'
+ publicaccess='false' designerversion='8.5.3' unreadmarks='none' onopengoto='lastopened'
+ onrefresh='displayindicator' headers='beveled' opencollapsed='false' showresponsehierarchy='true'
+ showmargin='true' shrinkrows='false' extendlastcolumn='false' showhierarchies='false'
+ unreadcolor='black' rowlinecount='1' headerlinecount='1' rowspacing='1' bgcolor='white'
+ totalscolor='black' headerbgcolor='white' boldunreadrows='false' evaluateactions='false'
+ allownewdocuments='false' allowcustomizations='true' hidemarginborder='false'
+ marginwidth='0px' marginbgcolor='white' uniquekeys='false'>
+<noteinfo noteid='26e' unid='712CEC7CCC337A8EC1257B8C002B7DFF' sequence='19'>
 <created><datetime dst='true'>20130616T095503,03+02</datetime></created>
-<modified><datetime dst='true'>20131017T120054,53+02</datetime></modified>
-<revised><datetime dst='true'>20130703T112022,34+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131017T232711,01+02</datetime></lastaccessed>
+<modified><datetime>20131104T104243,84+01</datetime></modified>
+<revised><datetime>20131104T104243,82+01</datetime></revised>
+<lastaccessed><datetime>20131104T104243,82+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131017T120054,52+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='selection'><formula
->SELECT Form="fFolder": "fFileMetadata"</formula></code>
+>SELECT Form="frmFolder": "frmFileMetadata"</formula></code>
 <column sort='ascending' hidedetailrows='false' itemname='$9' width='10' resizable='true'
  separatemultiplevalues='true' sortnoaccent='true' sortnocase='true' showaslinks='false'
  categorized='true'><columnheader title='folderId'><font size='9pt' style='bold'/></columnheader><code
@@ -28,7 +28,7 @@
  sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
  title='type'><font size='9pt' style='bold'/></columnheader><code event='value'><formula
 >@If(
-form="fFolder"; "folder";
+form="frmFolder"; "folder";
 type)</formula></code></column>
 <column hidedetailrows='false' itemname='id' width='10' resizable='true' separatemultiplevalues='false'
  sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader

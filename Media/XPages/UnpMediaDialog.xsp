@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
 	<xp:this.data>
 		<xp:dominoDocument var="document1" formName="Document"
 			action="openDocument">
 		</xp:dominoDocument>
 	</xp:this.data>
+	
 	<xp:this.resources>
 		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
+		<xp:script src="/unpMedia.jss" clientSide="false"></xp:script>
+		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
 	</xp:this.resources>
+
 	<xp:this.beforeRenderResponse><![CDATA[#{javascript:try{
 		
 	if (context.getUrlParameter("favorite") == "toggle"){
@@ -24,22 +29,74 @@
 			}
 			
 			setFavorites(newfavorites);
+			
 		}else{
+		
 			favorites.push(unid);
 			setFavorites(favorites);
+			
 		}
-	} else if (context.getUrlParameter("download") == "now") {
-	
-		document1.replaceItemValue("isLocal", "true");
-		document1.save(); 
 	
 	} else if (context.getUrlParameter("send") == "email") {
 	
-		var to = context.getUrlParameter("to");
+		//send an email with a link that can be used to access a file
+
+		dBar.debug("send email");
 	
-		var fromName = @Name([CN], @UserName() );
-		var fromEmail = "no-reply@teamstudio.com";
+		var to = context.getUrlParameter("to");
 		
+		dBar.debug("to=" + to);
+		
+		if (isEmpty(to)) {
+			dBar.error("no to address specified...");
+			return;
+		}
+		
+		//create 'download' document to indicate that this file can be downloaded
+		var docDownload:NotesDocument = database.createDocument();
+		docDownload.replaceItemValue("form", "fDownload");
+		
+		var downloadId = docDownload.getUniversalID().toLowerCase();
+		dBar.debug("id=" + downloadId);
+				
+		docDownload.replaceItemValue("downloadId", downloadId );
+		docDownload.replaceItemValue("attachmentDbPath", document1.getItemValueString("attachmentDbPath") ) ;
+		docDownload.replaceItemValue("attachmentSourceUnid", document1.getItemValueString("attachmentSourceUnid") ) ;
+		
+		docDownload.replaceItemValue("sharedWith", to);
+		
+		var EXPIRES_DAYS = 14;		//number of days after which a shared file expires
+
+		var nowMs = (new Date()).getTime();
+		var expiresMs = nowMs + ( EXPIRES_DAYS * 24 * 60 * 60 * 1000 );
+		
+		docDownload.replaceItemValue("expires", session.createDateTime( new Date(expiresMs) ) );
+		
+		docDownload.save();
+	
+		var fromName = @Name("[CN]", @UserName() );
+		var fromEmail = "no-reply@teamstudio.com";
+	
+		var hostName = applicationScope.hostName;
+		
+		if (isEmpty( hostName) ) {
+			var docConfig = database.getView("vConfig").getFirstDocument();
+			applicationScope.put("hostName", docConfig.getItemValueString("hostName") );
+			
+			hostName = applicationScope.hostName;
+		}
+		
+		var attachmentName = document1.getItemValueString("attachmentName");
+		var downloadLink = hostName + "/" + database.getFilePath().replace(".unp", ".nsf");
+		
+		if (isVideo( attachmentName) ) {
+			downloadLink += "/getVideo.xsp?id=" + downloadId;
+		
+		} else {
+		
+			downloadLink += "/getFile.xsp?id=" + downloadId;
+		}
+			
 		docMemo = database.createDocument();
 		docMemo.replaceItemValue("form", "Memo");
 		docMemo.replaceItemValue("SendTo", to );
@@ -50,17 +107,34 @@
 		docMemo.replaceItemValue("Principal", fromEmail + "@NotesDomain" );
 		docMemo.replaceItemValue("INETFROM", fromName + "<" + fromEmail + ">");
 	
-		var body = "A file was just shared with you from the Unplugged Media app:\r\n";
+		var body = "A file was just shared with you from the Unplugged Media app:\r\n\r\n";
+		body += "file name: " + attachmentName + "\r\n";
+		body += "download link: " + downloadLink + "\r\n";
 	
 		docMemo.replaceItemValue("Body", body );
 		
 		docMemo.send();
 		
+		//sync the app, so the email is send immediately
+		db = session.getCurrentDatabase();
+		db.replicate("");
+		mailDb = @MailDbName();
+		dbMail = session.getDatabase(mailDb[0], mailDb[1]);
+		dbMail.replicate("");
+		dbMail.close();
+		
+		dBar.debug("memo send");
+		
+		//add email address to cache
+		var listSession = sessionScope.emailCache || [];
+		
+		listSession.push(to);
+		sessionScope.emailCache = listSession;
 	
 	
 	}
 }catch(e){
-	
+	dBar.error(e);
 }}]]></xp:this.beforeRenderResponse>
 
 	<div id="results">
@@ -68,7 +142,7 @@
 			<div class="hviewclosebutton" onclick="closeDialog('hviewPopup')">
 				&#160; </div>
 			<xp:panel id="hviewicon">
-				<xp:this.styleClass><![CDATA[#{javascript:"hviewicon icon-" + @Right(document1.getItemValueString("attachmentname"), ".")}]]></xp:this.styleClass>
+				<xp:this.styleClass><![CDATA[#{javascript:"hviewicon icon-" + document1.getItemValueString("type")}]]></xp:this.styleClass>
 				<xp:panel tagName="span" id="badge1" styleClass="badge badge-favorite"
 					rendered="#{javascript:@IsMember(document1.getDocument().getUniversalID(), getFavorites());}">
 				</xp:panel>
@@ -117,19 +191,44 @@
 		</div>
 		<div id="hviewitembody">
 			<div id="hviewdialogbuttons">
-				<xp:text tagName="button" styleClass="button downloadnowbutton"
-					id="downloadnowbutton" escape="false">
+				<xp:text tagName="button" styleClass="button downloadnowbutton" id="downloadnowbutton" escape="false">
 					<xp:this.attrs>
 						<xp:attr name="type" value="button"></xp:attr>
 						<xp:attr name="onclick">
-							<xp:this.value><![CDATA[#{javascript:"hviewDownloadNow('" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
+							<xp:this.value><![CDATA[#{javascript:var doc = document1.getDocument();
+var fileName = doc.getItemValueString("attachmentName");
+var url = doc.getItemValueString("attachmentUrlExt");
+
+"downloadFile('" + doc.getUniversalID() + "','" + fileName + "','" + url + "', true);"}]]></xp:this.value>
 						</xp:attr>
 					</xp:this.attrs>
 					<xp:this.value><![CDATA[#{javascript:"<img src=\"unp/icon-button-download.png\" /> Download Now"}]]></xp:this.value>
+					<xp:this.rendered><![CDATA[#{javascript:context.getUrlParameter("islocal") != "true";
+}]]></xp:this.rendered>
 				</xp:text>
+				
+				<!-- remove from device -->
+				<xp:text tagName="button" styleClass="button downloadnowbutton" id="computedField1" escape="false" style="background: #FF3A2D">
+					<xp:this.attrs>
+						<xp:attr name="type" value="button"></xp:attr>
+						<xp:attr name="onclick">
+							<xp:this.value><![CDATA[#{javascript:var doc = document1.getDocument();
+"removeLocalFile('" + doc.getUniversalID() + "');"}]]></xp:this.value>
+						</xp:attr>
+					</xp:this.attrs>
+					<xp:this.value><![CDATA[#{javascript:"Remove from device"}]]></xp:this.value>
+					<xp:this.rendered><![CDATA[#{javascript:context.getUrlParameter("islocal") == "true";
+}]]></xp:this.rendered>
+				</xp:text>
+				
+				
 				<xp:text tagName="div" id="timetodownload" styleClass="timetodownload">
-
-					<xp:this.value><![CDATA[#{javascript:var size = document1.getItemValue("AttachmentSize").elementAt(0);
+				
+					<xp:this.value><![CDATA[#{javascript:if ( context.getUrlParameter("islocal") == "true") {
+					return " ";
+					}
+					
+					var size = document1.getItemValue("AttachmentSize").elementAt(0);
 if (size < 7000000){
 	return "Less than a minute in WiFi";
 }else{
@@ -140,18 +239,8 @@ if (size < 7000000){
 	return "Approx " + @Round(time) + " minutes to download in WiFi";
 }}]]></xp:this.value>
 				</xp:text>
-				<!--<xp:text tagName="button" styleClass="button downloadnowbutton"
-					id="downloadlaterbutton" escape="false">
-					<xp:this.attrs>
-						<xp:attr name="type" value="button"></xp:attr>
-						<xp:attr name="onclick">
-							<xp:this.value><![CDATA[#{javascript:"hviewDownloadLater('" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
-						</xp:attr>
-					</xp:this.attrs>
-					<xp:this.value><![CDATA[#{javascript:"<img src=\"unp/icon-button-sync.png\" /> Download during next Sync"}]]></xp:this.value>
-				</xp:text>
-
-				--><xp:text tagName="button" styleClass="button emailfilebutton"
+				
+				<xp:text tagName="button" styleClass="button emailfilebutton"
 					id="emailfilebutton" escape="false">
 					<xp:this.attrs>
 						<xp:attr name="type" value="button"></xp:attr>
@@ -167,7 +256,12 @@ if (size < 7000000){
 					<xp:this.attrs>
 						<xp:attr name="type" value="button"></xp:attr>
 						<xp:attr name="onclick">
-							<xp:this.value><![CDATA[#{javascript:"hviewFavourite('" + getCurrentXPage() + "', '" + document1.getDocument().getUniversalID() + "')"}]]></xp:this.value>
+							<xp:this.value><![CDATA[#{javascript:var doc = document1.getDocument(true);
+var fileName = doc.getItemValueString("attachmentName");
+var url = doc.getItemValueString("attachmentUrlExt");
+var isFavorite = @IsMember( doc.getUniversalID(), getFavorites() );
+							
+							"toggleFavorite(" + (isFavorite ? "true" : "false") + ",'" + getCurrentXPage() + "', '" + doc.getUniversalID() + "','" + fileName + "','" + url + "')"}]]></xp:this.value>
 						</xp:attr>
 					</xp:this.attrs>
 					<xp:this.value><![CDATA[#{javascript:"<img src=\"unp/icon-button-favorite.png\" /> " + ( @IsMember( document1.getDocument().getUniversalID(), getFavorites()) ? "Unmark as Favorite" : "Mark as Favorite")}]]></xp:this.value>
@@ -175,14 +269,15 @@ if (size < 7000000){
 			</div>
 
 			<div id="emailholder" styleClass="emailholder" style="display: none;">
-				<input id="emailaddress" name="emailaddress" value=""
-					placeholder="Enter email address..." />
-				<xp:text tagName="button" styleClass="button emailsendbutton"
+				<input id="emailaddress" name="emailaddress" value="" class="autocomplete deletable"
+					placeholder="Enter email address..." auto-src="UnpMediaEmailAuto.xsp" />
+					
+					<xp:text tagName="button" styleClass="button emailsendbutton"
 					id="sendemail" escape="false">
 					<xp:this.attrs>
 						<xp:attr name="type" value="button"></xp:attr>
 						<xp:attr name="onclick">
-							<xp:this.value><![CDATA[#{javascript:"hviewEmailSend('" + getCurrentXPage() + "', '" + document1.getDocument().getUniversalID() + "', $('emailaddress').val())"}]]></xp:this.value>
+							<xp:this.value><![CDATA[#{javascript:"hviewEmailSendMedia('" + getCurrentXPage() + "', '" + document1.getDocument().getUniversalID() + "', $('#emailaddress').val())"}]]></xp:this.value>
 						</xp:attr>
 					</xp:this.attrs>
 					<xp:this.value><![CDATA[#{javascript:"<img src=\"unp/icon-button-mail.png\" /> Send"}]]></xp:this.value>
@@ -201,4 +296,5 @@ if (size < 7000000){
 
 		</div>
 	</div>
+
 </xp:view>

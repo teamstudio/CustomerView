@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<form name='feedData' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257C070036FEE1'
- hide='web' publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
+<form name='feedData' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C1257C070036FEE1' hide='web' publicaccess='false' designerversion='8.5.3'
+ renderpassthrough='true'>
 <noteinfo noteid='15a' unid='6FE5AB839FF6CF53C1257A47006CE3B9' sequence='4'>
 <created><datetime dst='true'>20120726T214921,85+02</datetime></created>
 <modified><datetime dst='true'>20131017T120042,97+02</datetime></modified>

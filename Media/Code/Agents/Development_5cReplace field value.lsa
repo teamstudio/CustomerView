@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <agent name='Development\Replace field value' xmlns='http://www.lotus.com/dxl'
- version='9.0' replicaid='C1257C070036FEE1' hide='web v3' publicaccess='false'
- designerversion='8.5.2'>
+ version='9.0' maintenanceversion='1.0' replicaid='C1257C070036FEE1' hide='web v3'
+ publicaccess='false' designerversion='8.5.2'>
 <noteinfo noteid='842' unid='02B60BFCFE755F53C1257B9C00501B70' sequence='1'>
 <created><datetime dst='true'>20130702T163459,04+02</datetime></created>
 <modified><datetime dst='true'>20131017T120106,58+02</datetime></modified>
@@ -82,12 +82,12 @@ Option Declare
 End Sub</lotusscript></code>
 <rundata processeddocs='0' exitcode='0' agentdata='51E7B54F4199B160C12578B10046E6C7'>
 <agentmodified><datetime dst='true'>20131017T120106,58+02</datetime></agentmodified>
-<agentrun><datetime dst='true'>20131021T104837,49+02</datetime></agentrun>
-<runlog>Started running agent 'Development\Replace field value' on 21-10-2013 10:48:32
-Running on selected documents: 14 total
-Found 14 document(s) that match search criteria
+<agentrun><datetime>20131111T170032,19+01</datetime></agentrun>
+<runlog>Started running agent 'Development\Replace field value' on 11-11-2013 17:00:26
+Running on selected documents: 15 total
+Found 15 document(s) that match search criteria
 Ran LotusScript code
-Done running agent 'Development\Replace field value' on 21-10-2013 10:48:37
+Done running agent 'Development\Replace field value' on 11-11-2013 17:00:32
 </runlog></rundata>
 <item name='$POID'><datetime>20121121T144726,83+01</datetime></item></agent>
 

@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" 
-	xmlns:unp="http://unplugged.teamstudio.com" 
-	xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com" xmlns:xc="http://www.ibm.com/xsp/custom">
 
+	<xp:this.resources>
+		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
+		<xp:script src="/unpConfig.jss" clientSide="false"></xp:script>
+		
+	</xp:this.resources>
+	
 	<xc:unpResources></xc:unpResources>
-	
+
 	<unp:unpHeader search="database" viewsButton="true" title="Contacts" searchPage="UnpContactSearch.xsp"></unp:unpHeader>
-	
+
 	<xc:unpMenu></xc:unpMenu>
-	
+
 	<div id="content">
 		<unp:unpScrollableArea>
 			<xp:this.facets>
-			<unp:unpFlatView xp:key="facet_1" insetData="true" detailColumn="unpDetails" 
-				summaryColumn="unpName" title="Recent activities"
-				viewName="unpActivities" xpageDoc="UnpActivity.xsp" 
-				dbName="#{javascript:applicationScope.dbActivitiesPath}"
-				numberofrows="20" photoColumn="Icon" placeHolderIcon="user">
+				<unp:unpFlatView xp:key="facet_1" insetData="true" detailColumn="unpDetails" summaryColumn="unpName" title="Recent activities"
+					viewName="unpActivities" xpageDoc="UnpActivity.xsp" numberofrows="20" photoColumn="Icon" placeHolderIcon="user">
+					<unp:this.dbName><![CDATA[#{javascript://we need to init here this way because of the order in which libraries are loaded
+
+var path = applicationScope.dbActivitiesPath;
+
+if (path == null || path.length==0) {
+	var vwConfig:NotesView = database.getView("unpConfig");
+	var docConfig:NotesDocument = vwConfig.getFirstDocument();
+	
+	if (null != docConfig) {
+		
+		path = docConfig.getItemValueString("dbActivitiesPath")	
+		applicationScope.put("dbActivitiesPath", path );
+		
+	}
+}
+
+return path;
+}]]></unp:this.dbName>
 				</unp:unpFlatView>
 			</xp:this.facets>
 		</unp:unpScrollableArea>
 	</div>
-	
+
 	<unp:unpFooter synctype="alldbs" newDocLoadType="ajax"></unp:unpFooter>
 
 </xp:view>

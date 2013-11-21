@@ -32,8 +32,6 @@ m.push( { label: "Activities", disabled: "no", page : "/UnpActivities.xsp", ajax
 
 m.push( { label: "Media", disabled: "no", page : "/" + applicationScope.dbMediaPath + "/UnpMain.xsp", ajaxtargetid: null, ajaxloadid : null, icon : "file", submenu : "no" });
 
-m.push( { label: "Deals", disabled: "no", page : "/UnpContacts.xsp", ajaxtargetid: "content", ajaxloadid : "contentwrapper", icon : "folder_plus", submenu : "no" });
-
 return m;
 }]]>
 		</unp:this.menuItems>

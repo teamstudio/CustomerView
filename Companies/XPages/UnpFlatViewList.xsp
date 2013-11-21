@@ -64,9 +64,9 @@ if (start == ""){
 			viewScope.rowcount = viewScope.rowcount + 1;
 		}
 		if (context.getUrlParameter("ajaxload") != "No"){
-			return "openDocument('" + getDbPath() + "/" + context.getUrlParameter("xpage") + "?action=openDocument&documentId=" + thisRowData.getDocument().getUniversalID() + "', 'content');";
+			return "openDocument('" + getDbPath() + "/" + context.getUrlParameter("xpage") + "?action=openDocument&documentId=" + thisRowData.getUniversalID() + "', 'content');";
 		}else{
-			return "document.location.href='" + getDbPath() + "/" + context.getUrlParameter("xpage") + "?action=openDocument&documentId=" + thisRowData.getDocument().getUniversalID() + "'";
+			return "document.location.href='" + getDbPath() + "/" + context.getUrlParameter("xpage") + "?action=openDocument&documentId=" + thisRowData.getUniversalID() + "'";
 		}
 	}
 }catch(e){}}]]></xp:this.value>

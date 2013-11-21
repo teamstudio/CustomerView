@@ -20,11 +20,15 @@
 }else{
 	return compositeData.categoryfilter;
 }}]]></xp:this.categoryFilter>
-			<xp:this.databaseName><![CDATA[#{javascript:if (compositeData.dbName != null){
+			<xp:this.databaseName><![CDATA[#{javascript:
+			
+		if (compositeData.dbName != null){
+						
 	var db = session.getDatabase("", compositeData.dbName);
 	if (db == null){
 		return null;
 	}else{
+		print ("got it: "); 
 		return compositeData.dbName;
 	}
 }}]]></xp:this.databaseName>
@@ -86,7 +90,7 @@ if (compositeData.enableAZPicker == "yes"){
 							<xp:this.attrs>
 								<xp:attr name="onClick">
 									<xp:this.value><![CDATA[#{javascript:
-	var url = getDbPath() + "/" + compositeData.xpageDoc + "?action=openDocument&documentId=" + thisRowData.getDocument().getUniversalID();
+	var url = getDbPath() + "/" + compositeData.xpageDoc + "?action=openDocument&documentId=" + thisRowData.getUniversalID();
 	if (compositeData.ajaxload != "No"){
 		return "openDocument('" + url + "', 'content', true);"
 	}else{

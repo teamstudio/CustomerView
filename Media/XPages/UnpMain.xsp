@@ -8,26 +8,33 @@
 	<xp:this.resources>
 		<xp:styleSheet href="/unplugged-light.css"></xp:styleSheet>
 		<xp:styleSheet href="/unplugged-media.css"></xp:styleSheet>
+		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
 		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
 		<xp:script src="/unpMedia.jss" clientSide="false"></xp:script>
 		<xp:script src="/unpMediaJS.js" clientSide="true"></xp:script>
 	</xp:this.resources>
-
-
+	
 	<xp:this.beforePageLoad><![CDATA[#{javascript://enable workaround to play videos
 	session.setEnvironmentVar("unp.debug.workaround-video", "1", true);
 
 //for this prototype we mark all files in the app as being local (except a few)
-//TODO: Make this dynamic based on the files that are in fact local (requires Unplugged vNext)
 
-var d = $A(@Trim(@DbColumn(@DbName(), "unpFilesByFolder", 8)));	//unique list of unids of all files in the system
+if (!sessionScope.containsKey("downloaded") ) {
 
-//dBar.debug("set downloaded for : " + d.length);
+	var userName = session.getEffectiveUserName(); 
+	var docUser = database.getView("unpUsers").getDocumentByKey( userName, true );
+			
+	if (docUser != null && docUser.hasItem("downloadedFiles") ) {
+		sessionScope.put("downloaded", docUser.getItemValue("downloadedFiles") );
+	} else {
+		sessionScope.put("downloaded", [] );
+	}
 
-sessionScope.downloaded = d}]]></xp:this.beforePageLoad>
-	<unp:unpHeader search="database" searchPage="UnpMediaSearch.xsp"
-		viewsButton="false" appDescription="CustomerView" appVersion="0.5"
-		title="CustomerView">
+}
+}]]></xp:this.beforePageLoad>
+	
+	<unp:unpHeader search="database" searchPage="UnpMediaSearch.xsp" 
+		viewsButton="false"	title="CustomerView">
 	</unp:unpHeader>
 
 	<unp:unpNavigatorComputed>
@@ -35,15 +42,14 @@ sessionScope.downloaded = d}]]></xp:this.beforePageLoad>
 	</unp:unpNavigatorComputed>
 	
 	<div id="content">
-	
+		
 		<unp:unpScrollableArea>
 			<xp:this.facets>
-				<unp:unpHorizontalView xp:key="facet_1"
-					dialogxpage="UnpDemoHorizontalViewDialog" sourcediv="results"
-					primaryview="unpFilesByFolder" filterview="unpFilesFilter"
-					toplevelcategory="All" title="Media Library"
-					subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque arcu tellus, ullamcorper et tortor commodo, volutpat facilisis arcu. Donec eleifend nisl sed erat scelerisque sollicitudin.">
-				</unp:unpHorizontalView>
+				<unp:unpHorizontalView xp:key="facet_1" dialogxpage="UnpMediaDialog" sourcediv="results"
+				primaryview="unpFilesByFolder" filterview="unpFilesFilter"
+				toplevelcategory="All" title="Media Library"
+				subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque arcu tellus, ullamcorper et tortor commodo, volutpat facilisis arcu. Donec eleifend nisl sed erat scelerisque sollicitudin.">
+			</unp:unpHorizontalView>
 			</xp:this.facets>
 		</unp:unpScrollableArea>
 	</div>
@@ -59,7 +65,4 @@ sessionScope.downloaded = d}]]></xp:this.beforePageLoad>
 			</unp:tab>
 		</unp:this.tab>
 	</unp:unpTabbedFooter>
-	
-	
-
 </xp:view>

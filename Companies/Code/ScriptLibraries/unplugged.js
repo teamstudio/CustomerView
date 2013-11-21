@@ -8,6 +8,7 @@
  * KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License
  */
+
 var bLoaded = false;
 $(window)
 		.load(
@@ -186,24 +187,31 @@ function loadmore(dbName, viewName, summarycol, detailcol, category, xpage,
 	}
 }
 
-function openDocument(url, target, loadFooter) {
+function openDocument(url, target, loadFooter, replaceState) {
 	// $.blockUI();
 	// document.location.href = url;
 	var thisArea = $("#" + target);
+	
+	var replace = ( arguments.length >= 4 && replaceState);
+	
 	thisArea.load(url.replace(" ", "%20") + " #contentwrapper",
-			function(data) {
+			function(data, status, xhr) {
+		
+				if (status=="error") {
+					alert("An error occurred:\n\n" + xhr.status + " " + xhr.statusText + "\n\n" + $(data).text());
+				}
 
 				if (firedrequests != null) {
 					firedrequests = new Array();
 				}
 				
-				unp.storePageRequest(url);
+				unp.storePageRequest(url, replace);
 				
 				//extract footer content from ajax request and update footer
 				if (loadFooter) {
 					var footerNode = $(data).find(".footer");
 					if (footerNode) {
-						$(".footer").html( footerNode );
+						$(".footer").replaceWith( footerNode );
 					}
 				}
 				
@@ -228,6 +236,7 @@ function openDocument(url, target, loadFooter) {
 				}
 				return false;
 			});
+
 }
 
 function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname) {
@@ -261,10 +270,15 @@ function saveDocument(formid, unid, viewxpagename, formname, parentunid, dbname)
 				function(response) {
 					console.log(response.length);
 					if (response.length == 32) {
+						
+						//item has been saved: remove the last history entry
+						//from the pushState (openDocument will add another one)
+						
 						openDocument(
+								//ML: Update footer too when opening a document
 								viewxpagename
 										+ "?action=openDocument&documentId="
-										+ response, "content");
+										+ response, "content", true, true);
 						initiscroll();
 					} else {
 						alert(response);
@@ -333,7 +347,7 @@ function loadPage(url, target, menuitem, pushState, loadFooter) {
 		if (loadFooter) {
 			var footerNode = $(data).find(".footer");
 			if (footerNode) {
-				$(".footer").html( footerNode );
+				$(".footer").replaceWith( footerNode );
 			}
 		}
 
@@ -766,6 +780,7 @@ function hviewFavourite(xpage, unid) {
 	if (xpage.indexOf(".xsp") == -1) {
 		xpage += ".xsp";
 	}
+	
 	var url = xpage + "?favorite=toggle&action=openDocument&documentId=" + unid;
 	$("#hviewitemcontent").load(url.replace(" ", "%20") + " #results");
 	$("[unid='" + unid + "'] .badge-favorite").toggle();
@@ -800,14 +815,19 @@ if (!unp) {
 			
 		_firstLoad : true,
 		
-		storePageRequest : function(url) {
+		storePageRequest : function(url, replace) {
 			
 			this._firstLoad = false;
 			
 			if (url.indexOf("#")>-1) {
 				url = url.substring(0, url.indexOf(" #"));
 			}
-			history.pushState(null, "", url);
+			
+			if (arguments.length > 1 && replace) {
+				history.replaceState(null, "", url);
+			} else {
+				history.pushState(null, "", url);
+			}
 		}
 			
 	};

@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="17e" sequence="87" unid="B2E4FDD77DE9AB09C1257BE90041A99D">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="17e" sequence="101" unid="B2E4FDD77DE9AB09C1257BE90041A99D">
 <created><datetime dst="true">20130917T135712,61+02</datetime></created>
-<modified><datetime dst="true">20131008T164119,84+02</datetime></modified>
-<revised><datetime dst="true">20131008T164119,82+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131008T164119,82+02</datetime></lastaccessed>
+<modified><datetime>20131105T214533,64+01</datetime></modified>
+<revised><datetime>20131105T214533,62+01</datetime></revised>
+<lastaccessed><datetime>20131105T214533,62+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130923T115232,71+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<updatedby><name>CN=Mark Leusink/O=SAXDEV</name><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
 <item name="$TITLE"><text>unpFlatView.xsp</text></item>
 
@@ -18,6 +18,6 @@
 
 
 
+<item name="$FileNames" sign="true"><text>unpFlatView.xsp</text></item>
 
-
-<item name="$FileNames" sign="true"><text>unpFlatView.xsp</text></item></note>
+</note>

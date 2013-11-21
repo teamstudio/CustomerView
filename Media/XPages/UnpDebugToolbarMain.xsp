@@ -18,17 +18,62 @@ the specific language governing permissions and limitations under the License
 	<xp:this.beforePageLoad><![CDATA[#{javascript:dBar.init(false);
 	}]]></xp:this.beforePageLoad>
 	
-	<xp:panel id="dBar" styleClass="dBar" style="font-size: 12px;" rendered="#{javascript:dBar.isEnabled()}">
+	<xp:this.afterPageLoad><![CDATA[#{javascript:try {
+	var type = context.getUrlParameter("type") + "";
+	
+	if ( type == "") { return; }
+	
+var msg = context.getUrlParameter("msg") + "";
 
+switch (type.toLowerCase()) {
+
+	case "debug":
+		dBar.debug(msg);
+		break;
+	case "time":
+		dBar.time(msg);
+		break;
+	case "clear":
+		dBar.clear();
+		break;
+	case "save":
+		if ( dBar.save() ) {
+			dBar.info("All messages saved to database");
+		}
+		break;
+	case "sync":
+		dBar.debug("Sync: start");
+		
+		var dbCurrent = session.getCurrentDatabase();
+		dbCurrent.replicate("");
+
+		dBar.debug("Sync: done");
+		break;
+	case "enablefirebug":
+		dBar.setFirebugEnabled(true);
+		break;
+	case "disablefirebug":
+		dBar.setFirebugEnabled(false);
+		break;
+}
+
+} catch (e) {
+	print(e);
+}
+}]]></xp:this.afterPageLoad>
+
+	<xp:panel id="dBar" styleClass="dBar" style="font-size: 12px;">
+		<xp:this.rendered><![CDATA[#{javascript:dBar.isEnabled() && (context.getUrlParameter("type") == null || context.getUrlParameter("type")=="") }]]></xp:this.rendered>
+		
 		<div class="header">
 
 			<div style="float:right">
-				
+
 				<xp:button value="hide" id="button1" styleClass="button debugbutton">
 					<xp:this.attrs>
 						<xp:attr name="onclick">
-					
-						<xp:this.value><![CDATA[
+
+							<xp:this.value><![CDATA[
 						$("#dBarContents")
 							.hide()
 							.empty();
@@ -38,27 +83,13 @@ the specific language governing permissions and limitations under the License
 						</xp:attr>
 					</xp:this.attrs>
 				</xp:button>
-				
-				<!--<xp:button id="btnCollapse" rendered="#{javascript:!dBar.isCollapsed()}" styleClass="button debugbuttonsmall">
-					<xp:this.value><![CDATA[<]]></xp:this.value>
-					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
-						<xp:this.action><![CDATA[#{javascript:dBar.setCollapsed(true);}]]></xp:this.action>
-					</xp:eventHandler>
-				</xp:button>
-				
-				<xp:button id="btnExpand" rendered="#{javascript:dBar.isCollapsed()}" styleClass="button debugbuttonsmall">
-					<xp:this.value><![CDATA[>]]></xp:this.value>
-					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
-						<xp:this.action><![CDATA[#{javascript:dBar.setCollapsed(false);}]]></xp:this.action>
-					</xp:eventHandler>
-				</xp:button>
 
-			--></div>
-			
+			</div>
+
 			<h1>Unplugged Debug Toolbar</h1>
-			
+
 		</div>
-		
+
 		<xp:div rendered="#{javascript:!dBar.isCollapsed()}" id="dBarContent">
 
 			<!-- actions -->
@@ -100,11 +131,11 @@ the specific language governing permissions and limitations under the License
 						</xp:this.attrs>
 					</xp:button>
 
-					<xp:button value="reload" id="button7" styleClass="button debugbutton">
+					<xp:button value="refresh toolbar" id="button7" styleClass="button debugbutton">
 						<xp:this.attrs>
 							<xp:attr name="onclick">
-						
-							<xp:this.value><![CDATA[
+
+								<xp:this.value><![CDATA[
 							$('#dBarContents')
 								.text('Loading...')
 								.show()
@@ -115,39 +146,69 @@ the specific language governing permissions and limitations under the License
 						</xp:this.attrs>
 					</xp:button>
 
-					<!--
-					TODO
 					<xp:button value="sync" id="button3" styleClass="button debugbutton">
-						<xp:eventHandler immediate="true" event="onclick" submit="true" refreshMode="complete">
-
-							<xp:this.action><![CDATA[#{javascript:dBar.debug("sync: start");
-		
-		var dbCurrent = session.getCurrentDatabase();
-		dbCurrent.replicate("");
-
-							dBar.debug("sync: done");
-							
+						<xp:this.attrs>
+							<xp:attr name="onclick">
+								<xp:this.value><![CDATA[
+						$.get('UnpDebugToolbarMain.xsp?type=sync', function() { 
 							//reload the current page (required to show updates)
-							context.redirectToPage( context.getUrl().toString() );
-							}]]></xp:this.action>
-						</xp:eventHandler>
+							window.location.reload(true);
+						} );
+						]]>
+								</xp:this.value>
+							</xp:attr>
+						</xp:this.attrs>
 					</xp:button>
 
-				--></div>
+					<xp:button value="enable firebug" id="button2" styleClass="button debugbutton"
+						rendered="#{javascript:!dBar.isFirebugEnabled();}">
+						<xp:this.attrs>
+							<xp:attr name="onclick">
+								<xp:this.value><![CDATA[
+						$.get('UnpDebugToolbarMain.xsp?type=enablefirebug', function() { 
+							//reload the current page (required to show updates)
+							window.location.reload(true);
+						} );
+						]]>
+								</xp:this.value>
+							</xp:attr>
+						</xp:this.attrs>
+					</xp:button>
+					
+					<xp:button value="disable firebug" id="button4" styleClass="button debugbutton"
+						rendered="#{javascript:dBar.isFirebugEnabled();}">
+						<xp:this.attrs>
+							<xp:attr name="onclick">
+								<xp:this.value><![CDATA[
+						$.get('UnpDebugToolbarMain.xsp?type=disablefirebug', function() { 
+							//reload the current page (required to show updates)
+							window.location.reload(true);
+						} );
+						]]>
+								</xp:this.value>
+							</xp:attr>
+						</xp:this.attrs>
+					</xp:button>
+
+				</div>
 			</div>
 
 			<!-- messages -->
 			<div id="dBarMessages" class="section">
 				<div class="title" style="font-weight:bold">
 					Messages
-					
+
 					<div style="float:right">
 						<xp:button styleClass="button debugbutton" value="save">
 							<xp:this.attrs>
 								<xp:attr name="onclick">
-								<xp:this.value><![CDATA[
-							$.get('UnpDebugToolbarHelper.xsp?type=save', function() { 
-								alert('Messages saved');
+									<xp:this.value><![CDATA[
+							$.get('UnpDebugToolbarMain.xsp?type=save', function() { 
+								$('#dBarContents')
+									.text('Loading...')
+									.show()
+									.load('UnpDebugToolbarMain.xsp .dBar', function() {
+								});
 							} );
 							]]></xp:this.value>
 								</xp:attr>
@@ -159,8 +220,8 @@ the specific language governing permissions and limitations under the License
 						<xp:button styleClass="button debugbutton" value="clear">
 							<xp:this.attrs>
 								<xp:attr name="onclick">
-								<xp:this.value><![CDATA[
-							$.get('UnpDebugToolbarHelper.xsp?type=clear', function() { 
+									<xp:this.value><![CDATA[
+							$.get('UnpDebugToolbarMain.xsp?type=clear', function() { 
 								$('#dBarMessages .content').text('No messages found');
 							} );
 							]]></xp:this.value>
@@ -178,23 +239,28 @@ the specific language governing permissions and limitations under the License
 
 					<table class="grid">
 						<tbody>
-							<xp:repeat id="repeat1" rows="250" var="msg">
+							<xp:repeat id="repeat1" rows="250" var="dBarMsg">
 								<xp:this.value><![CDATA[#{javascript:dBar.getMessages();}]]></xp:this.value>
+								
 								<tr style="vertical-align:top">
 
 									<!-- timestamp -->
 									<td class="first">
-
 										<xp:text escape="true" id="computedField1">
-											<xp:this.value><![CDATA[#{javascript:var d = msg.date;
-									d.getHours() + ":" + @Right("0" + d.getMinutes(), 2) + ":" + @Right("0" + d.getSeconds(), 2) + ":" + @Right("00" + d.getMilliseconds(), 3)}]]></xp:this.value>
+											<xp:this.value><![CDATA[#{javascript:try {
+											var d = dBarMsg.date;
+											return d.getHours() + ":" + @Right("0" + d.getMinutes(), 2) + ":" + @Right("0" + d.getSeconds(), 2) + ":" + @Right("00" + d.getMilliseconds(), 3);
+									} catch (e) {
+										return "?";
+									}
+									}]]></xp:this.value>
 										</xp:text>
 
 									</td>
 
 									<!-- message -->
-									<xp:td styleClass="#{javascript:msg.type}">
-										<xp:text escape="true" disableTheme="true" value="#{javascript:msg.text}"></xp:text>
+									<xp:td styleClass="#{javascript:dBarMsg.type}">
+										<xp:text escape="true" disableTheme="true" value="#{javascript:dBarMsg.text}"></xp:text>
 									</xp:td>
 								</tr>
 							</xp:repeat>

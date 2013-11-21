@@ -25,7 +25,8 @@ var dBar = {
 				isEnabled : true,
 				messages : [],
 				isInit : false,
-				timerStarted : 0
+				timerStarted : 0,
+				firebugEnabled : false
 			};
 		}
 	
@@ -33,29 +34,40 @@ var dBar = {
 	
 	init : function( collapsed:boolean ) {
 		
-		var dBar = this._get();
-		if (!dBar.isInit) {
-			dBar.isInit = true;
-			dBar.isCollapsed = collapsed;
+		var _dBar = this._get();
+		if (!_dBar.isInit) {
+			_dBar.isInit = true;
+			_dBar.isCollapsed = collapsed;
 		}
-		sessionScope.put("dBar", dBar);
+		sessionScope.put("dBar", _dBar);
 		
 	},
 	
 	setCollapsed : function( to:boolean ) {
 		
-		var dBar = this._get();
-		dBar.isCollapsed = to;
-		sessionScope.put("dBar", dBar);
+		var _dBar = this._get();
+		_dBar.isCollapsed = to;
+		sessionScope.put("dBar", _dBar);
 		
 	},
 	
 	setEnabled : function( to:boolean ) {
 		
-		var dBar = this._get();
-		dBar.isEnabled = to;
-		sessionScope.put("dBar", dBar);
+		var _dBar = this._get();
+		_dBar.isEnabled = to;
+		sessionScope.put("dBar", _dBar);
 		
+	},
+	
+	setFirebugEnabled : function( to:boolean ) {
+		var _dBar = this._get();
+		_dBar.firebugEnabled = to;
+		sessionScope.put("dBar", _dBar);
+		
+	},
+	
+	isFirebugEnabled : function() {
+		return this._get().firebugEnabled;
 	},
 	
 	//check if the toolbar is enabled
@@ -68,17 +80,17 @@ var dBar = {
 		return this._get().isCollapsed;
 	},
 	
-	//retrieve a list of messages
+	//retrieve a list of messages 
 	getMessages : function() {
 		return this._get().messages;
 	},
 	
 	//clears the list of messages & timer start
 	clear : function() {
-		var dBar = this._get();
-		dBar.messages = [];
-		dBar.timerStarted = 0;
-		sessionScope.put("dBar", dBar);
+		var _dBar = this._get();
+		_dBar.messages = [];
+		_dBar.timerStarted = 0;
+		sessionScope.put("dBar", _dBar);
 	},
 		
 	//add a message to the toolbar
@@ -87,11 +99,11 @@ var dBar = {
 		
 		try {
 		
-			var dBar = this._get();
+			var _dBar = this._get();
 			
-			if ( !dBar.isEnabled ) { return; }
+			if ( !_dBar.isEnabled ) { return; }
 			
-			var messages = dBar.messages;
+			var messages = _dBar.messages;
 			
 			if (typeof msg != "string") {
 				msg = msg.toString();
@@ -102,10 +114,10 @@ var dBar = {
 			if (showTimeSincePrevious && messages.length > 0) {
 				
 				var nowMs = now.getTime();
-				var timerStarted = dBar.timerStarted;
+				var timerStarted = _dBar.timerStarted;
 				
 				if (timerStarted == 0) {
-					dBar.timerStarted = nowMs;
+					_dBar.timerStarted = nowMs;
 					timerStarted = nowMs;
 				}
 				
@@ -119,11 +131,13 @@ var dBar = {
 				"date" : now, 
 				"type" : type
 			};
-			messages.unshift( m );
 			
-			dBar.messages = messages;
+			//messages.unshift( m );
+			messages.push( m );
 			
-			sessionScope.put("dBar", dBar);
+			_dBar.messages = messages;
+			
+			sessionScope.put("dBar", _dBar);
 			
 		} catch (e) {		//error while logging
 			print(e.toString() );
@@ -150,6 +164,8 @@ var dBar = {
 	
 	//store all messages in a document in the current app
 	save : function() {
+		
+		var saved = false;
 	
 		try {
 			
@@ -162,9 +178,9 @@ var dBar = {
 			
 			//TODO: would be great to add device info here too
 			
-			var dBar = this._get();
+			var _dBar = this._get();
 			
-			var messages = dBar.messages;
+			var messages = _dBar.messages;
 			var messagesArr = [];
 			
 			for (var i=0; i<messages.length; i++) {
@@ -173,12 +189,14 @@ var dBar = {
 			}
 			
 			doc.replaceItemValue("LogMessages", messagesArr);
-			doc.save();
+			saved = doc.save();
 		
 		} catch (e) {
 			print("error while saving:");
 			print(e);
 		}
+		
+		return saved;
 	}
 		
 }

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257C070036FEE1" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="38e" sequence="11" unid="898FDD11D63DAA49C1257B950028C9E8">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257C070036FEE1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="38e" sequence="13" unid="898FDD11D63DAA49C1257B950028C9E8">
 <created><datetime dst="true">20130625T092531,28+02</datetime></created>
-<modified><datetime dst="true">20131017T120056,67+02</datetime></modified>
-<revised><datetime dst="true">20130625T134438,66+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131017T120056,66+02</datetime></lastaccessed>
+<modified><datetime>20131030T165624,96+01</datetime></modified>
+<revised><datetime>20131030T165441,68+01</datetime></revised>
+<lastaccessed><datetime>20131030T165624,94+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20131017T120056,66+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
@@ -12,8 +12,8 @@
 
 
 <item name="$FileNames" sign="true"><text>UnpMediaSearch.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5</text></item>
 
+<item name="$DesignerVersion"><text>8.5</text></item>
 
 
 

@@ -1,11 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<form name='fFolder' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257C070036FEE1'
- publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
-<noteinfo noteid='26a' unid='AB2F2E6288CBF3FBC1257B8B0020009F' sequence='12'>
+<form name='frmFolder' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C1257C070036FEE1' publicaccess='false' designerversion='8.5.3'
+ renderpassthrough='true'>
+<noteinfo noteid='26a' unid='AB2F2E6288CBF3FBC1257B8B0020009F' sequence='16'>
 <created><datetime dst='true'>20130615T074933,11+02</datetime></created>
-<modified><datetime dst='true'>20131017T120054,51+02</datetime></modified>
-<revised><datetime dst='true'>20130624T164927,15+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131017T120054,50+02</datetime></lastaccessed>
+<modified><datetime>20131104T102617,29+01</datetime></modified>
+<revised><datetime>20131104T102617,27+01</datetime></revised>
+<lastaccessed><datetime>20131104T102617,27+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131017T120054,50+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='windowtitle'><formula
@@ -82,6 +83,20 @@ Yg4BAIQAAAAAAAAAAAA=
 <par def='5'><run><font size='9pt' style='bold'/></run></par></tablecell></tablerow>
 <tablerow>
 <tablecell>
+<par def='3'><run><font size='9pt' style='bold'/>folderPath</run></par></tablecell>
+<tablecell>
+<par def='4'><run><font size='9pt' style='bold'/></run><run><font size='9pt'/><field
+ type='text' kind='editable' name='folderPath'/></run><compositedata type='98'
+ prevtype='65418' nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par></tablecell>
+<tablecell>
+<par def='5'><run><font size='9pt'/>full path to this folder: if this is a folder in the root this is only the title of this folder, else it is the current title plus the titles of ALL parent folders, separated by a \</run></par>
+<par def='5'><run><font size='9pt'/></run></par>
+<par def='5'><run><font size='9pt'/>e.g. root folder\subfolder\sub-subfolder</run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
 <par def='3'><run><font size='9pt' style='bold'/>tags</run></par></tablecell>
 <tablecell>
 <par def='4'><run><font size='9pt'/></run><run><font size='9pt'/><field type='text'
@@ -92,18 +107,11 @@ Yg4BAIQAAAAAAAAAAAA=
 Yg4BAIQAAAAAAAAAAAA=
 </compositedata><run><font size='9pt'/></run></par></tablecell>
 <tablecell>
-<par def='5'><run><font size='9pt'/></run></par></tablecell></tablerow>
-<tablerow>
-<tablecell>
-<par def='3'><run><font size='9pt' style='bold'/></run></par></tablecell>
-<tablecell>
-<par def='4'><run><font size='9pt'/></run></par></tablecell>
-<tablecell>
 <par def='5'><run><font size='9pt'/></run></par></tablecell></tablerow></table>
 <par def='1'><run><font size='9pt'/></run></par>
 <par def='1'><run><font size='9pt'/></run></par></richtext></body>
-<item name='folderHierarchPosition' summary='false'><number>0</number></item>
-<item name='folderHierarchyPosition' summary='false'><number>0</number></item>
-<item name='hierarchyPosition' summary='false'><number>0</number></item>
+<item name='folderHierarchPosition' summary='false' sign='true'><number>0</number></item>
+<item name='folderHierarchyPosition' summary='false' sign='true'><number>0</number></item>
+<item name='hierarchyPosition' summary='false' sign='true'><number>0</number></item>
 <item name='$$ScriptName' summary='false' sign='true'><text>fFolder</text></item></form>
 

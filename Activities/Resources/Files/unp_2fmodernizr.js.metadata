@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><fileresource alias="scripts/modernizr.js" designerversion="8.5.3" name="unp/modernizr.js" publicaccess="false" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1f6" sequence="1" unid="947334BC9AFD5CBFC1257BF9004BB463">
+<?xml version="1.0" encoding="UTF-8"?><fileresource alias="scripts/modernizr.js" designerversion="8.5.3" maintenanceversion="1.0" name="unp/modernizr.js" publicaccess="false" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1f6" sequence="6" unid="947334BC9AFD5CBFC1257BF9004BB463">
 <created><datetime dst="true">20131003T154653,79+02</datetime></created>
-<modified><datetime dst="true">20131003T154655,64+02</datetime></modified>
-<revised><datetime dst="true">20131003T154655,63+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131003T154655,63+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131003T154655,63+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby></fileresource>
+<modified><datetime>20131107T130140,66+01</datetime></modified>
+<revised><datetime>20131107T130140,65+01</datetime></revised>
+<lastaccessed><datetime>20131107T130140,65+01</datetime></lastaccessed>
+<addedtofile><datetime>20131107T130140,60+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=SAXDEV</name></updatedby></fileresource>

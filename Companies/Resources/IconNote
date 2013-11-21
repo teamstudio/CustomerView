@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- replicaid='C1257BEF00363F66'>
-<noteinfo noteid='126' unid='581B481097F30203C1257BE90040B7C1' sequence='9'>
+ maintenanceversion='1.0' replicaid='C1257BEF00363F66'>
+<noteinfo noteid='126' unid='581B481097F30203C1257BE90040B7C1' sequence='13'>
 <created><datetime dst='true'>20130917T134653,45+02</datetime></created>
-<modified><datetime dst='true'>20131017T154423,09+02</datetime></modified>
-<revised><datetime dst='true'>20131017T154423,07+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131017T154423,07+02</datetime></lastaccessed>
+<modified><datetime>20131114T130858,87+01</datetime></modified>
+<revised><datetime>20131114T130858,86+01</datetime></revised>
+<lastaccessed><datetime>20131114T130858,86+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20130923T115232,10+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Mark Leusink/O=LinQed</name><name>CN=Domino Administrator/O=LinQed</name><name
->CN=Mark Leusink/O=LinQed</name></updatedby>
+<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///4Af//8AD//4AAH/8AAA/+AAAH/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAA
@@ -25,7 +25,10 @@ EREdd3fRERER8AAAAAAA////Ed3dEf///wAAAAAAAAAAAPERER8AAAAAAAAAAAAAAAAP///wAAAA
 AAAAUEECICABAAD/////+A4DgA==
 </rawitemdata></item>
 <item name='$Daos'><text>0</text></item>
-<item name='$Flags'><text>J7z</text></item>
 <item name='$TITLE'><text>Contacts
-</text></item></note>
+</text></item>
+<item name='$DefaultXPage'><text>UnpMain.xsp</text></item>
+<item name='$Flags'><text>J7z!</text></item>
+<item name='$LaunchXPageRunOnServer'><text>0</text></item>
+<item name='$FlagsNoRefresh'><text/></item></note>
 

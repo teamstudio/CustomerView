@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
+
+	<xp:this.resources>
+		<xp:script src="/getFile.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+
+	<xp:this.beforeRenderResponse>
+		<![CDATA[#{javascript:var con:javax.faces.context.ExternalContext = facesContext.getExternalContext();
+var response = con.getResponse();
+var out = response.getOutputStream();
+
+try {
+	print("send a file...");
+	
+	getFile(response, out);
+	
+} catch (e) {
+	print("error");
+}
+
+facesContext.responseComplete();
+out.close(); 
+print("klaar");
+}]]>
+	</xp:this.beforeRenderResponse>
+
+</xp:view>

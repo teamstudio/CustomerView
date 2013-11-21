@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:var exCon = facesContext.getExternalContext(); 
+var writer = facesContext.getResponseWriter();
+var response = exCon.getResponse();
+response.setContentType("text/plain");
+response.setHeader("Cache-Control", "no-cache");
+
+var dbContactsPath = applicationScope.dbContactsPath;
+
+if (isEmpty(dbContactsPath) ) {
+
+	var docConfig = database.getView("vConfig").getFirstDocument();
+	applicationScope.put("dbContactsPath", docConfig.getItemValueString("dbContactsPath") );
+			
+	dbContactsPath = applicationScope.dbContactsPath;
+
+}
+
+var list = $A(@DbLookup(["", applicationScope.dbContactsPath], "unpContactsByEmail", context.getUrlParameter("q"), 1, "[PARTIALMATCH]"));
+
+//add addresses from current session
+var listSession = sessionScope.emailCache;
+
+if (!isEmpty( listSession) ) {
+
+	for( var i=0; i<listSession.length; i++) {
+		list.push( listSession[i] );
+	}
+
+}
+
+list = @Unique(list).sort();
+
+var out = "";
+for (var i=0; i<list.length; i++){
+	out += list[i] + "\n";	
+}
+writer.write(out);
+writer.endDocument();
+facesContext.responseComplete();}]]></xp:this.afterRenderResponse>
+	<xp:this.resources>
+		<xp:script src="/unpCommon.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+</xp:view>

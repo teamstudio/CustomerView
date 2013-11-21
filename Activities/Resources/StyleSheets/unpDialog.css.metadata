@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><stylesheetresource charset="UTF-8" designerversion="8.5.3" fromtemplate="Unplugged Controls" name="unpDialog.css" publicaccess="false" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="222" sequence="1" unid="D420A110881BB949C1257BF9004C3BAA">
+<?xml version="1.0" encoding="UTF-8"?><stylesheetresource charset="UTF-8" designerversion="8.5.3" fromtemplate="Unplugged Controls" maintenanceversion="1.0" name="unpDialog.css" publicaccess="false" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="222" sequence="6" unid="D420A110881BB949C1257BF9004C3BAA">
 <created><datetime dst="true">20131003T155240,10+02</datetime></created>
-<modified><datetime dst="true">20131003T155240,14+02</datetime></modified>
-<revised><datetime dst="true">20131003T155240,13+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131003T155240,13+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131003T155240,13+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby></stylesheetresource>
+<modified><datetime>20131107T130137,63+01</datetime></modified>
+<revised><datetime>20131107T130137,62+01</datetime></revised>
+<lastaccessed><datetime>20131107T130137,62+01</datetime></lastaccessed>
+<addedtofile><datetime>20131107T130137,57+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=SAXDEV</name></updatedby></stylesheetresource>

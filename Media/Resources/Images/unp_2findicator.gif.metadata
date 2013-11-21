@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" fromtemplate="Unplugged Controls 1.8" imagename="indicator.gif" maintenanceversion="1.0" name="unp/indicator.gif" publicaccess="false" replicaid="C1257C070036FEE1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1542" sequence="1" unid="83153ACAA8181E23C1257C1800709F21">
+<created><datetime>20131103T213007,69+01</datetime></created>
+<modified><datetime>20131103T213009,14+01</datetime></modified>
+<revised><datetime>20131103T213009,13+01</datetime></revised>
+<lastaccessed><datetime>20131103T213009,13+01</datetime></lastaccessed>
+<addedtofile><datetime>20131103T213009,13+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name><name>CN=Mark Leusink/O=LinQed</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<item name="$FileModDT" sign="true"><datetime>20130223T212334,00+00</datetime></item>
+</imageresource>

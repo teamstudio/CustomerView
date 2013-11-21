@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com" xmlns:xc="http://www.ibm.com/xsp/custom">
-	
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:unp="http://unplugged.teamstudio.com"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	pageTitle="CustomerView">
+
 	<xc:unpResources></xc:unpResources>
-	
-	<unp:unpHeader search="database" viewsButton="true" title="CustomerView" searchPage="UnpCompanySearch.xsp"></unp:unpHeader>
-	
+
+	<unp:unpHeader
+		search="database"
+		viewsButton="true"
+		title="CustomerView"
+		searchPage="UnpCompanySearch.xsp">
+	</unp:unpHeader>
+
 	<xc:unpMenu></xc:unpMenu>
 
 	<div id="content">
 		<unp:unpScrollableArea>
 			<xp:this.facets>
-				<xp:div xp:key="facet_1" >
-				
-				<unp:unpFlatView insetData="true" detailColumn="unpDetails" summaryColumn="unpName" title="Companies" viewName="unpCompanies"
-						xpageDoc="UnpCompany.xsp" numberofrows="20" refreshmethod="pull" ajaxload="Yes" enableAZPicker="no" photoColumn="unpPhoto"
+				<xp:div xp:key="facet_1">
+
+					<unp:unpFlatView
+						insetData="true"
+						detailColumn="unpDetails"
+						summaryColumn="unpName"
+						title="Companies"
+						viewName="unpCompanies"
+						xpageDoc="UnpCompany.xsp"
+						numberofrows="20"
+						refreshmethod="pull"
+						ajaxload="Yes"
+						enableAZPicker="no"
+						photoColumn="unpPhoto"
 						placeHolderIcon="building">
 					</unp:unpFlatView>
 				</xp:div>
@@ -21,6 +40,10 @@
 		</unp:unpScrollableArea>
 	</div>
 
-	<unp:unpFooter synctype="alldbs" newDocTarget="UnpCompanyEdit.xsp" newDocLoadType="ajax"></unp:unpFooter>
+	<unp:unpFooter
+		synctype="alldbs"
+		newDocTarget="UnpCompanyEdit.xsp"
+		newDocLoadType="ajax">
+	</unp:unpFooter>
 
 </xp:view>

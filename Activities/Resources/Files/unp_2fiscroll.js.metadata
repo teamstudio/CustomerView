@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><fileresource charset="ISO-2022-JP" designerversion="8.5.3" fromtemplate="Unplugged Controls" name="unp/iscroll.js" publicaccess="false" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1de" sequence="1" unid="69ECC6076A4D5150C1257BF9004BB45D">
+<?xml version="1.0" encoding="UTF-8"?><fileresource charset="ISO-2022-JP" designerversion="8.5.3" fromtemplate="Unplugged Controls" maintenanceversion="1.0" name="unp/iscroll.js" publicaccess="false" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1de" sequence="6" unid="69ECC6076A4D5150C1257BF9004BB45D">
 <created><datetime dst="true">20131003T154653,73+02</datetime></created>
-<modified><datetime dst="true">20131003T154655,17+02</datetime></modified>
-<revised><datetime dst="true">20131003T154655,16+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131003T154655,16+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131003T154655,16+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby></fileresource>
+<modified><datetime>20131107T130141,66+01</datetime></modified>
+<revised><datetime>20131107T130141,65+01</datetime></revised>
+<lastaccessed><datetime>20131107T130141,65+01</datetime></lastaccessed>
+<addedtofile><datetime>20131107T130141,60+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=SAXDEV</name></updatedby></fileresource>

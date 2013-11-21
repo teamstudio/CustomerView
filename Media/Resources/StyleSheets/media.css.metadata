@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><stylesheetresource charset="UTF-8" designerversion="8.5.3" name="media.css" publicaccess="false" replicaid="C1257C070036FEE1" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="18e" sequence="120" unid="C0F358394B9BC812C1257A4E007244B0">
+<?xml version="1.0" encoding="UTF-8"?><stylesheetresource charset="UTF-8" designerversion="8.5.3" maintenanceversion="1.0" name="media.css" publicaccess="false" replicaid="C1257C070036FEE1" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="18e" sequence="124" unid="C0F358394B9BC812C1257A4E007244B0">
 <created><datetime dst="true">20120802T224806,88+02</datetime></created>
-<modified><datetime dst="true">20131017T155625,50+02</datetime></modified>
-<revised><datetime dst="true">20131017T155625,48+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131017T155625,48+02</datetime></lastaccessed>
+<modified><datetime>20131105T232810,58+01</datetime></modified>
+<revised><datetime>20131105T232810,56+01</datetime></revised>
+<lastaccessed><datetime>20131105T232810,56+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20131017T120043,47+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby></stylesheetresource>

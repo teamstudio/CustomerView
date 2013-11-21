@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
-
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:unp="http://unplugged.teamstudio.com">
+	
 	<xp:this.resources>
 		<xp:script src="/unpDebugToolbar.jss" clientSide="false"></xp:script>
+		<xp:script src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js" clientSide="true"
+			rendered="#{javascript:try { return dBar.isFirebugEnabled(); } catch (e) { return false; }}">
+		</xp:script>
+		<xp:styleSheet href="/unpDebugToolbar.css"></xp:styleSheet>
 	</xp:this.resources>
-	
+
 	<div id="dBar">
 
 		<div id="dBarLoad" onclick="loadDebugToolbar()">Show toolbar</div>
@@ -22,8 +26,11 @@
 	$("#dBarContents")
 		.text("Loading...")
 		.show()
-		.load("UnpDebugToolbarMain.xsp .dBar", function() {
-			
+		.load("UnpDebugToolbarMain.xsp .dBar", function(responseText, status, xhr) {
+			if (status=="error") {
+				alert( xhr.status + " " + xhr.statusText );
+				alert(responseText);
+			}
 		});
 
 }]]></xp:this.value>

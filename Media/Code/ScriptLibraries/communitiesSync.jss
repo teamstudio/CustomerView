@@ -178,7 +178,7 @@ function processCommunityEntry( entryNode, vwCommunitiesById:NotesView) :String 
 		if (docCommunity == null ) {			//create new community document
 		    	
 			docCommunity = database.createDocument();
-			docCommunity.replaceItemValue("form", "fCommunity" );
+			docCommunity.replaceItemValue("form", "frmCommunity" );
 			docCommunity.replaceItemValue("id", id );
 			docCommunity.replaceItemValue("members", sessionScope.get("currentUser") );
 	

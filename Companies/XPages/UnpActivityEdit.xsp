@@ -14,7 +14,8 @@
 			<xp:div xp:key="facet_1">
 
 				<unp:unpFormEditor showbuttons="yes" closexpagename="UnpMain.xsp" formname="frmActivity" title="Activity"
-					dbName="#{applicationScope.dbActivitiesPath}" viewxpagename="UnpActivity.xsp">
+					dbName="#{applicationScope.dbActivitiesPath}" 
+					viewxpagename="UnpActivity.xsp">
 
 					<xp:this.facets>
 						<xp:panel xp:key="facet_1">

@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="17e" sequence="10" unid="C40B1DD657299508C1257BF900492319">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="17e" sequence="18" unid="C40B1DD657299508C1257BF900492319">
 <created><datetime dst="true">20131003T151851,13+02</datetime></created>
-<modified><datetime dst="true">20131008T122459,10+02</datetime></modified>
-<revised><datetime dst="true">20131008T122459,08+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131008T122459,08+02</datetime></lastaccessed>
+<modified><datetime>20131105T225709,67+01</datetime></modified>
+<revised><datetime>20131105T225709,65+01</datetime></revised>
+<lastaccessed><datetime>20131105T225709,65+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20131003T151851,15+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
 <item name="$TITLE"><text>UnpMain.xsp</text></item>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$Class"><text>TS CustomerView</text></item>
+
+
+
+<item name="$FileNames" sign="true"><text>UnpMain.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5</text></item>
 
 
 
-
-
-
-
-<item name="$FileNames" sign="true"><text>UnpMain.xsp</text></item></note>
+</note>

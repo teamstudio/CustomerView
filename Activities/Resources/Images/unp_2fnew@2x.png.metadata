@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" fromtemplate="Unplugged Controls" imagename="new@2x.png" name="unp/new@2x.png" publicaccess="false" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="192" sequence="1" unid="809567B468CFEE78C1257BF9004BAA33">
+<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" fromtemplate="Unplugged Controls" imagename="new@2x.png" maintenanceversion="1.0" name="unp/new@2x.png" publicaccess="false" replicaid="C1257BF200465B59" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="192" sequence="6" unid="809567B468CFEE78C1257BF9004BAA33">
 <created><datetime dst="true">20131003T154627,71+02</datetime></created>
-<modified><datetime dst="true">20131003T154627,97+02</datetime></modified>
-<revised><datetime dst="true">20131003T154627,96+02</datetime></revised>
-<lastaccessed><datetime dst="true">20131003T154627,96+02</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20131003T154627,96+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
-<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><jpeg>
+<modified><datetime>20131107T130140,07+01</datetime></modified>
+<revised><datetime>20131107T130140,06+01</datetime></revised>
+<lastaccessed><datetime>20131107T130140,06+01</datetime></lastaccessed>
+<addedtofile><datetime>20131107T130140,01+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Mark Leusink/O=SAXDEV</name></updatedby>
+<wassignedby><name>CN=Mark Leusink/O=SAXDEV</name></wassignedby><jpeg>
 iVBORw0KGgoAAAANSUhEUgAAACYAAAAoCAYAAACSN4jeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
 bWFnZVJlYWR5ccllPAAAA7FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp
 bj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6

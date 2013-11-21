@@ -132,10 +132,25 @@ function timeSince(datetime){
     return "less than a minute ago";
 }
 
-function getFavorites(){
+function getFavorites() {
+	
 	var favorites = session.getEnvironmentString("ro.favorites." + @LowerCase(@ReplaceSubstring(database.getFilePath(), "\\", "")), true) + ",";
-	if (favorites == null || favorites == ""){
-		return new Array();
+	
+	if (favorites == null ) {		//get from user document
+		
+		favorites = [];
+		
+		var userName = session.getEffectiveUserName(); 
+		var docUser = database.getView("unpUsers").getDocumentByKey( userName, true );
+		
+		if (docUser != null && docUser.hasItem("favorites") ) {
+			favorites = docUser.getItemValue("favorites");
+		}
+		
+		return favorites;
+		
+	} else if (favorites == ""){
+		return [];
 	}else if(favorites.indexOf(",") > -1){
 		return $A(favorites.split(","));
 	}else{
@@ -144,7 +159,20 @@ function getFavorites(){
 }
 function setFavorites(favoritesarray){
 	session.setEnvironmentVar("ro.favorites." + @LowerCase(@ReplaceSubstring(database.getFilePath(), "\\", "")), @Implode(@Trim(favoritesarray), ","), true);
-	sessionScope.favorites = null;
+	
+	//store favorites in document in current database
+	var userName = session.getEffectiveUserName(); 
+	var docUser = database.getView("unpUsers").getDocumentByKey( userName, true );
+	
+	if (docUser == null) {
+		docUser = database.createDocument();
+		docUser.replaceItemValue("form", "frmUser");
+		docUser.replaceItemValue("userName", userName);
+	}
+	
+	docUser.replaceItemValue("favorites", favoritesarray);
+	docUser.save();
+	
 }
 function getDownloaded(){
 	var downloaded = session.getEnvironmentString("ro.downloaded." + @LowerCase(@ReplaceSubstring(database.getFilePath(), "\\", "")), true);

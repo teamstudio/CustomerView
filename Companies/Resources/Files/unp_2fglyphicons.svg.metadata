@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><fileresource alias="images/glyphicons.svg" designerversion="8.5.3" name="unp/glyphicons.svg" publicaccess="false" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="222" sequence="8" unid="4F495FE0226B078FC1257BEA006A08FC">
+<?xml version="1.0" encoding="UTF-8"?><fileresource alias="images/glyphicons.svg" designerversion="8.5.3" maintenanceversion="1.0" name="unp/glyphicons.svg" publicaccess="false" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="222" sequence="11" unid="4F495FE0226B078FC1257BEA006A08FC">
 <created><datetime dst="true">20130918T211811,16+02</datetime></created>
-<modified><datetime dst="true">20130923T115235,27+02</datetime></modified>
-<revised><datetime dst="true">20130918T212939,88+02</datetime></revised>
-<lastaccessed><datetime dst="true">20130923T115235,26+02</datetime></lastaccessed>
+<modified><datetime>20131105T214429,79+01</datetime></modified>
+<revised><datetime>20131105T214429,78+01</datetime></revised>
+<lastaccessed><datetime>20131105T214429,78+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130923T115235,26+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby></fileresource>

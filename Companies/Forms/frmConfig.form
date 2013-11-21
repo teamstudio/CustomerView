@@ -1,22 +1,59 @@
 <?xml version='1.0' encoding='utf-8'?>
-<form name='frmConfig' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257BEF00363F66'
- publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
-<noteinfo noteid='2a82' unid='7C2D927F6B39F044C1257BF9004391C3' sequence='5'>
+<form name='frmConfig' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C1257BEF00363F66' publicaccess='false' designerversion='8.5.3'
+ renderpassthrough='true'>
+<noteinfo noteid='2a82' unid='7C2D927F6B39F044C1257BF9004391C3' sequence='13'>
 <created><datetime dst='true'>20131003T141802,27+02</datetime></created>
-<modified><datetime dst='true'>20131021T110608,93+02</datetime></modified>
-<revised><datetime dst='true'>20131021T110608,91+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131021T110608,91+02</datetime></lastaccessed>
+<modified><datetime>20131104T142328,15+01</datetime></modified>
+<revised><datetime>20131104T142328,13+01</datetime></revised>
+<lastaccessed><datetime>20131104T142328,13+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131003T141802,46+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
-<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
+<wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><code event='postsave'><lotusscript
+>Sub Postsave(Source As Notesuidocument)
+	
+	On Error Goto errH
+	
+	'copy this document to the activities db
+	
+	Dim dbActivities As NotesDatabase
+	Dim docConfig As NotesDocument
+	
+	Set docConfig = Source.Document
+	
+	Dim s As New NotesSession
+	
+	Set dbActivities = s.GetDatabase( s.CurrentDatabase.Server, docConfig.GetItemValue("dbActivitiesPath")(0) )
+	
+	If dbActivities.IsOpen Then
+		
+		Dim vwConfig As NotesView
+		Dim docConfigTarget As NotesDocument
+		Set vwConfig = dbActivities.getView("unpConfig")
+		
+		Set docConfigTarget = vwConfig.getFirstDocument
+		If docConfigTarget Is Nothing Then
+			
+			docConfig.CopyToDatabase dbActivities
+			
+		Else 
+			
+			Call docConfig.CopyAllItems(docConfigTarget, True)
+			docConfigTarget.Save True, True
+			
+		End If
+		
+	End If
+	
+	Exit Sub
+	
+errH:
+	Print("error: " + Error$)
+	Exit Sub
+	
+End Sub</lotusscript></code>
 <body><richtext>
 <pardef id='1'/>
-<par def='1'/>
-<par def='1'>type: <field type='text' kind='editable' name='type'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
-Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par>
 <par def='1'/>
 <par def='1'>dbActivitiesPath:	<field type='text' kind='editable' name='dbActivitiesPath'/><compositedata
  type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
@@ -34,6 +71,14 @@ Yg4BAIQAAAAAAAAAAAA=
  type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
  aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par></richtext></body>
+</compositedata></par>
+<par def='1'/>
+<par def='1'>type:			<field type='text' kind='editable' name='type'/><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par>
+<par def='1'/>
+<par def='1'/></richtext></body>
 <item name='$$ScriptName' summary='false' sign='true'><text>frmConfig</text></item></form>
 

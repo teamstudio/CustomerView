@@ -12,7 +12,6 @@
 		</xp:styleSheet>
 		<xp:dojoModule name="dojox.image.Lightbox"></xp:dojoModule>
 		<xp:dojoModule name="dijit.Dialog"></xp:dojoModule>
-		<xp:script src="mediaplayer-5.10/jwplayer.js" clientSide="true"></xp:script>
 	</xp:this.resources>
 	
 	<xc:ccLayout>

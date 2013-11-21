@@ -1,11 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<form name='fConfig' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257C070036FEE1'
- hide='web' publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
-<noteinfo noteid='172' unid='FD45F8D987714041C1257A49005083F4' sequence='15'>
+<form name='frmConfig' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C1257C070036FEE1' hide='web' publicaccess='false' designerversion='8.5.3'
+ renderpassthrough='true'>
+<noteinfo noteid='172' unid='FD45F8D987714041C1257A49005083F4' sequence='20'>
 <created><datetime dst='true'>20120728T163926,60+02</datetime></created>
-<modified><datetime dst='true'>20131017T120043,19+02</datetime></modified>
-<revised><datetime dst='true'>20130620T120745,67+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20131017T120043,18+02</datetime></lastaccessed>
+<modified><datetime>20131104T102552,43+01</datetime></modified>
+<revised><datetime>20131104T102552,41+01</datetime></revised>
+<lastaccessed><datetime>20131104T102552,41+01</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20131017T120043,18+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby>
@@ -17,7 +18,7 @@
  type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
  aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par>
+</compositedata><run><font size='9pt'/></run></par>
 <par def='1'><run><font size='9pt' style='bold'/>connectionsServerUrl:</run><run
 ><font size='9pt'/>			</run><run><font size='9pt'/><field type='text' kind='editable'
  name='connectionsServerUrl'/></run><compositedata type='98' prevtype='65418'
@@ -48,19 +49,42 @@ Yg4BAIQAAAAAAAAAAAA=
 Yg4BAIQAAAAAAAAAAAA=
 </compositedata><run><font size='9pt'/></run></par>
 <par def='1'><run><font size='9pt'/>connectionsBindPassword:	</run><run><font
- size='9pt'/><field type='password' kind='editable' seal='true' name='connectionsBindPassword'/></run></par>
-<par def='1'>connectionsCommunityId:	<field type='text' kind='editable' name='connectionsCommunityId'/><compositedata
+ size='9pt'/><field type='password' kind='editable' seal='true' name='connectionsBindPassword'/></run><run
+><font size='9pt'/></run></par>
+<par def='1'><run><font size='9pt'/>connectionsCommunityId:		</run><run><font
+ size='9pt'/><field type='text' kind='editable' name='connectionsCommunityId'/></run><compositedata
  type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
  aftercontainercount='1' afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par>
-<par def='1'>				(id of the community containing the library to be used)</par>
-<par def='1'/>
-<par def='1'>isActive:		<field type='text' kind='editable' name='isActive'/><compositedata
- type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
- aftercontainercount='1' afterbegincount='3'>
+</compositedata><run><font size='9pt'/></run></par>
+<par def='1'><run><font size='9pt'/>				(id of the community containing the library to be used)</run></par>
+<par def='1'><run><font size='9pt'/></run></par>
+<par def='1'><run><font size='9pt'/>isActive:		</run><run><font size='9pt'/><field
+ type='text' kind='editable' name='isActive'/></run><compositedata type='98'
+ prevtype='65418' nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
 Yg4BAIQAAAAAAAAAAAA=
-</compositedata></par>
-<par def='1'>			(true/ false)</par></richtext></body>
+</compositedata><run><font size='9pt'/></run></par>
+<par def='1'><run><font size='9pt'/>		(true/ false)</run></par>
+<par def='1'><run><font size='9pt'/></run></par>
+<par def='1'><run><font size='9pt'/>hostName:	</run><run><font size='9pt'/><field
+ type='text' kind='editable' name='hostName'/></run><compositedata type='98'
+ prevtype='65418' nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par>
+<par def='1'><run><font size='9pt'/>dbContactsPath:	</run><run><font size='9pt'/><field
+ type='text' kind='editable' name='dbContactsPath'/></run><compositedata type='98'
+ prevtype='65418' nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par>
+<par def='1'><run><font size='9pt'/>dbDocLibPath:	</run><run><font size='9pt'/><field
+ type='text' kind='editable' name='dbDocLibPath'/></run><compositedata type='98'
+ prevtype='65418' nexttype='222' afterparcount='6' containertype='65418' aftercontainercount='1'
+ afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='9pt'/></run></par>
+<par def='1'><run><font size='9pt'/></run></par></richtext></body>
 <item name='$$ScriptName' summary='false' sign='true'><text>fConfig</text></item></form>
 

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" fromtemplate="Unplugged Controls" imagename="home@2x.png" name="unp/home@2x.png" publicaccess="false" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1b6" sequence="2" unid="580841684B097A00C1257BE9004CA4FA">
+<?xml version="1.0" encoding="UTF-8"?><imageresource designerversion="8.5.3" fromtemplate="Unplugged Controls" imagename="home@2x.png" maintenanceversion="1.0" name="unp/home@2x.png" publicaccess="false" replicaid="C1257BEF00363F66" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1b6" sequence="6" unid="580841684B097A00C1257BE9004CA4FA">
 <created><datetime dst="true">20130917T155709,70+02</datetime></created>
-<modified><datetime dst="true">20130926T140716,52+02</datetime></modified>
-<revised><datetime dst="true">20130926T140603,84+02</datetime></revised>
-<lastaccessed><datetime dst="true">20130926T140716,51+02</datetime></lastaccessed>
+<modified><datetime>20131105T214428,15+01</datetime></modified>
+<revised><datetime>20131105T214428,14+01</datetime></revised>
+<lastaccessed><datetime>20131105T214428,14+01</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20130923T115233,40+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Mark Leusink/O=LinQed</name></updatedby>
 <wassignedby><name>CN=Mark Leusink/O=LinQed</name></wassignedby><jpeg>

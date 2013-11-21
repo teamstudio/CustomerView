@@ -234,28 +234,7 @@
 									id="link3" text="Preview video">
 									<xp:this.rendered><![CDATA[#{javascript:entry.getColumnValue("type").equals("mov")}]]></xp:this.rendered>
 
-									<xp:eventHandler event="onclick"
-										submit="false">
-										<xp:this.script><![CDATA[
-									dijit.byId("videoDialog").show();
 									
-				var db = "#{javascript:applicationScope.dbPath}";
-					
-				if (typeof player == "undefined" || player == null) {
-									
-				player = jwplayer("videoPlayer").setup({
-				flashplayer: "#{javascript:applicationScope.dbPath}/mediaplayer-5.10/player.swf",
-				height: 310,
-				width: 550
-				});
-					
-				}
-				
-				player.load(db + "/0/" + "#{javascript:entry.getColumnValue('attachmentUrl')}");
-				player.play();
-				
-				]]></xp:this.script>
-									</xp:eventHandler>
 								</xp:link>
 
 								<!-- size -->
