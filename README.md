@@ -1,4 +1,4 @@
 CustomerView
 ============
 
-Alle CustomView templates
+All CustomView templates
